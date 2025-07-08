@@ -8,6 +8,7 @@
     <script defer src="../scripts/index.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
     <link rel="stylesheet" href="../styles/styles.css">
+    <link rel="stylesheet" href="/LapTrinhWebNangCao_INT4241/frontend/styles/output.css">
     <link rel="icon" href="../icon.png" type="image/png" />
 </head>
 
