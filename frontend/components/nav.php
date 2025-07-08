@@ -4,13 +4,13 @@
     <div class="flex h-14 items-center bg-white justify-between shadow-md">
         <div class="flex xl:ml-55 gap-10 lg:gap-6 lg:mr-30 lg:ml-30 md:ml-10 md:gap-10 items-center">
             <a href="/LapTrinhWebNangCao_INT4241/frontend/"><img class="w-8 h-8" src="/LapTrinhWebNangCao_INT4241/frontend/icon.png" alt=""></a>
-            <a href=""><span class="cursor-pointer text-lg 2xl:text-sm xl:text-sm lg:text-sm md:text-[12px]  hover:text-[#3c81c6] duration-150"> Cửa hàng</span></a>
-            <a href=""><span class="cursor-pointer text-lg 2xl:text-sm xl:text-sm lg:text-sm md:text-[12px]  hover:text-[#3c81c6] duration-150"> Di động</span></a>
-            <a href=""><span class="cursor-pointer text-lg 2xl:text-sm xl:text-sm lg:text-sm md:text-[12px]  hover:text-[#3c81c6] duration-150"> Nhà thông minh</span></a>          
+            <a href=""><span class="cursor-pointer text-lg 2xl:text-sm 2xl:font-normal xl:text-sm lg:text-sm md:text-[12px] hover:text-[#3c81c6] duration-150"> Cửa hàng</span></a>
+            <a href=""><span class="cursor-pointer text-lg 2xl:text-sm 2xl:font-normal xl:text-sm lg:text-sm md:text-[12px] hover:text-[#3c81c6] duration-150"> Di động</span></a>
+            <a href=""><span class="cursor-pointer text-lg 2xl:text-sm 2xl:font-normal xl:text-sm lg:text-sm md:text-[12px] hover:text-[#3c81c6] duration-150"> Nhà thông minh</span></a>          
         </div>
         <div class="flex xl:mr-55 gap-10 lg:gap-6 md:mr-30 md:gap-10 items-center">
-            <span class="cursor-pointer text-lg 2xl:text-sm xl:text-sm lg:text-sm md:text-[12px]  hover:text-[#3c81c6] duration-150"> Khám phá</span>
-            <span class="cursor-pointer text-lg 2xl:text-sm xl:text-sm lg:text-sm md:text-[12px]  hover:text-[#3c81c6] duration-150"> Hỗ trợ</span>
+            <span class="cursor-pointer text-lg 2xl:text-sm 2xl:font-normal xl:text-sm lg:text-sm md:text-[12px] hover:text-[#3c81c6] duration-150"> Khám phá</span>
+            <span class="cursor-pointer text-lg 2xl:text-sm 2xl:font-normal xl:text-sm lg:text-sm md:text-[12px] hover:text-[#3c81c6] duration-150"> Hỗ trợ</span>
             <a href="">
                 <svg class="w-6 h-6 hover:stroke-[#3c81c6] duration-150" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
                     <path stroke-linecap="round" stroke-linejoin="round" d="m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.607 10.607Z" />

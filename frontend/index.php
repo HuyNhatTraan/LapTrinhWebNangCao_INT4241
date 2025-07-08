@@ -23,7 +23,7 @@
                     <img class="" src="https://i02.appmifile.com/808_operator_vn/03/07/2025/559515e7251125098dbc7f2e03a2a709.jpg"> 
                 </a>
                 <div class="banner-text">
-                    <a class="ml-100 brightness-100"
+                    <a class="ml-100"
                         href="product/product-brand/product-details/lamzu-details/maya-x.html">
                         <div class="flex flex-col">
                             <span class="text-black text-3xl font-bold z-10 mb-5">Xiaomi Smart Band 10</span>
@@ -39,7 +39,7 @@
                     <img class="" src="https://i02.appmifile.com/515_operator_vn/25/06/2025/42ed6105da86c555edc534451347ce5a.jpg?thumb=1&w=2560&q=85">                     
                 </a>
                 <div class="banner-text">
-                    <a class="ml-100 brightness-100"
+                    <a class="ml-100"
                         href="product/product-brand/product-details/lamzu-details/maya-x.html">
                         <div class="flex flex-col">
                             <span class="text-white text-3xl font-bold z-10 mb-5">New Beginnings</span>
@@ -55,7 +55,7 @@
                     <img class="" src="https://i02.appmifile.com/312_operator_vn/15/05/2025/f38f000d76f2fac93d7aa99f3b22f1d3.jpg?thumb=1&w=2560&q=85">                
                 </a>
                 <div class="banner-text">
-                    <a class="ml-100 brightness-100"
+                    <a class="ml-100"
                         href="product/product-brand/product-details/lamzu-details/maya-x.html">
                         <div class="flex flex-col">
                             <span class="text-black text-3xl font-bold z-10 mb-5">Xiaomi TV A Pro 75 2026</span>
@@ -73,7 +73,7 @@
                         src="https://i02.appmifile.com/947_operator_vn/15/05/2025/2957efbd184dde92281549a7152d05c6.jpg?thumb=1&w=2560&q=85">
                 </a>
                 <div class="banner-text">
-                    <a class=""
+                    <a class="ml-100"
                         href="https://i02.appmifile.com/947_operator_vn/15/05/2025/2957efbd184dde92281549a7152d05c6.jpg?thumb=1&w=2560&q=85">
                         <div class="flex flex-col">
                             <span class="text-black text-3xl font-bold z-10 mb-5">Xiaomi TV A Pro 65 2026</span>

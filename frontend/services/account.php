@@ -5,9 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script defer src="/LapTrinhWebNangCao_INT4241/frontend/scripts/index.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
-    <link rel="stylesheet" href="/LapTrinhWebNangCao_INT4241/frontend/styles/styles.css">
-    <link rel="stylesheet" href="/LapTrinhWebNangCao_INT4241/frontend/styles/output.css">
+    <link rel="stylesheet" href="../styles/output.css">
     <link rel="icon" href="/LapTrinhWebNangCao_INT4241/frontend/icon.png" type="image/png"/>
     <title>Tài khoản</title>
 </head>
