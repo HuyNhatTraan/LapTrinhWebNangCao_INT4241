@@ -16,7 +16,8 @@
 
 <body class="bg-[#f5f5f5]">
     <div class="sticky top-0 z-10" id="nav"></div>
-    <div class="slider xl:h-[600px] sm:h-[300px]">
+    
+    <div class="slider xl:h-[600px] sm:h-auto">
         <div class="list">
             <div class="item">
                 <a href="product/product-brand/product-details/lamzu-details/maya-x.html">
@@ -132,7 +133,6 @@
             <button onclick="switchTab('home')" class="tab-btn text-black hover:text-orange-500" id="tab-home">Giải trí
                 tại gia</button>
         </div>
-
         <!-- Nội dung tab -->
         <div id="tab-content-xiaomi" class="tab-content ml-60 mr-60 p-8 bg-white shadow-md rounded-3xl">          
             <div class="grid grid-cols-2 bg-[#f5f5f5] rounded-xl mb-6 group">

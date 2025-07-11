@@ -8,7 +8,6 @@ fetch('/LapTrinhWebNangCao_INT4241/frontend/components/nav.php')
 fetch('/LapTrinhWebNangCao_INT4241/frontend/components/footer.php')
     .then(response => response.text())
     .then(data => {
-        document.getElementById('footer').innerHTML = data;
-        
+        document.getElementById('footer').innerHTML = data;       
     }
 );
