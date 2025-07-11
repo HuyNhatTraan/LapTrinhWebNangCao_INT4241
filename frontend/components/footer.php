@@ -1,5 +1,5 @@
 <footer class="bg-[#191919]">
-    <div class="grid grid-cols-4 gap-4 ml-50 mr-50">
+    <div class="grid grid-cols-1 ml-10 mr-10 sm:grid md:grid-cols-2 xl:grid-cols-4 md:gap-4 md:ml-30 md:mr-30 xl:ml-50 xl:mr-50 sm:grid-cols-1 sm:gap-4 sm-ml-10 sm:mr-10">
         <div class="text-white flex flex-col mt-10 mb-10">
             <span class="text-white font-bold mb-3">CÁC CHÍNH SÁCH</span>
             <span class="mb-2 text-[#898989]">Điều khoản sử dụng</span>
@@ -10,7 +10,7 @@
             <span class="mb-2 text-[#898989]">Chính sách bảo vệ dữ liệu cá nhân</span>
             <span class="mb-2 text-[#898989]">CHÍNH SÁCH COOKIE</span>
         </div>
-        <div class="flex flex-col mt-10 mb-10 mb-3">
+        <div class="flex flex-col mt-10 mb-10">
             <div class="flex flex-col">
                 <span class="text-white font-bold mb-3">GIỚI THIỆU</span>
                 <span class="mb-2 text-[#898989]">Xiaomi</span>
@@ -25,12 +25,12 @@
                 <span class="mb-2 text-[#898989]">Phí sửa chữa dịch vụ đối với điện thoại</span>
             </div>
         </div>
-        <div class="flex flex-col mt-10 mb-10 mb-3">
+        <div class="flex flex-col mt-10 mb-10">
             <span class="text-white font-bold mb-3">LIÊN HỆ VỚI CHÚNG TÔI</span>
             <span class="mb-2 text-[#898989]">Email: service.vn@support.mi.com</span>
             <span class="mb-2 text-[#898989]">Số điện thoại: 1800400410</span>
         </div>
-        <div class="mt-10 mb-10 mb-3">
+        <div class="mt-10 mb-10">
             <span class="text-white font-bold">THEO DÕI Xiaomi</span>
             <div class="flex mt-1 items-center gap-3 mb-5">
                 <a href="https://www.facebook.com/XiaomiVietnam/"><svg class="w-10 h-10 cursor-pointer"
@@ -79,7 +79,7 @@
             </div>
             <div class="">
                 <span class="text-white font-bold mb-3">Nhập địa chỉ email của bạn để đăng ký nhận thông tin</span>
-                <div class="mt-6 flex max-w-md gap-x-4">
+                <div class="mt-6 flex max-w gap-x-4">
                     <label for="email-address" class="sr-only">Email address</label>
                     <input id="email-address" name="email" type="email" autocomplete="email" required
                         class="min-w-0 flex-auto rounded-md bg-white/5 px-3.5 py-2 text-base text-white outline-1 -outline-offset-1 outline-white/10 placeholder:text-gray-500 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-500 sm:text-sm/6"

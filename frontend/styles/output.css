@@ -1,11 +1,17 @@
 /*! tailwindcss v4.1.11 | MIT License | https://tailwindcss.com */
+@import "tailwindcss";
 @import url('https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+* {
+    font-family: "Be Vietnam Pro";
+}
 @layer properties;
 @layer theme, base, components, utilities;
 @layer theme {
   :root, :host {
-    --font-sans: "Be Vietnam Pro";
-    --font-mono: "Be Vietnam Pro";
+    --font-sans: ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji",
+      "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+    --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono",
+      "Courier New", monospace;
     --color-orange-500: oklch(70.5% 0.213 47.604);
     --color-indigo-400: oklch(67.3% 0.182 276.935);
     --color-indigo-500: oklch(58.5% 0.233 277.117);
@@ -122,7 +128,7 @@
   }
   img, svg, video, canvas, audio, iframe, embed, object {
     display: block;
-    /* vertical-align: middle; */
+    vertical-align: middle;
   }
   img, video {
     max-width: 100%;
@@ -409,6 +415,9 @@
   .resize {
     resize: both;
   }
+  .grid-cols-1 {
+    grid-template-columns: repeat(1, minmax(0, 1fr));
+  }
   .grid-cols-2 {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
@@ -429,9 +438,6 @@
   }
   .justify-center {
     justify-content: center;
-  }
-  .\!gap-10 {
-    gap: calc(var(--spacing) * 10) !important;
   }
   .gap-2 {
     gap: calc(var(--spacing) * 2);
@@ -599,6 +605,9 @@
   }
   .text-center {
     text-align: center;
+  }
+  .font-sans {
+    font-family: var(--font-sans);
   }
   .text-2xl {
     font-size: var(--text-2xl);
@@ -870,14 +879,54 @@
       outline-color: var(--color-indigo-500);
     }
   }
-  .sm\:hidden {
+  .sm\:mr-10 {
     @media (width >= 40rem) {
-      display: none;
+      margin-right: calc(var(--spacing) * 10);
+    }
+  }
+  .sm\:ml-20 {
+    @media (width >= 40rem) {
+      margin-left: calc(var(--spacing) * 20);
+    }
+  }
+  .sm\:grid {
+    @media (width >= 40rem) {
+      display: grid;
     }
   }
   .sm\:h-auto {
     @media (width >= 40rem) {
       height: auto;
+    }
+  }
+  .sm\:grid-cols-1 {
+    @media (width >= 40rem) {
+      grid-template-columns: repeat(1, minmax(0, 1fr));
+    }
+  }
+  .sm\:grid-cols-3 {
+    @media (width >= 40rem) {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+  }
+  .sm\:grid-cols-4 {
+    @media (width >= 40rem) {
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+    }
+  }
+  .sm\:grid-rows-1 {
+    @media (width >= 40rem) {
+      grid-template-rows: repeat(1, minmax(0, 1fr));
+    }
+  }
+  .sm\:gap-2 {
+    @media (width >= 40rem) {
+      gap: calc(var(--spacing) * 2);
+    }
+  }
+  .sm\:gap-4 {
+    @media (width >= 40rem) {
+      gap: calc(var(--spacing) * 4);
     }
   }
   .sm\:text-sm\/6 {
@@ -886,9 +935,26 @@
       line-height: calc(var(--spacing) * 6);
     }
   }
+  .\*\*\:sm\:grid-cols-3 {
+    :is(& *) {
+      @media (width >= 40rem) {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+      }
+    }
+  }
   .md\:mr-10 {
     @media (width >= 48rem) {
       margin-right: calc(var(--spacing) * 10);
+    }
+  }
+  .md\:mr-30 {
+    @media (width >= 48rem) {
+      margin-right: calc(var(--spacing) * 30);
+    }
+  }
+  .md\:mr-50 {
+    @media (width >= 48rem) {
+      margin-right: calc(var(--spacing) * 50);
     }
   }
   .md\:ml-10 {
@@ -896,14 +962,54 @@
       margin-left: calc(var(--spacing) * 10);
     }
   }
+  .md\:ml-30 {
+    @media (width >= 48rem) {
+      margin-left: calc(var(--spacing) * 30);
+    }
+  }
+  .md\:ml-50 {
+    @media (width >= 48rem) {
+      margin-left: calc(var(--spacing) * 50);
+    }
+  }
   .md\:flex {
     @media (width >= 48rem) {
       display: flex;
     }
   }
+  .md\:grid {
+    @media (width >= 48rem) {
+      display: grid;
+    }
+  }
   .md\:hidden {
     @media (width >= 48rem) {
       display: none;
+    }
+  }
+  .md\:grid-cols-2 {
+    @media (width >= 48rem) {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+  }
+  .md\:grid-cols-4 {
+    @media (width >= 48rem) {
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+    }
+  }
+  .md\:grid-rows-1 {
+    @media (width >= 48rem) {
+      grid-template-rows: repeat(1, minmax(0, 1fr));
+    }
+  }
+  .md\:grid-rows-4 {
+    @media (width >= 48rem) {
+      grid-template-rows: repeat(4, minmax(0, 1fr));
+    }
+  }
+  .md\:gap-4 {
+    @media (width >= 48rem) {
+      gap: calc(var(--spacing) * 4);
     }
   }
   .md\:gap-10 {
@@ -937,9 +1043,29 @@
       line-height: var(--tw-leading, var(--text-sm--line-height));
     }
   }
+  .xl\:mr-30 {
+    @media (width >= 80rem) {
+      margin-right: calc(var(--spacing) * 30);
+    }
+  }
+  .xl\:mr-50 {
+    @media (width >= 80rem) {
+      margin-right: calc(var(--spacing) * 50);
+    }
+  }
   .xl\:mr-55 {
     @media (width >= 80rem) {
       margin-right: calc(var(--spacing) * 55);
+    }
+  }
+  .xl\:ml-30 {
+    @media (width >= 80rem) {
+      margin-left: calc(var(--spacing) * 30);
+    }
+  }
+  .xl\:ml-50 {
+    @media (width >= 80rem) {
+      margin-left: calc(var(--spacing) * 50);
     }
   }
   .xl\:ml-55 {
@@ -947,14 +1073,14 @@
       margin-left: calc(var(--spacing) * 55);
     }
   }
-  .xl\:flex {
-    @media (width >= 80rem) {
-      display: flex;
-    }
-  }
   .xl\:h-\[600px\] {
     @media (width >= 80rem) {
       height: 600px;
+    }
+  }
+  .xl\:grid-cols-4 {
+    @media (width >= 80rem) {
+      grid-template-columns: repeat(4, minmax(0, 1fr));
     }
   }
   .xl\:text-sm {
@@ -963,9 +1089,9 @@
       line-height: var(--tw-leading, var(--text-sm--line-height));
     }
   }
-  .\32 xl\:flex {
+  .\32 xl\:gap-10 {
     @media (width >= 96rem) {
-      display: flex;
+      gap: calc(var(--spacing) * 10);
     }
   }
   .\32 xl\:text-sm {
@@ -980,6 +1106,10 @@
       font-weight: var(--font-weight-normal);
     }
   }
+}
+@import url('https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+* {
+  font-family: "Be Vietnam Pro";
 }
 @property --tw-rotate-x {
   syntax: "*";
