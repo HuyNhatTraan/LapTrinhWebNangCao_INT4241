@@ -1,7 +1,7 @@
 <?php session_start(); ?>
 <nav class="sticky top-0 z-10">
     <div class="flex h-14 items-center bg-white justify-between shadow-md">
-        <div class="flex gap-4 ml-10 xl:ml-55 lg:ml-30 md:ml-10 sm:ml-20 md:gap-4 lg:gap-6  items-center">
+        <div class="flex gap-4 ml-10 xl:ml-55 lg:ml-30 md:ml-10 sm:ml-10 md:gap-4 lg:gap-6 items-center">
             <div class="flex items-center gap-4">
                 <div class="flex md:hidden">
                     <svg class="w-10 h-10" fill="#000000" viewBox="0 0 32 32" enable-background="new 0 0 32 32" id="Glyph" version="1.1" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"><path d="M26,16c0,1.104-0.896,2-2,2H8c-1.104,0-2-0.896-2-2s0.896-2,2-2h16C25.104,14,26,14.896,26,16z" id="XMLID_314_"></path><path d="M26,8c0,1.104-0.896,2-2,2H8c-1.104,0-2-0.896-2-2s0.896-2,2-2h16C25.104,6,26,6.896,26,8z" id="XMLID_315_"></path><path d="M26,24c0,1.104-0.896,2-2,2H8c-1.104,0-2-0.896-2-2s0.896-2,2-2h16C25.104,22,26,22.896,26,24z" id="XMLID_316_"></path></g></svg>
