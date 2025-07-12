@@ -383,8 +383,6 @@
         </div>
     </div>
 </div>
-
-
     <script>
         function switchTab(tab) {
             const tabs = ['xiaomi', 'poco', 'tablet', 'home'];
@@ -405,7 +403,7 @@
     </script>
     </div>
     <span class="KhamPhaXiaomi flex font-bold text-3xl justify-center mt-20 mb-10">Khám phá Xiaomi</span>
-    <div class="flex shrink-0 overflow-x-scroll gap-5 ml-5 rounded-tl-3xl rounded-bl-3xl scrollbar-hide">
+    <div class="flex shrink-0 overflow-x-scroll gap-5 ml-5 rounded-tl-3xl rounded-bl-3xl hide-scrollbar">
         <div class="bg-white flex flex-col text-center mb-3 rounded-3xl">
             <a class="flex flex-col text-center group w-[250px] lg:w-[400px] 2xl:w-[500px] h-auto overflow-hidden rounded-3xl" href="">
                 <img class="rounded-tl-3xl rounded-tr-3xl group-hover:scale-110 duration-150"
