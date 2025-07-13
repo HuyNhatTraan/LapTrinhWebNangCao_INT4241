@@ -1,25 +1,28 @@
 <?php
-    require_once('../config/db.php');
-    session_start();
-    // Đăng nhập
-    if (isset($_POST['login'])) {
-        $email = $_POST['email'];
-        $password = $_POST['password'];
+require_once('../config/db.php');
+session_start();
 
-        $result = $conn->query("SELECT * FROM Account WHERE email='$email'");
-        if ($result->num_rows === 1) {
-            $row = $result->fetch_assoc();
-            if (password_verify($password, $row['password'])) {
-                $_SESSION['user'] = $row['email'];
-                $_SESSION['last_activity'] = time(); // dùng để kiểm tra session timeout
-                header("Location: /LapTrinhWebNangCao_INT4241/frontend/");  
-                echo "Đăng nhập thành công! <a href='/LapTrinhWebNangCao_INT4241/frontend/'>Vào trang chính</a>";                
-            } else {
-                echo "<h1>Sai mật khẩu!</h1>";
-            }
+if (isset($_POST['login'])) {
+    $email = $_POST['email'];
+    $password = $_POST['password'];
+
+    $stmt = $conn->prepare("SELECT * FROM Account WHERE email = :email");
+    $stmt->bindParam(':email', $email);
+    $stmt->execute();
+
+    // PDO fetch chuẩn
+    if ($stmt->rowCount() === 1) {
+        $row = $stmt->fetch(PDO::FETCH_ASSOC);
+        if (password_verify($password, $row['Password'])) {
+            $_SESSION['user'] = $row['Email'];
+            $_SESSION['last_activity'] = time();
+            header("Location: /LapTrinhWebNangCao_INT4241/frontend/");
+            exit(); // Dừng script sau khi chuyển trang
         } else {
-            echo "<h1>Không tìm thấy tài khoản!</h1>";
+            echo "<h1>Sai mật khẩu!</h1>";
         }
+    } else {
+        echo "<h1>Không tìm thấy tài khoản!</h1>";
     }
-    exit();
+}
 ?>

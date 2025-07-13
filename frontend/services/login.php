@@ -7,7 +7,6 @@
     <title>Login</title>
     <script defer src="../scripts/index.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
-    <link rel="stylesheet" href="../styles/styles.css">
     <link rel="stylesheet" href="/LapTrinhWebNangCao_INT4241/frontend/styles/output.css">
     <link rel="icon" href="../icon.png" type="image/png" />
 </head>
@@ -23,7 +22,7 @@
             <form class="space-y-4" action="/LapTrinhWebNangCao_INT4241/backend/routes/login.php" method="POST">
                 <div>
                     <label class="block text-sm mb-1" for="email">Email address</label>
-                    <input type="email" id="email" name="email"
+                    <input type="email" id="email" name="email" placeholder="Email"
                         class="w-full px-3 py-2 rounded-md bg-[#1e293b] text-white border border-[#334155] focus:outline-none focus:ring-2 focus:ring-indigo-500" />
                 </div>
 
@@ -31,11 +30,12 @@
                     <div class="flex items-center justify-between mb-1">
                         <label class="text-sm" for="password">Password</label>
                     </div>
-                    <input type="password" id="password" name="password"
+                    <input type="password" id="password" name="password" placeholder="Mật khẩu"
                         class="w-full px-3 py-2 rounded-md bg-[#1e293b] text-white border border-[#334155] focus:outline-none focus:ring-2 focus:ring-indigo-500" />
                 </div>
 
-                <button type="submit" name="login" class="w-full py-2 rounded-md bg-indigo-500 hover:bg-indigo-600 transition text-white font-medium cursor-pointer">              
+                <button type="submit" name="login"
+                    class="w-full py-2 rounded-md bg-indigo-500 hover:bg-indigo-600 transition text-white font-medium cursor-pointer">
                     Sign in
                 </button>
             </form>
@@ -45,6 +45,56 @@
             </p>
         </div>
     </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const form = document.querySelector('form');
+            form.addEventListener('submit', function (e) {
+                // Xóa thông báo cũ
+                document.querySelectorAll('.form-error').forEach(el => el.remove());
+
+                let valid = true;
+                const email = form.email.value.trim();
+                const password = form.password.value.trim();
+
+                // Validate email
+                if (!email) {
+                    showError(form.email, 'Vui lòng nhập email');
+                    valid = false;
+                } else if (!/^[\w-.]+@([\w-]+\.)+[\w-]{2,}$/.test(email)) {
+                    showError(form.email, 'Email không hợp lệ');
+                    valid = false;
+                }
+
+                // Validate password
+                if (!password) {
+                    showError(form.password, 'Vui lòng nhập mật khẩu');
+                    valid = false;
+                } else if (password.length < 6) {
+                    showError(form.password, 'Mật khẩu tối thiểu 6 ký tự');
+                    valid = false;
+                }
+
+                if (!valid) e.preventDefault();
+            });
+
+            function showError(input, message) {
+                const error = document.createElement('div');
+                error.className = 'form-error text-red-400 text-sm mt-1';
+                error.innerText = message;
+                input.classList.add('border-red-500', 'focus:ring-red-500');
+                input.parentNode.appendChild(error);
+            }
+
+            // Xóa border đỏ khi nhập lại
+            document.querySelectorAll('input').forEach(input => {
+                input.addEventListener('input', function () {
+                    input.classList.remove('border-red-500', 'focus:ring-red-500');
+                    const err = input.parentNode.querySelector('.form-error');
+                    if (err) err.remove();
+                });
+            });
+        });
+    </script>
 
     <div class="" id="footer"></div>
 </body>
