@@ -15,27 +15,27 @@
 
 <body class="bg-[#f5f5f5]">
     <div class="sticky top-0 z-10" id="nav"></div>
-    <div class="slider !h-300px xl:h-[600px]">
+    <div class="slider h-[200px] sm:h-[300px] xl:h-[600px]">
         <div class="list">
             <div class="item">
-                <a href="product/product-brand/product-details/lamzu-details/maya-x.html">
+                <a class="" href="product/product-brand/product-details/lamzu-details/maya-x.html">
                     <img class=""
                         src="https://i02.appmifile.com/808_operator_vn/03/07/2025/559515e7251125098dbc7f2e03a2a709.jpg">
                 </a>
                 <div class="banner-text">
                     <a class="ml-100" href="product/product-brand/product-details/lamzu-details/maya-x.html">
                         <div class="flex flex-col">
-                            <span class="text-black text-3xl font-bold z-10 mb-5">Xiaomi Smart Band 10</span>
-                            <span class="text-black text-2xl z-10">Chuẩn dáng bật chất nghiệp</span>
+                            <span class="text-black text-sm md:text-3xl font-bold z-10 md:mb-5">Xiaomi Smart Band 10</span>
+                            <span class="text-black md:text-2xl z-10">Chuẩn dáng bật chất nghiệp</span>
                             <span class="mt-10">Từ <span class="text-3xl ml-1">1.090.000</span></span>
                         </div>
-                        <p class="mt-3 bg-[#000000] text-white" id="banner-text-XemNgay">Mua ngay</p>
+                        <p class="flex w-fit mt-3 bg-[#000000] text-white" id="banner-text-XemNgay">Mua ngay</p>
                     </a>
                 </div>
             </div>
             <div class="item">
                 <a href="product/product-brand/product-details/lamzu-details/maya-x.html">
-                    <img class=""
+                    <img class="h-full"
                         src="https://i02.appmifile.com/515_operator_vn/25/06/2025/42ed6105da86c555edc534451347ce5a.jpg?thumb=1&w=2560&q=85">
                 </a>
                 <div class="banner-text">
@@ -51,7 +51,7 @@
             </div>
             <div class="item">
                 <a href="product/product-brand/product-details/lamzu-details/maya-x.html">
-                    <img class=""
+                    <img class="h-full"
                         src="https://i02.appmifile.com/312_operator_vn/15/05/2025/f38f000d76f2fac93d7aa99f3b22f1d3.jpg?thumb=1&w=2560&q=85">
                 </a>
                 <div class="banner-text">
@@ -68,7 +68,7 @@
             </div>
             <div class="item">
                 <a href="product/product-brand/product-details/lamzu-details/maya-x.html">
-                    <img class=""
+                    <img class="h-full"
                         src="https://i02.appmifile.com/947_operator_vn/15/05/2025/2957efbd184dde92281549a7152d05c6.jpg?thumb=1&w=2560&q=85">
                 </a>
                 <div class="banner-text">
