@@ -7,53 +7,52 @@
         <div class="hidden duration-700 ease-in-out" data-carousel-item>
             <img src="https://i02.appmifile.com/808_operator_vn/03/07/2025/559515e7251125098dbc7f2e03a2a709.jpg" class="absolute block w-full h-full object-cover object-center top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2" alt="...">
             <div class="flex flex-col absolute top-1/2 left-1/2 md:left-0 transform -translate-x-1/2 -translate-y-1/2 md:translate-x-0 md:-translate-y-1/2">
-                <span class="text-black text-sm md:text-4xl font-bold z-10">Xiaomi Smart Band 10</span>
-                <span class="text-black md:text-2xl z-10">Chuẩn dáng bật chất nghiệp</span>
-                <span class="mt-10">Từ <span class="text-3xl ml-1">1.090.000</span></span>  
-                <button class="mt-2 w-fit p-4 bg-cyan-700 rounded-2xl border-1 border-gray-200 hover:bg-blue-200 duration-150">Xem Ngay</button>
+                <span class="text-black text-sm md:text-4xl font-bold">Xiaomi Smart Band 10</span>
+                <span class="text-black text-sm md:text-2xl">Chuẩn dáng bật chất chuyên nghiệp</span>
+                <span class="">Từ <span class="text-md ml-1 font-bold">1.090.000</span></span>  
+                <button class="mt-2 w-fit p-2 bg-cyan-700 rounded-xl border-1 border-gray-200 hover:bg-blue-200 duration-150">Xem Ngay</button>
             </div>  
         </div>
         <!-- Item 2 -->
         <div class="hidden duration-700 ease-in-out" data-carousel-item>
             <img src="https://i02.appmifile.com/808_operator_vn/03/07/2025/559515e7251125098dbc7f2e03a2a709.jpg" class="absolute block w-full h-full object-cover object-center top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2" alt="...">
             <div class="flex flex-col absolute top-1/2 left-1/2 md:left-0 transform -translate-x-1/2 -translate-y-1/2 md:translate-x-0 md:-translate-y-1/2">
-                <span class="text-black text-sm md:text-4xl font-bold z-10">Xiaomi Smart Band 10</span>
-                <span class="text-black md:text-2xl z-10">Chuẩn dáng bật chất nghiệp</span>
-                <span class="mt-10">Từ <span class="text-3xl ml-1">1.090.000</span></span>  
-                <button class="mt-2 w-fit p-4 bg-cyan-700 rounded-2xl border-1 border-gray-200 hover:bg-blue-200 duration-150">Xem Ngay</button>
+                <span class="text-black text-sm md:text-4xl font-bold">Xiaomi Smart Band 10</span>
+                <span class="text-black text-sm md:text-2xl">Chuẩn dáng bật chất chuyên nghiệp</span>
+                <span class="">Từ <span class="text-md ml-1 font-bold">1.090.000</span></span>  
+                <button class="mt-2 w-fit p-2 bg-cyan-700 rounded-xl border-1 border-gray-200 hover:bg-blue-200 duration-150">Xem Ngay</button>
             </div>  
         </div>
         <!-- Item 3 -->
         <div class="hidden duration-700 ease-in-out" data-carousel-item>
             <img src="https://i02.appmifile.com/808_operator_vn/03/07/2025/559515e7251125098dbc7f2e03a2a709.jpg" class="absolute block w-full h-full object-cover object-center top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2" alt="...">
             <div class="flex flex-col absolute top-1/2 left-1/2 md:left-0 transform -translate-x-1/2 -translate-y-1/2 md:translate-x-0 md:-translate-y-1/2">
-                <span class="text-black text-sm md:text-4xl font-bold z-10">Xiaomi Smart Band 10</span>
-                <span class="text-black md:text-2xl z-10">Chuẩn dáng bật chất nghiệp</span>
-                <span class="mt-10">Từ <span class="text-3xl ml-1">1.090.000</span></span>  
-                <button class="mt-2 w-fit p-4 bg-cyan-700 rounded-2xl border-1 border-gray-200 hover:bg-blue-200 duration-150">Xem Ngay</button>
+                <span class="text-black text-sm md:text-4xl font-bold">Xiaomi Smart Band 10</span>
+                <span class="text-black text-sm md:text-2xl">Chuẩn dáng bật chất chuyên nghiệp</span>
+                <span class="">Từ <span class="text-md ml-1 font-bold">1.090.000</span></span>  
+                <button class="mt-2 w-fit p-2 bg-cyan-700 rounded-xl border-1 border-gray-200 hover:bg-blue-200 duration-150">Xem Ngay</button>
             </div>  
         </div>
         <!-- Item 4 -->
         <div class="hidden duration-700 ease-in-out" data-carousel-item>
             <img src="https://i02.appmifile.com/808_operator_vn/03/07/2025/559515e7251125098dbc7f2e03a2a709.jpg" class="absolute block w-full h-full object-cover object-center top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2" alt="...">
             <div class="flex flex-col absolute top-1/2 left-1/2 md:left-0 transform -translate-x-1/2 -translate-y-1/2 md:translate-x-0 md:-translate-y-1/2">
-                <span class="text-black text-sm md:text-4xl font-bold z-10">Xiaomi Smart Band 10</span>
-                <span class="text-black md:text-2xl z-10">Chuẩn dáng bật chất nghiệp</span>
-                <span class="mt-10">Từ <span class="text-3xl ml-1">1.090.000</span></span>  
-                <button class="mt-2 w-fit p-4 bg-cyan-700 rounded-2xl border-1 border-gray-200 hover:bg-blue-200 duration-150">Xem Ngay</button>
+                <span class="text-black text-sm md:text-4xl font-bold">Xiaomi Smart Band 10</span>
+                <span class="text-black text-sm md:text-2xl">Chuẩn dáng bật chất chuyên nghiệp</span>
+                <span class="">Từ <span class="text-md ml-1 font-bold">1.090.000</span></span>  
+                <button class="mt-2 w-fit p-2 bg-cyan-700 rounded-xl border-1 border-gray-200 hover:bg-blue-200 duration-150">Xem Ngay</button>
             </div>  
         </div>
         <!-- Item 5 -->
         <div class="hidden duration-700 ease-in-out" data-carousel-item>
             <img src="https://i02.appmifile.com/808_operator_vn/03/07/2025/559515e7251125098dbc7f2e03a2a709.jpg" class="absolute block w-full h-full object-cover object-center top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2" alt="...">
             <div class="flex flex-col absolute top-1/2 left-1/2 md:left-0 transform -translate-x-1/2 -translate-y-1/2 md:translate-x-0 md:-translate-y-1/2">
-                <span class="text-black text-sm md:text-4xl font-bold z-10">Xiaomi Smart Band 10</span>
-                <span class="text-black md:text-2xl z-10">Chuẩn dáng bật chất nghiệp</span>
-                <span class="mt-10">Từ <span class="text-3xl ml-1">1.090.000</span></span>  
-                <button class="mt-2 w-fit p-4 bg-cyan-700 rounded-2xl border-1 border-gray-200 hover:bg-blue-200 duration-150">Xem Ngay</button>
+                <span class="text-black text-sm md:text-4xl font-bold">Xiaomi Smart Band 10</span>
+                <span class="text-black text-sm md:text-2xl">Chuẩn dáng bật chất chuyên nghiệp</span>
+                <span class="">Từ <span class="text-md ml-1 font-bold">1.090.000</span></span>  
+                <button class="mt-2 w-fit p-2 bg-cyan-700 rounded-xl border-1 border-gray-200 hover:bg-blue-200 duration-150">Xem Ngay</button>
             </div>  
         </div>
-    </div>
     <!-- Slider indicators -->
     <div class="absolute z-30 flex -translate-x-1/2 bottom-5 left-1/2 space-x-3 rtl:space-x-reverse">
         <button type="button" class="w-3 h-3 rounded-full" aria-current="true" aria-label="Slide 1" data-carousel-slide-to="0"></button>
