@@ -1,5 +1,5 @@
 <?php session_start(); ?>
-<nav class="sticky top-0 z-10">
+<nav class="sticky top-0 z-35">
     <div class="flex h-14 items-center bg-white justify-between shadow-md">
         <div class="flex gap-4 ml-10 xl:ml-55 lg:ml-30 md:ml-10 sm:ml-10 md:gap-4 lg:gap-6 items-center">
             <div class="flex items-center gap-4">

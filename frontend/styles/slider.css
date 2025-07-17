@@ -58,6 +58,7 @@ html, body {
   overflow: hidden;
   display: flex;
   align-items: center;
+  height: 600px;
 }
 
 .slider .list {

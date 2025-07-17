@@ -9,118 +9,17 @@
     <script defer src="/LapTrinhWebNangCao_INT4241/frontend/scripts/slider.js"></script>
     <link rel="stylesheet" href="/LapTrinhWebNangCao_INT4241/frontend/styles/output.css">
     <link rel="stylesheet" href="/LapTrinhWebNangCao_INT4241/frontend/styles/slider.css">
+    <link href="https://cdn.jsdelivr.net/npm/flowbite@3.1.2/dist/flowbite.min.css" rel="stylesheet" />
     <link rel="icon" href="icon.png" type="image/png" />
     <title>HT Tech | Trang web lỏ nhất VN</title>
 </head>
 
 <body class="bg-[#f5f5f5]">
-    <div class="sticky top-0 z-10" id="nav"></div>
-    <div class="slider h-[200px] sm:h-[300px] xl:h-[600px]">
-        <div class="list">
-            <div class="item">
-                <a class="" href="product/product-brand/product-details/lamzu-details/maya-x.html">
-                    <img class=""
-                        src="https://i02.appmifile.com/808_operator_vn/03/07/2025/559515e7251125098dbc7f2e03a2a709.jpg">
-                </a>
-                <div class="banner-text">
-                    <a class="ml-100" href="product/product-brand/product-details/lamzu-details/maya-x.html">
-                        <div class="flex flex-col">
-                            <span class="text-black text-sm md:text-3xl font-bold z-10 md:mb-5">Xiaomi Smart Band 10</span>
-                            <span class="text-black md:text-2xl z-10">Chuẩn dáng bật chất nghiệp</span>
-                            <span class="mt-10">Từ <span class="text-3xl ml-1">1.090.000</span></span>
-                        </div>
-                        <p class="flex w-fit mt-3 bg-[#000000] text-white" id="banner-text-XemNgay">Mua ngay</p>
-                    </a>
-                </div>
-            </div>
-            <div class="item">
-                <a href="product/product-brand/product-details/lamzu-details/maya-x.html">
-                    <img class="h-full"
-                        src="https://i02.appmifile.com/515_operator_vn/25/06/2025/42ed6105da86c555edc534451347ce5a.jpg?thumb=1&w=2560&q=85">
-                </a>
-                <div class="banner-text">
-                    <a class="ml-100" href="product/product-brand/product-details/lamzu-details/maya-x.html">
-                        <div class="flex flex-col">
-                            <span class="text-white text-3xl font-bold z-10 mb-5">New Beginnings</span>
-                            <span class="text-white text-2xl z-10">Sự kiện ra mắt [Human x Car x Home]</span>
-                            <span class="text-white text-2xl z-10">26 tháng 6 | 18:00 GMT+7</span>
-                        </div>
-                        <p class="mt-10 bg-white text-black" id="banner-text-XemNgay">Tìm hiểu thêm</p>
-                    </a>
-                </div>
-            </div>
-            <div class="item">
-                <a href="product/product-brand/product-details/lamzu-details/maya-x.html">
-                    <img class="h-full"
-                        src="https://i02.appmifile.com/312_operator_vn/15/05/2025/f38f000d76f2fac93d7aa99f3b22f1d3.jpg?thumb=1&w=2560&q=85">
-                </a>
-                <div class="banner-text">
-                    <a class="ml-100" href="product/product-brand/product-details/lamzu-details/maya-x.html">
-                        <div class="flex flex-col">
-                            <span class="text-black text-3xl font-bold z-10 mb-5">Xiaomi TV A Pro 75 2026</span>
-                            <span class="text-black text-2xl z-10">Tuyệt đỉnh thị giác</span>
-                            <span class="text-black text-2xl z-10">Mãn nhãn với màn hình QLED 4K</span>
-                            <span class="mt-10 text-white">Từ <span class="text-3xl ml-1">17.990.000</span></span>
-                        </div>
-                        <p class="mt-3 bg-white text-black" id="banner-text-XemNgay">Mua ngay</p>
-                    </a>
-                </div>
-            </div>
-            <div class="item">
-                <a href="product/product-brand/product-details/lamzu-details/maya-x.html">
-                    <img class="h-full"
-                        src="https://i02.appmifile.com/947_operator_vn/15/05/2025/2957efbd184dde92281549a7152d05c6.jpg?thumb=1&w=2560&q=85">
-                </a>
-                <div class="banner-text">
-                    <a class="ml-100"
-                        href="https://i02.appmifile.com/947_operator_vn/15/05/2025/2957efbd184dde92281549a7152d05c6.jpg?thumb=1&w=2560&q=85">
-                        <div class="flex flex-col">
-                            <span class="text-black text-3xl font-bold z-10 mb-5">Xiaomi TV A Pro 65 2026</span>
-                            <span class="text-black text-2xl z-10">Giải trí đỉnh cao</span>
-                            <span class="text-black text-2xl z-10">Tận hưởng mọi nội dung đa dạng</span>
-                            <span class="mt-10 text-white">Từ <span class="text-3xl ml-1">13.990.000</span></span>
-                        </div>
-                        <p class="mt-3 bg-white text-black" id="banner-text-XemNgay">Mua ngay</p>
-                    </a>
-                </div>
-            </div>
-        </div>
-        <div class="buttons">
-            <button id="prev" class="w-48 h-48 flex items-center justify-center">
-                <svg width="32px" height="32px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"
-                    transform="rotate(0)">
-                    <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
-                    <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
-                    <g id="SVGRepo_iconCarrier">
-                        <path fill-rule="evenodd" clip-rule="evenodd"
-                            d="M6.3508 12.7499L11.2096 17.4615L10.1654 18.5383L3.42264 11.9999L10.1654 5.46148L11.2096 6.53833L6.3508 11.2499L21 11.2499L21 12.7499L6.3508 12.7499Z"
-                            fill="#000000"></path>
-                    </g>
-                </svg>
-            </button>
-            <button id="next" class="w-48 h-48 flex items-center justify-center">
-                <svg width="32px" height="32px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"
-                    transform="rotate(180)">
-                    <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
-                    <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
-                    <g id="SVGRepo_iconCarrier">
-                        <path fill-rule="evenodd" clip-rule="evenodd"
-                            d="M6.3508 12.7499L11.2096 17.4615L10.1654 18.5383L3.42264 11.9999L10.1654 5.46148L11.2096 6.53833L6.3508 11.2499L21 11.2499L21 12.7499L6.3508 12.7499Z"
-                            fill="#000000"></path>
-                    </g>
-                </svg>
-            </button>
-        </div>
-        <ul class="dots">
-            <li class="active"></li>
-            <li></li>
-            <li></li>
-            <li></li>
-        </ul>
-    </div>
+    <div class="sticky top-0 z-50" id="nav"></div>
+    <?php require 'components/carousel.php' ?>
     <span class="flex font-bold text-xl md:text-3xl justify-center mt-20">Sản phẩm nổi bật</span>
     <div class="w-full mt-10 overflow-x-auto scrollbar-hide">
-        <div class="flex ml-6 md:ml-0 justify-start sm:justify-center">
+        <div class="flex ml-6 md:ml-0 justify-start sm:justify-center"> 
             <div class="flex shrink-0 space-x-8 mb-6 text-lg font-semibold">
                 <button onclick="switchTab('xiaomi')" class="tab-btn text-orange-500 border-b-2 border-orange-500 pb-2"
                     id="tab-xiaomi">Xiaomi Series</button>
@@ -475,6 +374,7 @@
         ScrollReveal({ reset: 1 });
         ScrollReveal().reveal(".KhamPhaXiaomi", slideUp, { delay: 1000 });
     </script>
+    <script src="https://cdn.jsdelivr.net/npm/flowbite@3.1.2/dist/flowbite.min.js"></script>
 </body>
 
-</html>
+</html> 
