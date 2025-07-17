@@ -23,19 +23,19 @@
             // CHẶN TRUY CẬP KHI CHƯA LOGIN
             if (!isset($_SESSION['user'])) {
                 echo "
-        <div class='flex items-center gap-6 p-4'>
-            <div class='flex flex-col justify-center items-center gap-4'>  
-                <!-- SVG Icon -->
-                <svg width='64px' height='64px' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'>
-                    <path d='M2 8C2 4.68629 4.68629 2 8 2H16C19.3137 2 22 4.68629 22 8V16C22 19.3137 19.3137 22 16 22H8C4.68629 22 2 19.3137 2 16V8Z' stroke='#ffffff' stroke-width='1.5'></path>
-                    <path d='M9.00012 9L15.0001 15' stroke='#ffffff' stroke-width='1.5' stroke-linecap='round'></path>
-                    <path d='M15 9L9 14.9999' stroke='#ffffff' stroke-width='1.5' stroke-linecap='round'></path>
-                </svg>                                      
-                <span class='text-3xl font-semibold text-white'>Bạn chưa đăng nhập!</span>
-                <a class='text-white underline text-xl' href='/LapTrinhWebNangCao_INT4241/frontend/services/login.php'>Đăng nhập ngay</a>
-            </div>
-        </div>                
-    ";
+                    <div class='flex items-center gap-6 p-4'>
+                        <div class='flex flex-col justify-center items-center gap-4'>  
+                            <!-- SVG Icon -->
+                            <svg width='64px' height='64px' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'>
+                                <path d='M2 8C2 4.68629 4.68629 2 8 2H16C19.3137 2 22 4.68629 22 8V16C22 19.3137 19.3137 22 16 22H8C4.68629 22 2 19.3137 2 16V8Z' stroke='#ffffff' stroke-width='1.5'></path>
+                                <path d='M9.00012 9L15.0001 15' stroke='#ffffff' stroke-width='1.5' stroke-linecap='round'></path>
+                                <path d='M15 9L9 14.9999' stroke='#ffffff' stroke-width='1.5' stroke-linecap='round'></path>
+                            </svg>                                      
+                            <span class='text-3xl font-semibold text-white'>Bạn chưa đăng nhập!</span>
+                            <a class='text-white underline text-xl' href='/LapTrinhWebNangCao_INT4241/frontend/services/login.php'>Đăng nhập ngay</a>
+                        </div>
+                    </div>                
+                ";
                 exit();
             }
             ?>
@@ -57,61 +57,61 @@
                             $email = $row["email"];
 
                             echo "
-                <div class='flex items-center justify-center gap-6 p-4'>
-                    <img class='w-[120px] h-[120px] object-cover rounded-full border-2 border-white shadow' src='$avartar' alt='avatar'>
-                    <div class='flex flex-col'>
-                        <span class='text-2xl font-bold text-white mb-2'>Xin chào: $name</span>
-                        <span class='text-lg text-white-600'>Email: $email</span>
-                        <a href=''>
-                            <span class='text-lg underline mt-3 hover:text-[#3c81c6] duration-200'>Chỉnh sửa thông tin</span>
-                        </a>
-                    </div>
-                </div>
-                <div class='flex items-center gap-6 p-4'>
-                    <div class='flex flex-col items-center gap-2'>
-                        <!-- Icon & text cho đơn hàng -->
-                        <svg width='64px' height='64px' viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg' fill='#ffffff'>
-                            <path d='... (rút gọn SVG nếu cần)' />
-                        </svg>
-                        <span class='text-[20px] font-semibold text-white'>Đơn hàng</span>
-                        <span class='text-[20px] font-bold text-white-600'>1</span>
-                    </div>
-                </div>
-                <div class='flex items-center gap-6 p-4'>
-                    <div class='flex flex-col items-center gap-2'>
-                        <!-- Icon & text cho địa chỉ -->
-                        <svg width='64px' height='64px' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'>
-                            <path d='... (rút gọn SVG nếu cần)' />
-                        </svg>
-                        <span class='text-[20px] font-semibold text-white'>Địa chỉ</span>
-                        <span class='text-[20px] font-bold'>1</span>
-                    </div>
-                </div>
-                <div class='flex items-center gap-6 p-4'>
-                    <div class='flex flex-col items-center gap-2'>
-                        <!-- Icon & text cho điểm tích luỹ -->
-                        <svg width='64px' height='64px' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'>
-                            <path d='... (rút gọn SVG nếu cần)' />
-                        </svg>
-                        <span class='text-[20px] font-semibold text-white'>Điểm tích luỹ</span>
-                        <span class='text-[20px] font-bold'>1</span>
-                    </div>
-                </div>
-                <div class='flex items-center gap-6 p-4'>
-                    <div class='flex flex-col items-center gap-2'>
-                        <a class='text-xl font-bold underline hover:text-[#3c81c6] duration-150' href='/LapTrinhWebNangCao_INT4241/backend/routes/logout.php'>Đăng xuất</a>
-                    </div>
-                </div>
-            ";
+                                <div class='flex items-center justify-center gap-6 p-4'>
+                                    <img class='w-[120px] h-[120px] object-cover rounded-full border-2 border-white shadow' src='$avartar' alt='avatar'>
+                                    <div class='flex flex-col'>
+                                        <span class='text-2xl font-bold text-white mb-2'>Xin chào: $name</span>
+                                        <span class='text-lg text-white-600'>Email: $email</span>
+                                        <a href=''>
+                                            <span class='text-lg underline mt-3 hover:text-[#3c81c6] duration-200'>Chỉnh sửa thông tin</span>
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class='flex items-center gap-6 p-4'>
+                                    <div class='flex flex-col items-center gap-2'>
+                                        <!-- Icon & text cho đơn hàng -->
+                                        <svg width='64px' height='64px' viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg' fill='#ffffff'>
+                                            <path d='... (rút gọn SVG nếu cần)' />
+                                        </svg>
+                                        <span class='text-[20px] font-semibold text-white'>Đơn hàng</span>
+                                        <span class='text-[20px] font-bold text-white-600'>1</span>
+                                    </div>
+                                </div>
+                                <div class='flex items-center gap-6 p-4'>
+                                    <div class='flex flex-col items-center gap-2'>
+                                        <!-- Icon & text cho địa chỉ -->
+                                        <svg width='64px' height='64px' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'>
+                                            <path d='... (rút gọn SVG nếu cần)' />
+                                        </svg>
+                                        <span class='text-[20px] font-semibold text-white'>Địa chỉ</span>
+                                        <span class='text-[20px] font-bold'>1</span>
+                                    </div>
+                                </div>
+                                <div class='flex items-center gap-6 p-4'>
+                                    <div class='flex flex-col items-center gap-2'>
+                                        <!-- Icon & text cho điểm tích luỹ -->
+                                        <svg width='64px' height='64px' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'>
+                                            <path d='... (rút gọn SVG nếu cần)' />
+                                        </svg>
+                                        <span class='text-[20px] font-semibold text-white'>Điểm tích luỹ</span>
+                                        <span class='text-[20px] font-bold'>1</span>
+                                    </div>
+                                </div>
+                                <div class='flex items-center gap-6 p-4'>
+                                    <div class='flex flex-col items-center gap-2'>
+                                        <a class='text-xl font-bold underline hover:text-[#3c81c6] duration-150' href='/LapTrinhWebNangCao_INT4241/backend/routes/logout.php'>Đăng xuất</a>
+                                    </div>
+                                </div>
+                            ";
                         }
                     } else {
                         echo "
-            <div class='flex items-center gap-6 p-4'>
-                <div class='flex flex-col items-center gap-4'>                                                       
-                    <span class='text-3xl font-semibold text-white'>Không tìm thấy kết quả. Vui lòng đăng nhập lại</span>
-                </div>
-            </div>
-        ";
+                            <div class='flex items-center gap-6 p-4'>
+                                <div class='flex flex-col items-center gap-4'>                                                       
+                                    <span class='text-3xl font-semibold text-white'>Không tìm thấy kết quả. Vui lòng đăng nhập lại</span>
+                                </div>
+                            </div>
+                        ";
                     }
                 } catch (PDOException $e) {
                     echo "Lỗi truy vấn: " . $e->getMessage();

@@ -4,7 +4,7 @@ session_start();
 
 // Kiểm tra kết nối PDO
 if (!$conn) {
-    die("❌ Kết nối thất bại!");
+    die("Kết nối thất bại!");
 }
 
 // HÀM SINH MÃ TỰ ĐỘNG (TK001, KH001,...)
@@ -40,7 +40,7 @@ if (isset($_POST['register'])) {
     $stmt->execute();
 
     if ($stmt->rowCount() > 0) {
-        echo "⚠️ Email đã được sử dụng!";
+        echo "Email đã được sử dụng!";
         exit;
     }
 
