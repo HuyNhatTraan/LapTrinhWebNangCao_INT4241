@@ -24,13 +24,13 @@
                     <div class="flex flex-col">
                         <span class="font-bold md:text-xl">Xiaomi TV A Pro 2026 Series</span>
                         <span class="text-sm md:text-md mt-2">Tuyệt tác thị giác</span>
-                        <button class="rounded-xl p-3 bg-black text-white w-fit mt-3">Tìm hiểu thêm</button>
+                        <button class="rounded-xl p-3 bg-black text-white w-fit mt-3 cursor-pointer hover:scale-105 duration-150">Tìm hiểu thêm</button>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-    
+
     <?php include '../../components/store/smartphone-list.php'?>
     <?php include '../../components/store/tablet-list.php'?>
     <?php include '../../components/store/smartTV-list.php'?>
