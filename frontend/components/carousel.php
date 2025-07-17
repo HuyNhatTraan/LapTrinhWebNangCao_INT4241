@@ -10,7 +10,7 @@
                 <span class="text-sm md:text-4xl md:mb-5 font-bold">Xiaomi Smart Band 10</span>
                 <span class="text-sm md:text-xl md:mb-5">Chuẩn dáng bật chất chuyên nghiệp</span>
                 <span class="">Từ <span class="text-md md:text-3xl ml-1 font-bold">1.090.000</span></span>  
-                <button class="mt-2 w-fit p-2 md:p-5 bg-blue-200 rounded-xl border-1 border-gray-200 hover:bg-blue-600 duration-150 font-bold">Xem Ngay</button>
+                <button class="mt-2 w-fit p-2 md:p-5 bg-white rounded-xl border-1 border-gray-200 hover:bg-blue-200 duration-150 font-bold">Xem Ngay</button>
             </div>  
         </div>
         <!-- Item 2 -->
@@ -20,7 +20,7 @@
                 <span class="text-sm md:text-4xl md:mb-5 font-bold">New Beginnings</span>
                 <span class="text-sm md:text-xl md:mb-5">Sự kiện ra mắt [Human x Car x Home]</span>
                 <span class="text-sm md:text-xl md:mb-5">26 tháng 6 | 18:00 GMT+7</span>
-                <button class="mt-2 w-fit p-2 md:p-5 bg-blue-200 rounded-xl border-1 border-gray-200 hover:bg-blue-600 duration-150 font-bold">Tìm hiểu thêm</button>
+                <button class="text-black mt-2 w-fit p-2 md:p-5 bg-white rounded-xl border-1 border-gray-200 hover:bg-blue-200 duration-150 font-bold">Tìm hiểu thêm</button>
             </div>  
         </div>
         <!-- Item 3 -->
@@ -31,7 +31,7 @@
                 <span class="text-sm md:text-xl md:mb-5">Tuyệt đỉnh thị giác</span>
                 <span class="text-sm md:text-xl md:mb-5">Mãn nhãn với màn hình QLED 4K</span>
                 <span class="">Từ <span class="text-md md:text-3xl ml-1 font-bold">17.990.000</span></span>  
-                <button class="mt-2 w-fit p-2 md:p-5 bg-blue-200 rounded-xl border-1 border-gray-200 hover:bg-blue-600 duration-150 font-bold">Mua Ngay</button>
+                <button class="mt-2 w-fit p-2 md:p-5 bg-white rounded-xl border-1 border-gray-200 hover:bg-blue-200 duration-150 font-bold">Mua Ngay</button>
             </div>  
         </div>
         <!-- Item 4 -->
@@ -42,7 +42,7 @@
                 <span class="text-black text-sm md:text-xl md:mb-5">Giải trí đỉnh cao</span>
                 <span class="text-black text-sm md:text-xl md:mb-5">Tận hưởng mọi nội dung đa dạng</span>
                 <span class="">Từ <span class="text-md md:text-3xl ml-1 font-bold">13.990.000</span></span>  
-                <button class="mt-2 w-fit p-2 md:p-5 bg-blue-200 rounded-xl border-1 border-gray-200 hover:bg-blue-600 duration-150 font-bold">Xem Ngay</button>
+                <button class="mt-2 w-fit p-2 md:p-5 bg-white rounded-xl border-1 border-gray-200 hover:bg-blue-200 duration-150 font-bold">Xem Ngay</button>
             </div>  
         </div>
     <!-- Slider indicators -->
