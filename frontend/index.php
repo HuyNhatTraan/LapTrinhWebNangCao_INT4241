@@ -374,7 +374,7 @@
         ScrollReveal({ reset: 1 });
         ScrollReveal().reveal(".KhamPhaXiaomi", slideUp, { delay: 1000 });
     </script>
-    <script src="https://cdn.jsdelivr.net/npm/flowbite@3.1.2/dist/flowbite.min.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/flowbite@3.1.2/dist/flowbite.min.js"></script>
 </body>
 
 </html> 
