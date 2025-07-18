@@ -22,8 +22,8 @@
                     alt="">
                 <div class="absolute top-1/2 left-5 md:left-10 -translate-y-1/2 w-[70%]">
                     <div class="flex flex-col">
-                        <span class="font-bold md:text-xl">Xiaomi TV A Pro 2026 Series</span>
-                        <span class="text-sm md:text-md mt-2">Tuyệt tác thị giác</span>
+                        <span class="font-bold md:text-xl lg:text-3xl">Xiaomi TV A Pro 2026 Series</span>
+                        <span class="text-sm md:text-md lg:text-xl mt-2">Tuyệt tác thị giác</span>
                         <button class="rounded-xl p-3 bg-black text-white w-fit mt-3 cursor-pointer hover:scale-105 duration-150">Tìm hiểu thêm</button>
                     </div>
                 </div>
