@@ -21,7 +21,7 @@
             $stmt = $conn->prepare("SELECT * FROM SanPham WHERE MaSP = ?");
             $stmt->execute([$maSP]);
             $product = $stmt->fetch();
-
+            
             if ($product) {
                 echo '
                     <div class="container flex">
@@ -35,9 +35,9 @@
                                     <span class="text-2xl font-bold xl:text-4xl xl:font-bold text-[#ff6900]">' . number_format($product['GiaHienTai'], 0, ',', '.') . 'đ</span>
                                     <span class="text-lg xl:text-4xl text-[#757575] line-through ml-3">' . number_format($product['GiaBase'], 0, ',', '.') . 'đ</span>
                                 </div>
-                                <span class="font-bold text-2xl mt-6">Màu sắc</span>
-                                <div class="grid grid-cols-2 lg:grid-cols-3 gap-2">
-                                    <div class="flex items-center justify-center p-4 flex-col rounded-xl border-1 border-black mt-3">                                           
+                                <span class="font-bold text-2xl mt-6 mb-5">Màu sắc</span>
+                                <div class="grid grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-2">
+                                    <div class="flex items-center justify-center p-4 flex-col rounded-xl border-1 border-black">                                           
                                         <span class="inline-block w-8 h-8 rounded-full bg-red-500 mr-2"></span>
                                         <span class="mt-3">Màu XXX</span>
                                     </div>
@@ -115,6 +115,7 @@
                         echo "Lỗi truy vấn: " . $e->getMessage();
                     }
                 ?>     
+                 
             </tbody>
         </table>
     </div>
