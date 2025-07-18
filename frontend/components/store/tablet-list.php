@@ -13,19 +13,23 @@
                     $giaHienTai = $row['GiaHienTai'];
                     $giaCuoi = $giaBase - $giaHienTai;
                     echo '
-                        <div class="bg-white rounded-xl flex justify-between p-3 shadow-lg items-center">                         
-                            <div class="p-4 md:w-150">
-                                <h2 class="text-lg font-bold sm:text-3xl mb-3">' . $row['TenSP'] . '</h2>
-                                <h3 class="text-sm p-2 rounded-xl bg-[#fbeed5] w-fit text-[#895a25]">Tiết kiệm ' . number_format($giaCuoi, 0, ',', '.') . 'đ</h3>
-                                <div class="text-sm flex flex-col text-gray-600 mt-2">
-                                    <span class="text-lg">Từ: </span>
-                                    <div class="flex flex-col gap-2 md:flex-row md:items-center">
-                                        <p class="text-black text-lg md:text-2xl font-bold">' . number_format($row['GiaHienTai'], 0, ',', '.') . 'đ</p>
-                                        <p class="text-sm font-bold text-[#757575] md:text-lg line-through">' . number_format($row['GiaBase'], 0, ',', '.') . 'đ</p>
-                                    </div>                                
+                        <div class="bg-white rounded-xl flex justify-between p-3 shadow-lg items-center">  
+                            <a href="/LapTrinhWebNangCao_INT4241/frontend/product/?MaSP=' . $row['MaSP'] . '">
+                                <div class="p-4 md:w-150">
+                                    <h2 class="text-lg font-bold sm:text-3xl mb-3">' . $row['TenSP'] . '</h2>
+                                    <h3 class="text-sm p-2 rounded-xl bg-[#fbeed5] w-fit text-[#895a25]">Tiết kiệm ' . number_format($giaCuoi, 0, ',', '.') . 'đ</h3>
+                                    <div class="text-sm flex flex-col text-gray-600 mt-2">
+                                        <span class="text-lg">Từ: </span>
+                                        <div class="flex flex-col gap-2 md:flex-row md:items-center">
+                                            <p class="text-black text-lg md:text-2xl font-bold">' . number_format($row['GiaHienTai'], 0, ',', '.') . 'đ</p>
+                                            <p class="text-sm font-bold text-[#757575] md:text-lg line-through">' . number_format($row['GiaBase'], 0, ',', '.') . 'đ</p>
+                                        </div>                                
+                                    </div>
                                 </div>
-                            </div>
-                            <img src="' . $row['HinhAnhSP'] . '" alt="' . $row['TenSP'] . '" class="w-30 h-30 sm:w-50 sm:h-50 md:w-60 md:h-60">
+                                <a href="/LapTrinhWebNangCao_INT4241/frontend/product/?MaSP=' . $row['MaSP'] . '">
+                                    <img src="' . $row['HinhAnhSP'] . '" alt="' . $row['TenSP'] . '" class="w-30 h-30 sm:w-50 sm:h-50 md:w-60 md:h-60">
+                                </a>
+                            </a>
                         </div>
                     ';
                 }
@@ -45,18 +49,22 @@
             if ($stmt->rowCount() > 0) {
                 while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
                     echo '
-                        <div class="flex bg-white rounded-xl flex-col xl:flex-row justify-between p-4 shadow-lg">                         
-                            <div class="md:p-2">
-                                <h2 class="text-md font-bold sm:text-xl">' . $row['TenSP'] . '</h2>
-                                <h3 class="text-xs p-2 rounded-xl bg-[#fbeed5] mt-3 w-fit text-[#895a25]">Tiết kiệm ' . number_format($giaCuoi, 0, ',', '.') . 'đ</h3>
-                                <p class="text-sm flex text-gray-600 mt-2 ">Từ: 
-                                    <p class="text-black font-bold text-sm xl:text-xl">' . number_format($row['GiaHienTai'], 0, ',', '.') . 'đ</p>
-                                    <p class="text-xs font-bold text-[#757575] xl:text-md line-through">' . number_format($row['GiaBase'], 0, ',', '.') . 'đ</p>
-                                </p>
-                            </div>
-                            <div class="flex items-center">
-                                <img src="' . $row['HinhAnhSP'] . '" alt="' . $row['TenSP'] . '" class="xl:w-40 xl:h-35">
-                            </div>                       
+                        <div class="flex bg-white rounded-xl flex-col xl:flex-row justify-between p-4 shadow-lg">      
+                            <a href="/LapTrinhWebNangCao_INT4241/frontend/product/?MaSP=' . $row['MaSP'] . '">                   
+                                <div class="md:p-2">
+                                    <h2 class="text-md font-bold sm:text-xl">' . $row['TenSP'] . '</h2>
+                                    <h3 class="text-xs p-2 rounded-xl bg-[#fbeed5] mt-3 w-fit text-[#895a25]">Tiết kiệm ' . number_format($giaCuoi, 0, ',', '.') . 'đ</h3>
+                                    <p class="text-sm flex text-gray-600 mt-2 ">Từ: 
+                                        <p class="text-black font-bold text-sm xl:text-xl">' . number_format($row['GiaHienTai'], 0, ',', '.') . 'đ</p>
+                                        <p class="text-xs font-bold text-[#757575] xl:text-md line-through">' . number_format($row['GiaBase'], 0, ',', '.') . 'đ</p>
+                                    </p>
+                                </div>
+                             </a> 
+                             <a href="/LapTrinhWebNangCao_INT4241/frontend/product/?MaSP=' . $row['MaSP'] . '"> 
+                                <div class="flex items-center">
+                                    <img src="' . $row['HinhAnhSP'] . '" alt="' . $row['TenSP'] . '" class="xl:w-40 xl:h-35">
+                                </div>
+                            </a>
                         </div>                      
                     ';
                 }
