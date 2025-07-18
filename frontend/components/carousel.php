@@ -5,7 +5,7 @@
     <div class="relative h-56 overflow-hidden md:h-96">
         <!-- Item 1 -->
         <div class="hidden duration-700 ease-in-out" data-carousel-item>
-            <img src="https://i02.appmifile.com/808_operator_vn/03/07/2025/559515e7251125098dbc7f2e03a2a709.jpg" class="absolute block w-full h-full object-cover object-center top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2" alt="...">
+            <img src="/LapTrinhWebNangCao_INT4241/frontend/images/homepage/banner/1.jpg" class="absolute block w-full h-full object-cover object-center top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2" alt="...">
             <div class="flex flex-col absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 xl:left-0 xl:right-1 xl:translate-y-1/2 text-black">
                 <span class="text-sm md:text-4xl md:mb-5 font-bold">Xiaomi Smart Band 10</span>
                 <span class="text-sm md:text-xl md:mb-5">Chuẩn dáng bật chất chuyên nghiệp</span>
@@ -15,7 +15,7 @@
         </div>
         <!-- Item 2 -->
         <div class="hidden duration-700 ease-in-out text-white" data-carousel-item>
-            <img src="https://i02.appmifile.com/515_operator_vn/25/06/2025/42ed6105da86c555edc534451347ce5a.jpg?thumb=1&w=2560&q=85" class="absolute block w-full h-full object-cover object-center top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2" alt="...">
+            <img src="/LapTrinhWebNangCao_INT4241/frontend/images/homepage/banner/2.jpg" class="absolute block w-full h-full object-cover object-center top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2" alt="...">
             <div class="flex flex-col absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 xl:left-1 xl:right-1 xl:translate-y-1/2">
                 <span class="text-sm md:text-4xl md:mb-5 font-bold">New Beginnings</span>
                 <span class="text-sm md:text-xl md:mb-5">Sự kiện ra mắt [Human x Car x Home]</span>
@@ -25,7 +25,7 @@
         </div>
         <!-- Item 3 -->
         <div class="hidden duration-700 ease-in-out text-black" data-carousel-item>
-            <img src="https://i02.appmifile.com/312_operator_vn/15/05/2025/f38f000d76f2fac93d7aa99f3b22f1d3.jpg?thumb=1&w=2560&q=85" class="absolute block w-full h-full object-cover object-center top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2" alt="...">
+            <img src="/LapTrinhWebNangCao_INT4241/frontend/images/homepage/banner/3.jpg" class="absolute block w-full h-full object-cover object-center top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2" alt="...">
             <div class="flex flex-col absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 xl:left-1 xl:right-1 xl:translate-y-1/2">
                 <span class="text-sm md:text-4xl md:mb-5 font-bold">Xiaomi TV A Pro 75 2026</span>
                 <span class="text-sm md:text-xl md:mb-5">Tuyệt đỉnh thị giác</span>
@@ -36,7 +36,7 @@
         </div>
         <!-- Item 4 -->
         <div class="hidden duration-700 ease-in-out" data-carousel-item>
-            <img src="https://i02.appmifile.com/947_operator_vn/15/05/2025/2957efbd184dde92281549a7152d05c6.jpg?thumb=1&w=2560&q=85" class="absolute block w-full h-full object-cover object-center top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2" alt="...">
+            <img src="/LapTrinhWebNangCao_INT4241/frontend/images/homepage/banner/4.jpg" class="absolute block w-full h-full object-cover object-center top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2" alt="...">
             <div class="flex flex-col absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 xl:left-1 xl:right-1 xl:translate-y-1/2">
                 <span class="text-black text-sm md:text-4xl md:mb-5 font-bold">Xiaomi TV A Pro 65 2026</span>
                 <span class="text-black text-sm md:text-xl md:mb-5">Giải trí đỉnh cao</span>

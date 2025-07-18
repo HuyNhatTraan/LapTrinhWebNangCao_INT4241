@@ -9,7 +9,7 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        sans: [''],
+        sans: ['Be Vietnam Pro'],
         roboto: ['Be Vietnam Pro'],
         mono: ['Be Vietnam Pro']
       },

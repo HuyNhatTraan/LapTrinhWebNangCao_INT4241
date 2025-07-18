@@ -6,8 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script defer src="/LapTrinhWebNangCao_INT4241/frontend/scripts/index.js"></script>
     <link rel="stylesheet" href="/LapTrinhWebNangCao_INT4241/frontend/styles/output.css">
-    <link rel="icon" href="/LapTrinhWebNangCao_INT4241/frontend/icon.png" type="image/png" />
-    
+    <link rel="icon" href="/LapTrinhWebNangCao_INT4241/frontend/icon.png" type="image/png">
 </head>
 
 <body class="bg-[#f7f7f7]">
