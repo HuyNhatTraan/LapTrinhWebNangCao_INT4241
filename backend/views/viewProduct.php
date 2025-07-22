@@ -15,7 +15,7 @@
             if ($stmt->rowCount() > 0) {
                 while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
                     echo '    
-                    <div class="flex items-center justify-center p-4 flex-col rounded-xl border-2 cursor-pointer hover:scale-105 duration-200 shadow-md">                                                  
+                    <div class="flex text-center items-center justify-center p-4 flex-col rounded-xl border-2 cursor-pointer hover:scale-105 duration-200 shadow-md">                                                  
                         <span class="inline-block w-8 h-8 rounded-full bg-' . htmlspecialchars($row['MaMau']) . '"></span>
                         <span class="mt-3">' . htmlspecialchars($row['MauSac']) . '</span>
                     </div>
@@ -48,7 +48,7 @@
             if ($stmt->rowCount() > 0) {
                 while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
                     echo '    
-                    <div class="flex items-center justify-center p-4 flex-col rounded-xl border-2 cursor-pointer hover:scale-105 duration-200 shadow-md">                                                  
+                    <div class="flex text-center items-center justify-center p-4 flex-col rounded-xl border-2 cursor-pointer hover:scale-105 duration-200 shadow-md">                                                  
                         <span class="px-2 py-2">' . htmlspecialchars($row['TenDLSP']) . '</span>
                     </div>
                     '; 
@@ -87,11 +87,7 @@
                     '; 
                 }
             } else {
-                echo '
-                    
-                    Không có dữ liệu
-                    
-                ';
+                echo ' Không có dữ liệu ';
             }
             }
             
@@ -123,57 +119,55 @@
                 ';
                     showHinhAnh();
                 echo '
-                            </div>
-                            <!-- Slider controls -->
-                            <button type="button" class="absolute top-0 start-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none" data-carousel-prev>
-                                <span class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/30 dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none">
-                                    <svg class="w-4 h-4 text-white dark:text-gray-800 rtl:rotate-180" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
-                                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 1 1 5l4 4"/>
-                                    </svg>
-                                    <span class="sr-only">Previous</span>
-                                </span>
-                            </button>
-                            <button type="button" class="absolute top-0 end-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none" data-carousel-next>
-                                <span class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/30 dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none">
-                                    <svg class="w-4 h-4 text-white dark:text-gray-800 rtl:rotate-180" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
-                                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 9 4-4-4-4"/>
-                                    </svg>
-                                    <span class="sr-only">Next</span>
-                                </span>
-                            </button>
                         </div>
+                        <!-- Slider controls -->
+                        <button type="button" class="absolute top-0 start-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none" data-carousel-prev>
+                            <span class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/30 dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none">
+                                <svg class="w-4 h-4 text-white dark:text-gray-800 rtl:rotate-180" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
+                                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 1 1 5l4 4"/>
+                                </svg>
+                                <span class="sr-only">Previous</span>
+                            </span>
+                        </button>
+                        <button type="button" class="absolute top-0 end-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none" data-carousel-next>
+                            <span class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/30 dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none">
+                                <svg class="w-4 h-4 text-white dark:text-gray-800 rtl:rotate-180" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
+                                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 9 4-4-4-4"/>
+                                </svg>
+                                <span class="sr-only">Next</span>
+                            </span>
+                        </button>
+                    </div>
+                        </div>
+                        <div class="xl:p-15 p-6 flex flex-col">
+                            <span class="xl:text-4xl text-4xl font-bold xl:mb-5 text-orange-500">' . $product['TenSP'] . '</span>
+                            <div class="flex items-center mt-3">
+                                <span class="text-2xl font-bold xl:text-4xl xl:font-bold text-[#ff6900]">' . number_format($product['GiaHienTai'], 0, ',', '.') . 'đ</span>
+                                <span class="text-lg xl:text-4xl text-[#757575] line-through ml-3">' . number_format($product['GiaBase'], 0, ',', '.') . 'đ</span>
                             </div>
-                            <div class="xl:p-15 p-10 flex flex-col w-full">
-                                <span class="xl:text-4xl text-4xl font-bold xl:mb-5 text-orange-500">' . $product['TenSP'] . '</span>
-                                <div class="flex items-center mt-3">
-                                    <span class="text-2xl font-bold xl:text-4xl xl:font-bold text-[#ff6900]">' . number_format($product['GiaHienTai'], 0, ',', '.') . 'đ</span>
-                                    <span class="text-lg xl:text-4xl text-[#757575] line-through ml-3">' . number_format($product['GiaBase'], 0, ',', '.') . 'đ</span>
-                                </div>
-                                <span class="font-bold text-2xl mt-6 mb-5">Dung lượng</span>
-                                <div class="grid grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5"> 
+                            <span class="font-bold text-2xl mt-6 mb-5">Dung lượng</span>
+                            <div class="grid grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5"> 
                 ';
                     showDungLuong();
                 echo '
-                                </div>
-                                <span class="font-bold text-2xl mt-6 mb-5">Màu sắc</span>
-                                <div class="grid grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5">  
+                            </div>
+                            <span class="font-bold text-2xl mt-6 mb-5">Màu sắc</span>
+                            <div class="grid grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5">  
                 ';
                     showMauSac();
                 echo '
-                                </div>
-                                <hr class="mt-5">
-                                <div class="flex items-center justify-between w-full mt-5 mb-5">
-                                    <span class="font-bold text-2xl">Tổng cộng</span>
-                                    <span class="font-bold text-red-500 text-xl">' . number_format($product['GiaHienTai'], 0, ',', '.') . 'đ</span>
-                                </div>
-                                <div class="w-full">
-                                    <button class="bg-red-500 text-white font-bold rounded-xl w-full p-4 hover:bg-red-800 duration-200 cursor-pointer">Thêm vào giỏ hàng</button>
-                                </div> 
                             </div>
-                        </div>   
-                                          
+                            <hr class="mt-5">
+                            <div class="flex items-center justify-between w-full mt-5 mb-5">
+                                <span class="font-bold text-2xl">Tổng cộng</span>
+                                <span class="font-bold text-red-500 text-xl">' . number_format($product['GiaHienTai'], 0, ',', '.') . 'đ</span>
+                            </div>
+                            <div class="w-full">
+                                <button class="bg-red-500 text-white font-bold rounded-xl w-full p-4 hover:bg-red-800 duration-200 cursor-pointer">Thêm vào giỏ hàng</button>
+                            </div> 
+                        </div>
+                    </div>   
                     </div>
-                    
                 ';
 
             } else {

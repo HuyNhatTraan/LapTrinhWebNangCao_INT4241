@@ -17,7 +17,7 @@
     ?>
     <br><br><br>
     <span class="flex justify-center mt-10 text-2xl md:text-4xl font-bold">Thông Số Kỹ Thuật</span>
-    <div class="ThongSo flex w-[70%] mx-auto mt-6">
+    <div class="ThongSo flex w-[70%] justify-center m-auto mt-6">
         <table class="table-auto w-full border border-gray-300 text-left">
             <tbody>        
                 <?php 
