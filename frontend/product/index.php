@@ -16,7 +16,8 @@
         showProduct(); // gọi hàm hiển thị sản phẩm
         
     ?>
-    <span class="flex justify-center mt-10 text-2xl xl:text-4xl font-bold">Thông Số Kỹ Thuật</span>
+    <br><br><br>
+    <span class="flex justify-center mt-10 text-2xl md:text-4xl font-bold">Thông Số Kỹ Thuật</span>
     <div class="ThongSo flex w-[70%] mx-auto mt-6">
         <table class="table-auto w-full border border-gray-300 text-left">
             <tbody>        
@@ -30,6 +31,5 @@
                 
     <div class="" id="footer"></div>
     <script src="https://cdn.jsdelivr.net/npm/flowbite@3.1.2/dist/flowbite.min.js"></script>
-
 </body>
 </html>

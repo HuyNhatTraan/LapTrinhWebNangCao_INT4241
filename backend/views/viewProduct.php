@@ -15,17 +15,48 @@
             if ($stmt->rowCount() > 0) {
                 while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
                     echo '    
-                    <div class="flex items-center justify-center p-4 flex-col rounded-xl border-1 border-black cursor-pointer hover:scale-105 duration-200">                                                  
+                    <div class="flex items-center justify-center p-4 flex-col rounded-xl border-2 border-gray-200 cursor-pointer hover:scale-105 duration-200 shadow-md">                                                  
                         <span class="inline-block w-8 h-8 rounded-full bg-' . htmlspecialchars($row['MaMau']) . '"></span>
                         <span class="mt-3">' . htmlspecialchars($row['MauSac']) . '</span>
                     </div>
                     '; 
                 }
             } else {
-                echo '
-                    
-                    Không có dữ liệu
-                    
+                echo '           
+                    Không có dữ liệu 
+                ';
+            }
+            }
+            
+        } catch (PDOException $e) {
+            echo "Lỗi truy vấn: " . $e->getMessage();
+        }
+
+    }
+
+     function showDungLuong() : void {
+        global $conn;
+
+        try {
+            if (isset($_GET['MaSP'])) { 
+                $maSP = $_GET['MaSP'];
+
+            // Dùng prepare để chống SQL Injection
+            $stmt = $conn->prepare("SELECT * FROM BienTheSP WHERE MaSP = ?");
+            $stmt->execute([$maSP]);
+
+            if ($stmt->rowCount() > 0) {
+                while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
+                    echo '    
+                    <div class="flex items-center justify-center p-4 flex-col rounded-xl border-2 border-gray-200 cursor-pointer hover:scale-105 duration-200 shadow-md">                                                  
+                        <span class="inline-block w-8 h-8 rounded-full bg-' . htmlspecialchars($row['MaMau']) . '"></span>
+                        <span class="mt-3">' . htmlspecialchars($row['MauSac']) . '</span>
+                    </div>
+                    '; 
+                }
+            } else {
+                echo '           
+                    Không có dữ liệu 
                 ';
             }
             }
@@ -83,15 +114,15 @@
             
             if ($product) {
                 echo '
-                    <div class="container">
-                        <div class="grid md:grid-cols-2 w-full">
-                            <div class="bg-[#f5f5f5] flex items-center justify-center">
+                    <div class="w-full">
+                        <div class="grid md:grid-cols-2">
+                            <div class="bg-[#f5f5f5] flex items-center justify-center   ">
                                 <div id="controls-carousel" class="relative w-full" data-carousel="slide">
                             <!-- Carousel wrapper -->
                             <div class="relative flex items-center justify-center m-auto h-56 overflow-hidden rounded-lg md:h-96">
                                 <!-- Item XX -->
                 ';
-                showHinhAnh();
+                    showHinhAnh();
                 echo '
                             </div>
                             <!-- Slider controls -->
@@ -113,22 +144,28 @@
                             </button>
                         </div>
                             </div>
-                            <div class="xl:p-15 p-10 flex flex-col">
-                                <span class="xl:text-4xl text-3xl font-bold xl:mb-5 text-[#ff6900]">' . $product['TenSP'] . '</span>
+                            <div class="xl:p-15 p-10 flex flex-col w-full">
+                                <span class="xl:text-4xl text-4xl font-bold xl:mb-5 text-orange-500">' . $product['TenSP'] . '</span>
                                 <div class="flex items-center mt-3">
                                     <span class="text-2xl font-bold xl:text-4xl xl:font-bold text-[#ff6900]">' . number_format($product['GiaHienTai'], 0, ',', '.') . 'đ</span>
                                     <span class="text-lg xl:text-4xl text-[#757575] line-through ml-3">' . number_format($product['GiaBase'], 0, ',', '.') . 'đ</span>
                                 </div>
+                                <span class="font-bold text-2xl mt-6 mb-5">Dung lượng</span>
+                                <div class="grid grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5"> 
+                ';
+                    showDungLuong();
+                echo '
+                                </div>
                                 <span class="font-bold text-2xl mt-6 mb-5">Màu sắc</span>
                                 <div class="grid grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5">  
                 ';
-                showMauSac();
+                    showMauSac();
                 echo '
                                 </div>
-                                <hr class="mt-3">
+                                <hr class="mt-5">
                                 <div class="flex items-center justify-between w-full mt-5 mb-5">
-                                    <span class="font-black text-xl">Tổng cộng</span>
-                                    <span class="font-bold text-xl">' . number_format($product['GiaHienTai'], 0, ',', '.') . 'đ</span>
+                                    <span class="font-bold text-2xl">Tổng cộng</span>
+                                    <span class="font-bold text-red-500 text-xl">' . number_format($product['GiaHienTai'], 0, ',', '.') . 'đ</span>
                                 </div>
                                 <div class="w-full">
                                     <button class="bg-red-500 text-white font-bold rounded-xl w-full p-4 hover:bg-red-800 duration-200 cursor-pointer">Thêm vào giỏ hàng</button>
