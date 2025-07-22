@@ -4,9 +4,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
     <link rel="stylesheet" href="/LapTrinhWebNangCao_INT4241/frontend/styles/output.css">
     <link rel="icon" href="/LapTrinhWebNangCao_INT4241/frontend/icon.png" type="image/png">
+    <title>Cửa hàng</title>
 </head>
 
 <body class="bg-[#f7f7f7]">
@@ -27,11 +27,9 @@
             </div>
         </div>
     </div>
-
     <?php require '../../components/store/smartphone-list.php';?>
     <?php require '../../components/store/tablet-list.php';?>
     <?php require '../../components/store/smartTV-list.php';?>
-
     <?php require '../../components/footer.php'; ?>
 </body>
 
