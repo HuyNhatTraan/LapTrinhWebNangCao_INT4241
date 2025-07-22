@@ -1,5 +1,5 @@
 <?php 
-    include_once '../../../LapTrinhWebNangCao_INT4241/backend/config/db.php';
+    include __DIR__ . '../../../backend/config/db.php';
     
     function showMauSac() : void {
         global $conn;
@@ -34,7 +34,7 @@
 
     }
 
-     function showDungLuong() : void {
+    function showDungLuong() : void {
         global $conn;
 
         try {
@@ -230,6 +230,44 @@
             }
             }
             
+        } catch (PDOException $e) {
+            echo "Lỗi truy vấn: " . $e->getMessage();
+        }
+    }
+
+    function showAllPhone(): void {
+        global $conn;
+
+        try {
+            $stmt = $conn->prepare("SELECT * FROM SanPham WHERE MaDM = 'DM001' OR MaDM = 'DM002'");
+            $stmt->execute();
+
+            if ($stmt->rowCount() > 0) {
+                while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
+                    $giaBase = $row['GiaBase'];
+                    $giaHienTai = $row['GiaHienTai'];
+                    $giam = round((($giaBase - $giaHienTai) / $giaBase) * 100);
+
+                    echo '
+                        <a href="/LapTrinhWebNangCao_INT4241/frontend/product/?MaSP=' . $row['MaSP'] . '">
+                            <div class="flex bg-white  flex-row xl:flex-col">                                
+                                <div class="flex">  
+                                    <img src="' . $row['HinhAnhSP'] . '" alt="' . $row['TenSP'] . '" class="w-30 h-30 sm:w-50 sm:h-50 md:w-50 md:h-50">
+                                </div>                                              
+                                <div class="md:p-2">
+                                    <h2 class="text-md font-bold sm:text-xl md:text-2xl">' . htmlspecialchars($row['TenSP']) . '</h2>
+                                    <h3 class="text-xs p-2 rounded-xl bg-[#fbeed5] mt-1 w-fit text-[#895a25]">Giảm ' . $giam.'%</h3>
+                                    <h3 class="text-lg font-bold mt-2">' . number_format($row['GiaHienTai'], 0, ',', '.') . 'đ</h3>
+                                </div>   
+                            </div>    
+                        </a>
+                    ';
+                }
+            } else {
+                echo '
+                    Không có dữ liệu
+                ';
+            }
         } catch (PDOException $e) {
             echo "Lỗi truy vấn: " . $e->getMessage();
         }

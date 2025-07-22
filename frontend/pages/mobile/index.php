@@ -9,7 +9,19 @@
     <title>HT Tech Official Store</title>
 </head>
 <body>
-    <div class="" id="nav"></div>
-    <div class="" id="footer"></div>
+    <?php require '../../components/nav.php'?>
+    <div class="">
+        <span class="flex justify-center font-bold text-2xl md:text-4xl mt-5 mb-5">Điện thoại</span>
+        <div class="w-[90%] flex m-auto">
+            <div class="grid md:grid-cols-2 xl:grid-cols-4 w-full gap-5 xl:gap-10">
+                <?php 
+                    include_once '../../../backend/views/viewProduct.php'; // kết nối CSDL
+                    showAllPhone(); // gọi hàm hiển thị sản phẩm
+                ?>
+            </div>
+        </div>
+        
+    </div>
+    <?php require '../../components/footer.php'?>
 </body>
 </html>

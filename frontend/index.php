@@ -8,7 +8,7 @@
     <link rel="icon" href="icon.png" type="image/png" />
     <title>HT Tech | Trang web lỏ nhất VN</title>
 </head>
-<body>
+<body class="bg-[#f5f5f5]">
     <?php require 'components/nav.php'; ?>
     <?php require 'components/carousel.php'; ?>
     <?php require 'components/san-pham-noi-bat.php'; ?>
