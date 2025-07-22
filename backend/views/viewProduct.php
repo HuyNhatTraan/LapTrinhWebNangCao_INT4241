@@ -248,20 +248,20 @@
                     $giaHienTai = $row['GiaHienTai'];
                     $giam = round((($giaBase - $giaHienTai) / $giaBase) * 100);
 
-                    echo '
-                        <a href="/LapTrinhWebNangCao_INT4241/frontend/product/?MaSP=' . $row['MaSP'] . '">
-                            <div class="flex bg-white  flex-row xl:flex-col">                                
-                                <div class="flex">  
-                                    <img src="' . $row['HinhAnhSP'] . '" alt="' . $row['TenSP'] . '" class="w-30 h-30 sm:w-50 sm:h-50 md:w-50 md:h-50">
+                    echo '                  
+                        <div class="flex w-full bg-white"> 
+                            <a href="/LapTrinhWebNangCao_INT4241/frontend/product/?MaSP=' . $row['MaSP'] . '" class="flex flex-row xl:flex-col"> 
+                                <div class="flex xl:justify-center">  
+                                    <img src="' . $row['HinhAnhSP'] . '" alt="' . $row['TenSP'] . '" 
+                                        class="w-30 h-30 sm:w-50 sm:h-50 md:w-50 md:h-50">
                                 </div>                                              
-                                <div class="md:p-2">
+                                <div class="md:p-2 xl:m-auto xl:text-center">
                                     <h2 class="text-md font-bold sm:text-xl md:text-2xl">' . htmlspecialchars($row['TenSP']) . '</h2>
                                     <h3 class="text-xs p-2 rounded-xl bg-[#fbeed5] mt-1 w-fit text-[#895a25]">Giảm ' . $giam.'%</h3>
                                     <h3 class="text-lg font-bold mt-2">' . number_format($row['GiaHienTai'], 0, ',', '.') . 'đ</h3>
-                                </div>   
-                            </div>    
-                        </a>
-                    ';
+                                </div>                           
+                            </a>
+                        </div>';
                 }
             } else {
                 echo '
