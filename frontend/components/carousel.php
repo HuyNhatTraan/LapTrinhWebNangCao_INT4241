@@ -20,7 +20,7 @@
             <img src="/LapTrinhWebNangCao_INT4241/frontend/images/homepage/banner/2.jpg" class="absolute block w-full h-full object-cover object-center top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2" alt="...">
             <div class="flex flex-col absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 
             md:left-[25%] md:translate-x-0 md:text-left text-center 
-            w-[80%] md:w-auto text-black">
+            w-[80%] md:w-auto text-white">
                 <span class="text-sm md:text-4xl md:mb-5 font-bold">New Beginnings</span>
                 <span class="text-sm md:text-xl md:mb-5">Sự kiện ra mắt [Human x Car x Home]</span>
                 <span class="text-sm md:text-xl md:mb-5">26 tháng 6 | 18:00 GMT+7</span>
