@@ -3,7 +3,6 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script defer src="/LapTrinhWebNangCao_INT4241/frontend/scripts/index.js"></script>
     <link rel="stylesheet" href="/LapTrinhWebNangCao_INT4241/frontend/styles/output.css">
     <link rel="icon" href="/LapTrinhWebNangCao_INT4241/frontend/icon.png" type="image/png" />
     <link href="https://cdn.jsdelivr.net/npm/flowbite@3.1.2/dist/flowbite.min.css" rel="stylesheet" />
@@ -29,7 +28,7 @@
         </table>
     </div>
                 
-    <div class="" id="footer"></div>
+    <?php include '../components/footer.php' ?>
     <script src="https://cdn.jsdelivr.net/npm/flowbite@3.1.2/dist/flowbite.min.js"></script>
 </body>
 </html>

@@ -4,9 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
     <link rel="stylesheet" href="/LapTrinhWebNangCao_INT4241/frontend/styles/output.css">
-    <link href="https://cdn.jsdelivr.net/npm/flowbite@3.1.2/dist/flowbite.min.css" rel="stylesheet" />
+    <link href="https://cdn.jsdelivr.net/npm/flowbite@3.1.2/dist/flowbite.min.css" rel="stylesheet">
     <link rel="icon" href="icon.png" type="image/png" />
     <title>HT Tech | Trang web lỏ nhất VN</title>
 </head>
@@ -96,7 +95,9 @@
         ScrollReveal({ reset: 1 });
         ScrollReveal().reveal(".KhamPhaXiaomi", slideUp, { delay: 1000 });
     </script>
+    
     <script defer src="https://cdn.jsdelivr.net/npm/flowbite@3.1.2/dist/flowbite.min.js"></script>
+    <?php include 'components/footer.php'; ?>
 </body>
 
 </html>
