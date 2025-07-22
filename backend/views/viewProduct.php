@@ -15,7 +15,7 @@
             if ($stmt->rowCount() > 0) {
                 while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
                     echo '    
-                    <div class="flex items-center justify-center p-4 flex-col rounded-xl border-2 border-gray-200 cursor-pointer hover:scale-105 duration-200 shadow-md">                                                  
+                    <div class="flex items-center justify-center p-4 flex-col rounded-xl border-2 cursor-pointer hover:scale-105 duration-200 shadow-md">                                                  
                         <span class="inline-block w-8 h-8 rounded-full bg-' . htmlspecialchars($row['MaMau']) . '"></span>
                         <span class="mt-3">' . htmlspecialchars($row['MauSac']) . '</span>
                     </div>
@@ -42,15 +42,14 @@
                 $maSP = $_GET['MaSP'];
 
             // Dùng prepare để chống SQL Injection
-            $stmt = $conn->prepare("SELECT * FROM BienTheSP WHERE MaSP = ?");
+            $stmt = $conn->prepare("SELECT DISTINCT TenDLSP FROM DungLuongSP WHERE MaSP = ?");
             $stmt->execute([$maSP]);
 
             if ($stmt->rowCount() > 0) {
                 while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
                     echo '    
-                    <div class="flex items-center justify-center p-4 flex-col rounded-xl border-2 border-gray-200 cursor-pointer hover:scale-105 duration-200 shadow-md">                                                  
-                        <span class="inline-block w-8 h-8 rounded-full bg-' . htmlspecialchars($row['MaMau']) . '"></span>
-                        <span class="mt-3">' . htmlspecialchars($row['MauSac']) . '</span>
+                    <div class="flex items-center justify-center p-4 flex-col rounded-xl border-2 cursor-pointer hover:scale-105 duration-200 shadow-md">                                                  
+                        <span class="px-2 py-2">' . htmlspecialchars($row['TenDLSP']) . '</span>
                     </div>
                     '; 
                 }

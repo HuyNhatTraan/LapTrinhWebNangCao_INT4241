@@ -4,7 +4,7 @@
     include_once '../../../backend/config/db.php';
 
     try {
-        $sql = "SELECT MaSP, TenSP, HinhAnhSP, GiaBase, GiaHienTai FROM SanPham Where MaDM = 'DM002' Limit 1";
+        $sql = "SELECT MaSP, TenSP, HinhAnhSP, GiaBase, GiaHienTai FROM SanPham Where MaDM = 'DM003' Limit 1";
         $stmt = $conn->query($sql); // thực thi truy vấn trực tiếp
     
         if ($stmt->rowCount() > 0) {
@@ -43,7 +43,7 @@
     <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-4 gap-4 mt-4 mb-4">
         <?php
         try {
-            $sql = "SELECT MaSP, TenSP, HinhAnhSP, GiaBase, GiaHienTai FROM SanPham Where MaDM = 'DM002' Limit 4";
+            $sql = "SELECT MaSP, TenSP, HinhAnhSP, GiaBase, GiaHienTai FROM SanPham Where MaDM = 'DM003' Limit 4";
             $stmt = $conn->query($sql); // thực thi truy vấn trực tiếp
         
             if ($stmt->rowCount() > 0) {
