@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="vi">
+<html lang="en">
 
 <head>
     <meta charset="UTF-8">
@@ -11,9 +11,9 @@
 </head>
 
 <body class="bg-[#f5f5f5]">
-    <?php include 'components/nav.php'; ?>
-    <?php require 'components/carousel.php' ?>
-    <?php require 'components/san-pham-noi-bat.php' ?>
+    <?php require 'components/nav.php'; ?>
+    <?php require 'components/carousel.php'; ?>
+    <?php require 'components/san-pham-noi-bat.php'; ?>
     
     <span class="KhamPhaXiaomi flex font-bold text-3xl justify-center mt-20 mb-10">Khám phá Xiaomi</span>
     <div class="flex shrink-0 overflow-x-scroll gap-5 ml-5 rounded-tl-3xl rounded-bl-3xl hide-scrollbar">
@@ -44,6 +44,7 @@
                 </div>
             </a>
         </div>
+
         <div class=" bg-white flex flex-col text-center mb-3 rounded-3xl">
             <a class="flex flex-col text-center group w-[250px] lg:w-[400px] 2xl:w-[500px] h-auto overflow-hidden rounded-3xl"
                 href="">
@@ -56,6 +57,7 @@
                 </div>
             </a>
         </div>
+
         <div class=" bg-white flex flex-col text-center mb-3 rounded-3xl">
             <a class="flex flex-col text-center group w-[250px] lg:w-[400px] 2xl:w-[500px] h-auto overflow-hidden rounded-3xl"
                 href="">
@@ -68,6 +70,7 @@
                 </div>
             </a>
         </div>
+
         <div class=" bg-white flex flex-col text-center mb-3 rounded-3xl">
             <a class="flex flex-col text-center group w-[250px] lg:w-[400px] 2xl:w-[500px] h-auto overflow-hidden rounded-3xl"
                 href="">
@@ -80,22 +83,8 @@
                 </div>
             </a>
         </div>
-    </div>
     </div>
 
-    <div class="" id="footer"></div>
-    <script src="https://unpkg.com/scrollreveal"></script>
-    <script>
-        var slideUp = {
-            distance: "60%",
-            origin: "bottom",
-            opacity: 0,
-            easing: "cubic-bezier(0.6, 0, 0, 1)",
-        };
-        ScrollReveal({ reset: 1 });
-        ScrollReveal().reveal(".KhamPhaXiaomi", slideUp, { delay: 1000 });
-    </script>
-    
     <script defer src="https://cdn.jsdelivr.net/npm/flowbite@3.1.2/dist/flowbite.min.js"></script>
     <?php include 'components/footer.php'; ?>
 </body>

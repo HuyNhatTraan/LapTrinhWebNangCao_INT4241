@@ -4,13 +4,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script defer src="/LapTrinhWebNangCao_INT4241/frontend/scripts/index.js"></script>
+    
     <link rel="stylesheet" href="/LapTrinhWebNangCao_INT4241/frontend/styles/output.css">
     <link rel="icon" href="/LapTrinhWebNangCao_INT4241/frontend/icon.png" type="image/png">
 </head>
 
 <body class="bg-[#f7f7f7]">
-    <div class="z-10 top-0 sticky" id="nav"></div>
+    <?php require '../../components/nav.php'; ?>
     <div class="flex justify-center m-auto mt-5 rounded-2xl">
         <div class="flex w-[90%] rounded-2xl h-40 md:h-50 xl:h-80 xl:w-[80%]">
             <div class="relative">
@@ -28,12 +28,11 @@
         </div>
     </div>
 
-    <?php include '../../components/store/smartphone-list.php'?>
-    <?php include '../../components/store/tablet-list.php'?>
-    <?php include '../../components/store/smartTV-list.php'?>
+    <?php require '../../components/store/smartphone-list.php';?>
+    <?php require '../../components/store/tablet-list.php';?>
+    <?php require '../../components/store/smartTV-list.php';?>
 
-    <div class=""></div>
-    <div class="" id="footer"></div>
+    <?php require '../../components/footer.php'; ?>
 </body>
 
 </html>
