@@ -142,7 +142,7 @@
                         <div class="xl:p-15 p-6 flex flex-col">
                             <span class="xl:text-4xl text-4xl font-bold xl:mb-5 text-orange-500">' . $product['TenSP'] . '</span>
                             <div class="flex items-center mt-3">
-                                <span class="text-2xl font-bold xl:text-4xl xl:font-bold text-[#ff6900]">' . number_format($product['GiaHienTai'], 0, ',', '.') . 'đ</span>
+                                <span class="text-2xl font-bold xl:text-4xl xl:font-bold">' . number_format($product['GiaHienTai'], 0, ',', '.') . 'đ</span>
                                 <span class="text-lg xl:text-4xl text-[#757575] line-through ml-3">' . number_format($product['GiaBase'], 0, ',', '.') . 'đ</span>
                             </div>
                             <span class="font-bold text-2xl mt-6 mb-5">Dung lượng</span>

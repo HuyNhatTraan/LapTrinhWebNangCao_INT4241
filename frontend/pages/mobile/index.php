@@ -13,7 +13,7 @@
     <?php require '../../components/nav.php' ?>
     <div class="">
         <form method="GET" class="p-10 flex flex-col">
-            <span class="flex font-bold text-2xl md:text-4xl">Điện thoại</span>
+            <span class="flex font-bold text-2xl md:text-4xl">Smartphone & Tablets</span>
             <div class="flex w-full md:gap-10 mt-3 text-md justify-between md:justify-start md:text-2xl">
                 <!-- Liên quan -->
                 <button type="submit" name="filter" value="relevant" class="bg-transparent border-none outline-none cursor-pointer 

@@ -80,7 +80,7 @@
     </div>
     <div
         class="flex bg-gradient-to-r from-slate-200 to-slate-400 items-center justify-center text-center m-auto p-4 rounded-xl shadow-lg mb-20">
-        <a href="/LapTrinhWebNangCao_INT4241/frontend/pages/mobile/" class="px-10 py-10">
+        <a href="/LapTrinhWebNangCao_INT4241/frontend/pages/smart-home/" class="px-10 py-10">
             <span class="text-gray-600 font-bold text-4xl">Tất cả sản phẩm</span>
         </a>
     </div>
