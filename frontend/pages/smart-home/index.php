@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+    <!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -21,7 +21,7 @@
                     Liên quan
                 </button>
 
-                <span class="text-gray-800 font-bold">|</span>
+                <span class="text-gray-800 font-bold">|</span>  
 
                 <!-- Mới -->
                 <button type="submit" name="filter" value="newest" class="bg-transparent border-none outline-none cursor-pointer 
