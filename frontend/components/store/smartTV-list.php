@@ -15,7 +15,7 @@
                 echo '
                     <a class="w-full" href="/LapTrinhWebNangCao_INT4241/frontend/product/?MaSP=' . $row['MaSP'] . '">  
                         <div class="bg-white rounded-xl flex justify-between p-3 shadow-lg items-center">                          
-                            <div class="p-4 md:w-150">
+                            <div class="p-4 md:w-80">
                                 <h2 class="text-lg font-bold sm:text-3xl mb-3">' . $row['TenSP'] . '</h2>
                                 <h3 class="text-sm p-2 rounded-xl bg-[#fbeed5] w-fit text-[#895a25]">Tiết kiệm ' . number_format($giaCuoi, 0, ',', '.') . 'đ</h3>
                                 <div class="text-sm flex flex-col text-gray-600 mt-2">

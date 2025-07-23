@@ -235,7 +235,7 @@
         }
     }
 
-    function showAllPhone(): void {
+    function showAllPhone_HinhAnh(): void {
         global $conn;
 
         try {
@@ -249,25 +249,130 @@
                     $giam = round((($giaBase - $giaHienTai) / $giaBase) * 100);
 
                     echo '                  
-                        <div class="flex w-full bg-white"> 
-                            <a href="/LapTrinhWebNangCao_INT4241/frontend/product/?MaSP=' . $row['MaSP'] . '" class="flex flex-row xl:flex-col"> 
-                                <div class="flex xl:justify-center">  
-                                    <img src="' . $row['HinhAnhSP'] . '" alt="' . $row['TenSP'] . '" 
-                                        class="w-30 h-30 sm:w-50 sm:h-50 md:w-50 md:h-50">
+                        <div class="flex bg-white"> 
+                            <a href="/LapTrinhWebNangCao_INT4241/frontend/product/?MaSP=' . $row['MaSP'] . '" class="relative flex flex-row md:flex-col w-full bg-white p-4 md:py-15"> 
+                                <div class="flex lg:justify-center flex-col items-center">  
+                                    <h2 class="hidden text-md font-bold sm:text-xl xl:text-4xl md:text-2xl md:flex">' . htmlspecialchars($row['TenSP']) . '</h2>
+                                    <h3 class="hidden sm:flex text-lg font-bold mt-2">' . number_format($row['GiaHienTai'], 0, ',', '.') . 'đ</h3>
+                                    <img src="' . $row['HinhAnhSP'] . '" alt="' . $row['TenSP'] . '" class="w-30 h-30 sm:w-50 sm:h-50 md:w-60 "> 
+                                    <h3 class="absolute hidden md:flex top-3 left-3 border-2 border-[#ffa566] font-bold text-xs p-2 rounded-lg bg-[#fbeed5] mt-1 w-fit text-[#ffa566]">Giảm ' . $giam.'%</h3>                     
                                 </div>                                              
-                                <div class="md:p-2 xl:m-auto xl:text-center">
-                                    <h2 class="text-md font-bold sm:text-xl md:text-2xl">' . htmlspecialchars($row['TenSP']) . '</h2>
-                                    <h3 class="text-xs p-2 rounded-xl bg-[#fbeed5] mt-1 w-fit text-[#895a25]">Giảm ' . $giam.'%</h3>
-                                    <h3 class="text-lg font-bold mt-2">' . number_format($row['GiaHienTai'], 0, ',', '.') . 'đ</h3>
+                                <div class="md:p-2 lg:m-auto lg:text-center lg:items-center lg:justify-center">
+                                    <h2 class="text-md font-bold sm:text-xl md:text-2xl md:hidden">' . htmlspecialchars($row['TenSP']) . '</h2>
+                                    <h3 class="text-xs p-2 rounded-xl bg-[#fbeed5] mt-1 w-fit text-[#895a25] md:hidden">Giảm ' . $giam.'%</h3>
+                                    <h3 class="text-lg font-bold mt-2 md:hidden">' . number_format($row['GiaHienTai'], 0, ',', '.') . 'đ</h3>
                                 </div>                           
                             </a>
-                        </div>';
+                        </div>
+                    ';
                 }
             } else {
                 echo '
                     Không có dữ liệu
                 ';
             }
+        } catch (PDOException $e) {
+            echo "Lỗi truy vấn: " . $e->getMessage();
+        }
+    }
+    
+    function showAllPhone(string $filter): void {
+    global $conn;
+
+    try {
+        // Chọn truy vấn dựa theo filter
+        switch ($filter) {
+            case 'newest':
+                $stmt = $conn->prepare("SELECT * FROM SanPham WHERE MaDM IN ('DM001', 'DM002') ORDER BY ThoiGian DESC");
+                break;
+            case 'price':
+                $stmt = $conn->prepare("SELECT * FROM SanPham WHERE MaDM IN ('DM001', 'DM002') ORDER BY GiaHienTai ASC");
+                break;
+            default:
+                $stmt = $conn->prepare("SELECT * FROM SanPham WHERE MaDM IN ('DM001', 'DM002')");
+                break;
+        }
+
+        $stmt->execute();
+
+        if ($stmt->rowCount() > 0) {
+            while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
+                $giaBase = $row['GiaBase'];
+                $giaHienTai = $row['GiaHienTai'];
+                $giam = round((($giaBase - $giaHienTai) / $giaBase) * 100);
+
+                echo '                  
+                    <div class="flex bg-white">
+                        <a href="/LapTrinhWebNangCao_INT4241/frontend/product/?MaSP=' . $row['MaSP'] . '" class="relative flex flex-row sm:flex-col w-full bg-white p-4 sm:py-15"> 
+                            <div class="flex sm:justify-center flex-col items-center text-center">  
+                                <h2 class="hidden text-md font-bold sm:text-xl xl:text-4xl sm:text-2xl md:text-2xl sm:flex">' . htmlspecialchars($row['TenSP']) . '</h2>
+                                <h3 class="hidden sm:flex text-lg font-bold mt-2">' . number_format($row['GiaHienTai'], 0, ',', '.') . 'đ</h3>
+                                <img src="' . $row['HinhAnhSP'] . '" alt="' . $row['TenSP'] . '" class="w-30 h-30 sm:w-50 sm:h-50 md:w-60 "> 
+                                <h3 class="absolute hidden sm:flex top-3 left-3 border-2 border-[#ffa566] font-bold text-xs p-2 rounded-lg bg-[#fbeed5] mt-1 w-fit text-[#ffa566]">Giảm ' . $giam.'%</h3>                     
+                            </div>                                              
+                            <div class="md:p-2 lg:m-auto lg:text-center lg:items-center lg:justify-center">
+                                <h2 class="text-md font-bold sm:text-xl md:text-2xl sm:hidden">' . htmlspecialchars($row['TenSP']) . '</h2>
+                                <h3 class="text-xs p-2 rounded-xl bg-[#fbeed5] mt-1 w-fit font-black border-2 border-[#ffa566] text-[#ffa566] sm:hidden">Giảm ' . $giam.'%</h3>
+                                <h3 class="text-lg font-bold mt-2 sm:hidden">' . number_format($row['GiaHienTai'], 0, ',', '.') . 'đ</h3>
+                            </div>                           
+                        </a>
+                    </div>
+                ';
+            }
+        } else {
+            echo 'Không có dữ liệu';
+        }
+        } catch (PDOException $e) {
+            echo "Lỗi truy vấn: " . $e->getMessage();
+        }
+    }
+
+    function showAllTV(string $filter): void {
+    global $conn;
+
+    try {
+        // Chọn truy vấn dựa theo filter
+        switch ($filter) {
+            case 'newest':
+                $stmt = $conn->prepare("SELECT * FROM SanPham WHERE MaDM = 'DM003' ORDER BY ThoiGian DESC");
+                break;
+            case 'price':
+                $stmt = $conn->prepare("SELECT * FROM SanPham WHERE MaDM = 'DM003' ORDER BY GiaHienTai ASC");
+                break;
+            default:
+                $stmt = $conn->prepare("SELECT * FROM SanPham WHERE MaDM = 'DM003'");
+                break;
+        }
+
+        $stmt->execute();
+
+        if ($stmt->rowCount() > 0) {
+            while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
+                $giaBase = $row['GiaBase'];
+                $giaHienTai = $row['GiaHienTai'];
+                $giam = round((($giaBase - $giaHienTai) / $giaBase) * 100);
+
+                echo '                  
+                    <div class="flex bg-white">
+                        <a href="/LapTrinhWebNangCao_INT4241/frontend/product/?MaSP=' . $row['MaSP'] . '" class="relative flex flex-row md:flex-col w-full bg-white p-4 md:py-15"> 
+                            <div class="flex lg:justify-center flex-col items-center text-center">  
+                                <h2 class="hidden text-md font-bold sm:text-xl xl:text-4xl md:text-2xl md:flex">' . htmlspecialchars($row['TenSP']) . '</h2>
+                                <h3 class="hidden sm:flex text-lg font-bold mt-2">' . number_format($row['GiaHienTai'], 0, ',', '.') . 'đ</h3>
+                                <img src="' . $row['HinhAnhSP'] . '" alt="' . $row['TenSP'] . '" class="w-30 h-30 sm:w-50 sm:h-50 md:w-60 "> 
+                                <h3 class="absolute hidden md:flex top-3 left-3 border-2 border-[#ffa566] font-bold text-xs p-2 rounded-lg bg-[#fbeed5] mt-1 w-fit text-[#ffa566]">Giảm ' . $giam.'%</h3>                     
+                            </div>                                              
+                            <div class="md:p-2 lg:m-auto lg:text-center lg:items-center lg:justify-center">
+                                <h2 class="text-md font-bold sm:text-xl md:text-2xl md:hidden">' . htmlspecialchars($row['TenSP']) . '</h2>
+                                <h3 class="text-xs p-2 rounded-xl bg-[#fbeed5] mt-1 w-fit border-2 border-[#ffa566] text-[#ffa566] md:hidden">Giảm ' . $giam.'%</h3>
+                                <h3 class="text-lg font-bold mt-2 md:hidden">' . number_format($row['GiaHienTai'], 0, ',', '.') . 'đ</h3>
+                            </div>                           
+                        </a>
+                    </div>
+                ';
+            }
+        } else {
+            echo 'Không có dữ liệu';
+        }
         } catch (PDOException $e) {
             echo "Lỗi truy vấn: " . $e->getMessage();
         }
