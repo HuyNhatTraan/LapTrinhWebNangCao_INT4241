@@ -13,7 +13,7 @@
                 $giaHienTai = $row['GiaHienTai'];
                 $giaCuoi = $giaBase - $giaHienTai;
                 echo '
-                    <a class="w-full" href="/product/?MaSP=' . $row['MaSP'] . '">  
+                    <a class="w-full" href="product/?MaSP=' . $row['MaSP'] . '">  
                         <div class="bg-white rounded-xl flex justify-between p-3 shadow-lg items-center">                          
                             <div class="p-4 md:w-80">
                                 <h2 class="text-lg font-bold sm:text-3xl mb-3">' . $row['TenSP'] . '</h2>

@@ -25,6 +25,7 @@ $routes = [
     '/register' => 'views/services/register.php',
     '/login' => 'views/services/login.php',
     '/admin' => 'views/admin/index.php',
+    '/product' => 'views/product/index.php',
 ];
 
 if (array_key_exists($uri, $routes)) {
@@ -38,5 +39,5 @@ if (array_key_exists($uri, $routes)) {
 
 } else {
     http_response_code(404);
-    echo "404 Not Found - $uri";
+    include 'views/pages/404.php';
 }

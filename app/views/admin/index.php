@@ -70,7 +70,7 @@ switch($page) {
                         </div>
                     </div>
                 </div>
-                <div class="hidden md:block">
+                <div class="hidden xl:block">
                     <div class="ml-4 flex items-center md:ml-6">
                         <button type="button"
                             class="relative rounded-full bg-gray-800 p-1 text-gray-400 hover:text-white focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800 focus:outline-hidden">
@@ -109,6 +109,44 @@ switch($page) {
                     </div>
                 </div>
                 <div class="-mr-2 flex xl:hidden">
+                    <div class="hidden md:block">
+                    <div class="ml-4 flex items-center md:ml-6">
+                        <button type="button"
+                            class="relative rounded-full bg-gray-800 p-1 text-gray-400 hover:text-white focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800 focus:outline-hidden">
+                            <span class="absolute -inset-1.5"></span>
+                            <span class="sr-only">View notifications</span>
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"
+                                data-slot="icon" aria-hidden="true" class="size-6">
+                                <path
+                                    d="M14.857 17.082a23.848 23.848 0 0 0 5.454-1.31A8.967 8.967 0 0 1 18 9.75V9A6 6 0 0 0 6 9v.75a8.967 8.967 0 0 1-2.312 6.022c1.733.64 3.56 1.085 5.455 1.31m5.714 0a24.255 24.255 0 0 1-5.714 0m5.714 0a3 3 0 1 1-5.714 0"
+                                    stroke-linecap="round" stroke-linejoin="round" />
+                            </svg>
+                        </button>
+
+                        <!-- Profile dropdown -->
+                        <div class="relative ml-3">
+                            <button id="user-menu-button" type="button" aria-expanded="false" aria-haspopup="true"
+                                class="relative flex max-w-xs items-center rounded-full bg-gray-800 text-sm focus:outline-hidden focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-gray-800">
+                                <span class="absolute -inset-1.5"></span>
+                                <span class="sr-only">Open user menu</span>
+                                <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
+                                    alt="" class="size-8 rounded-full" />
+                            </button>
+               
+                            <div role="menu" tabindex="-1" aria-labelledby="user-menu-button"
+                                aria-orientation="vertical"
+                                class="absolute right-0 z-10 mt-2 w-48 origin-top-right rounded-md bg-white py-1 shadow-lg ring-1 ring-black/5 focus:outline-hidden">
+                                <!-- Active: "bg-gray-100 outline-hidden", Not Active: "" -->
+                                <a id="user-menu-item-0" role="menuitem" href="#" tabindex="-1"
+                                    class="block px-4 py-2 text-sm text-gray-700">Your Profile</a>
+                                <a id="user-menu-item-1" role="menuitem" href="#" tabindex="-1"
+                                    class="block px-4 py-2 text-sm text-gray-700">Settings</a>
+                                <a id="user-menu-item-2" role="menuitem" href="#" tabindex="-1"
+                                    class="block px-4 py-2 text-sm text-gray-700">Sign out</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
                     <!-- Mobile menu button -->
                     <button type="button" id="mobile-menu-button" aria-controls="mobile-menu" aria-expanded="false"
                         class="relative inline-flex items-center justify-center rounded-md bg-gray-800 p-2 text-gray-400 hover:bg-gray-700 hover:text-white focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800 focus:outline-hidden">
@@ -186,12 +224,12 @@ switch($page) {
     </nav>
 
     <header class="bg-white shadow-sm">
-        <div class="mx-auto max-w-7xl px-4 py-6 sm:px-6 lg:px-8">
+        <div class="mx-auto w-[90%] px-4 py-6 sm:px-6 lg:px-8">
             <h1 class="text-3xl font-bold tracking-tight text-gray-900"><?php echo $pageTitle; ?></h1>
         </div>
     </header>
     <main>
-        <div class="mx-auto max-w-7xl px-4 py-6 sm:px-6 lg:px-8">
+        <div class="mx-auto w-[90%] px-4 py-6 sm:px-6 lg:px-8">
             <?php
             // Include nội dung theo page
             switch($page) {
@@ -214,7 +252,8 @@ switch($page) {
                     echo '<div class="bg-white p-6 rounded-lg shadow">
                             <h2 class="text-2xl font-bold mb-4">Chào mừng đến với Admin Dashboard</h2>
                             <p class="text-gray-600">Chọn một chức năng từ menu để bắt đầu quản lý.</p>
-                          </div>';
+                          </div>
+                    ';
             }
             ?>
         </div>
