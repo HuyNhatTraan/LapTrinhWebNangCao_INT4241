@@ -5,7 +5,7 @@
         $giaHienTai = $row['GiaHienTai'];
         $giaCuoi = $giaBase - $giaHienTai;
     ?>
-    <a class="w-full" href="product?MaSP=<?= $row['MaSP']?> ">  
+    <a class="w-full" href="product?MaSP=<?=$row['MaSP']?>">  
         <div class="bg-white rounded-xl flex justify-between p-3 shadow-lg items-center">                          
             <div class="p-4 md:w-80">
                 <h2 class="text-lg font-bold sm:text-3xl mb-3"><?=$row['TenSP']?> </h2>
@@ -31,7 +31,7 @@
             $giaHienTai = $row['GiaHienTai'];
             $giaCuoi = $giaBase - $giaHienTai;
         ?>
-        <a class="w-full" href="product?MaSP=' . <?= $row['MaSP'] ?> . '">  
+        <a class="w-full" href="product?MaSP=<?=$row['MaSP']?>">  
             <div class="bg-white rounded-xl flex justify-between p-3 shadow-lg items-center">                          
                 <div class="p-4 md:w-80">
                     <h2 class="text-lg font-bold sm:text-3xl mb-3"><?=$row['TenSP']?> </h2>
@@ -44,7 +44,7 @@
                         </div>                                
                     </div>
                 </div>
-                <a href="product/?MaSP=<?= $row['MaSP'] ?>">
+                <a href="product/?MaSP=<?=$row['MaSP']?>">
                     <img src="<?= $row['HinhAnhSP'] ?>" alt="<?= $row['TenSP'] ?>" class="w-30 h-30 sm:w-50 sm:h-50 md:w-60 md:h-60">
                 </a>                            
             </div>
