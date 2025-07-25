@@ -14,11 +14,13 @@ $uri = '/' . trim($uri, '/'); // Chuẩn hoá: nếu rỗng thì là '/'
 // Debug thử xem ra gì
 // echo "URI: " . $uri;
 
+require_once 'controllers/productController.php'; // Nạp controller cần dùng
+
 $routes = [
     '/' => 'views/home.php',
     '/store' => 'views/pages/store/index.php',
-    '/mobile' => 'views/pages/mobile/index.php',
-    '/smart-home' => 'views/pages/smart-home/index.php',
+    '/mobile' => ['controller' => 'ProductController', 'action' => 'showPhones'],
+    '/smart-home' => ['controller' => 'ProductController', 'action' => 'showSmartTV'],
     '/discover' => 'views/pages/discover/index.php',
     '/support' => 'views/pages/support/index.php',
     '/account' => 'views/services/account.php',
@@ -28,15 +30,24 @@ $routes = [
     '/product' => 'views/product/index.php',
 ];
 
+// Kiểm tra route có tồn tại không
 if (array_key_exists($uri, $routes)) {
-    $filePath = $routes[$uri];
-    
-    if (file_exists($filePath)) {
-        require $filePath;
-    } else {
-        echo "File path không tồn tại: $filePath";
-    }
+    $route = $routes[$uri];
 
+    if (is_array($route)) {
+        $controllerName = $route['controller'];
+        $action = $route['action'];
+
+        
+        $controller = new $controllerName();
+        $controller->$action();
+    } else {
+        if (file_exists($route)) {
+            require $route;
+        } else {
+            echo "File path không tồn tại: $route";
+        }
+    }
 } else {
     http_response_code(404);
     include 'views/pages/404.php';
