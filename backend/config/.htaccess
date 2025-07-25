@@ -1,7 +1,0 @@
-# Chặn toàn bộ truy cập từ trình duyệt
-Order Deny,Allow
-Deny from all
-
-<RequireAll>
-    Require all denied
-</RequireAll>
