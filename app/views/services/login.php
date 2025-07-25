@@ -17,7 +17,7 @@
                 <span class="text-4xl font-semibold text-center mb-6">Đăng nhập</span>
             </div>
             <!-- Form -->
-            <form class="space-y-4" action="/LapTrinhWebNangCao_INT4241/backend/routes/login.php" method="POST">
+            <form class="space-y-4" action="routes/login.php" method="POST">
                 <div>
                     <label class="block text-sm mb-1" for="email">Email address</label>
                     <input type="email" id="email" name="email" placeholder="Email"

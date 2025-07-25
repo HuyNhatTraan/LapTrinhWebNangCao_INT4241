@@ -20,7 +20,7 @@
             </div>
 
             <!-- Form -->
-            <form class="space-y-4" action="/LapTrinhWebNangCao_INT4241/backend/routes/register.php" method="POST">
+            <form class="space-y-4" action="routes/register.php" method="POST">
                 <div>
                     <label class="block text-sm mb-1" for="fullName">Họ và Tên</label>
                     <input type="text" id="fullName" name="fullName" placeholder="Họ và tên của bạn"

@@ -5,20 +5,19 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script defer src="/LapTrinhWebNangCao_INT4241/frontend/scripts/index.js"></script>
-    <link rel="stylesheet" href="../styles/output.css">
+    <link rel="stylesheet" href="styles/output.css">
     <link rel="icon" href="/LapTrinhWebNangCao_INT4241/frontend/icon.png" type="image/png" />
     <title>Tài khoản</title>
 </head>
 
 <body class="bg-[#f5f5f5]">
-    <div class="sticky z-10 top-0" id="nav"></div>
+    <?php require 'views/components/nav.php'; ?>
     <div class="w-full relative">
         <img src="https://i02.appmifile.com/756_operatorx_operatorx_opx/10/12/2021/e02f348a785e05a0aaf82bfabfc1be24.jpg"
             alt="" class="w-full h-auto object-cover">
         <div class="absolute inset-0 flex justify-center items-center">
             <?php
-            session_start();
-            require_once('../../backend/config/db.php');
+            require_once('config/db.php');
 
             // CHẶN TRUY CẬP KHI CHƯA LOGIN
             if (!isset($_SESSION['user'])) {
@@ -235,13 +234,12 @@
                         <span>Chỉnh sửa thông tin cá nhân</span>
                     </div>
                 </div>
-
             </div>
         </div>
 
     </div>
     <br> <br> <br>
-    <div class="" id="footer"></div>
+    <?php require 'views/components/footer.php'; ?>
 </body>
 
 </html>
