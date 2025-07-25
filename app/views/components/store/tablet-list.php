@@ -13,7 +13,7 @@
                 $giaHienTai = $row['GiaHienTai'];
                 $giaCuoi = $giaBase - $giaHienTai;
                 echo '
-                    <a class="w-full" href="/LapTrinhWebNangCao_INT4241/frontend/product/?MaSP=' . $row['MaSP'] . '">  
+                    <a class="w-full" href="product/?MaSP=' . $row['MaSP'] . '">  
                         <div class="bg-white rounded-xl flex justify-between p-3 shadow-lg items-center">                          
                             <div class="p-4 md:w-80">
                                 <h2 class="text-lg font-bold sm:text-3xl mb-3">' . $row['TenSP'] . '</h2>
@@ -26,7 +26,7 @@
                                     </div>                                
                                 </div>
                             </div>
-                            <a href="/LapTrinhWebNangCao_INT4241/frontend/product/?MaSP=' . $row['MaSP'] . '">
+                            <a href="product/?MaSP=' . $row['MaSP'] . '">
                                 <img src="' . $row['HinhAnhSP'] . '" alt="' . $row['TenSP'] . '" class="w-30 h-30 sm:w-50 sm:h-50 md:w-60 md:h-60">
                             </a>                            
                         </div>
@@ -52,7 +52,7 @@
                     $giaHienTai = $row['GiaHienTai'];
                     $giaCuoi = $giaBase - $giaHienTai;
                     echo '
-                        <a class="h-full w-full" href="/LapTrinhWebNangCao_INT4241/frontend/product/?MaSP=' . $row['MaSP'] . '">      
+                        <a class="h-full w-full" href="product/?MaSP=' . $row['MaSP'] . '">      
                             <div class="flex bg-white rounded-xl flex-col xl:flex-row justify-between p-4 shadow-lg h-full">                                               
                                 <div class="md:p-2">
                                     <h2 class="text-md font-bold sm:text-xl">' . $row['TenSP'] . '</h2>
@@ -80,7 +80,7 @@
     </div>
     <div
         class="flex bg-gradient-to-r from-slate-200 to-slate-400 items-center justify-center text-center m-auto p-4 rounded-xl shadow-lg mb-20">
-        <a href="/LapTrinhWebNangCao_INT4241/frontend/pages/mobile/" class="px-10 py-10">
+        <a href="mobile" class="px-10 py-10">
             <span class="text-gray-600 font-bold text-4xl">Tất cả sản phẩm</span>
         </a>
     </div>
