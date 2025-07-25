@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles/output.css">
-    <link rel="icon" href="icon.png" type="image/png" />
+    <link rel="icon" href="icon.png" type="image/png"/>
     <title>HT Tech Official Store</title>
 </head>
 
@@ -46,8 +46,6 @@
 
         <div class="w-full m-auto ">
             <div class="grid sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 w-full sm:gap-3 md:gap-3">
-                <?php 
-                ?>
                 <?php foreach ($products as $row): 
                     $giaBase = $row['GiaBase'];
                     $giaHienTai = $row['GiaHienTai'];
@@ -73,7 +71,6 @@
         </div>
     </div>
     <?php require 'views/components/footer.php' ?>
-    <h1>Danh sách sản phẩm</h1>
 </body>
 
 </html>

@@ -5,12 +5,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles/output.css">
-    <link rel="icon" href="/LapTrinhWebNangCao_INT4241/frontend/icon.png" type="image/png">
+    <link rel="icon" href="icon.png" type="image/png">
     <title>Cửa hàng</title>
 </head>
 
 <body class="bg-[#f7f7f7]">
-    <?php require __DIR__. '/../../components/nav.php'; ?>
+    <?php include 'views/components/nav.php'; ?>
     <div class="flex justify-center m-auto mt-5 rounded-2xl">
         <div class="flex w-[90%] rounded-2xl h-40 md:h-50 xl:h-80 xl:w-[80%]">
             <div class="relative">

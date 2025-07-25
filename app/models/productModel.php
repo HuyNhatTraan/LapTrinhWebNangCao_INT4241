@@ -9,6 +9,7 @@ class productModel {
     public $HinhAnh;
     public $MaDM;
 
+    // Constructor nè 
     public function __construct($MaSP, $TenSP, $Gia, $MoTa, $HinhAnh, $MaDM) {
         $this->MaSP = $MaSP;
         $this->TenSP = $TenSP;
@@ -27,6 +28,7 @@ class productModel {
         return $data;
     }
 
+    // Lấy toàn bộ sản phẩm là Nhà thông minh AKA Smart TV
     public static function getAllSmartTV() {
         $db = Database::getInstance()->getConnection();
         $stmt = $db->prepare("SELECT * FROM SanPham WHERE MaDM = 'DM003'");
@@ -34,6 +36,44 @@ class productModel {
         $data = $stmt->fetchAll(PDO::FETCH_ASSOC);
         return $data;
     }
+
+    // Lấy toàn bộ sản phẩm là Nhà thông minh AKA Smart TV
+    public static function getStorePhoneLimit($limit) {
+        $db = Database::getInstance()->getConnection();
+
+        // Dùng bindValue để tránh SQL Injection cho LIMIT
+        $stmt = $db->prepare("SELECT * FROM SanPham WHERE MaDM = 'DM001' LIMIT :limit");
+        $stmt->bindValue(':limit', (int)$limit, PDO::PARAM_INT); // Ép kiểu và gán giá trị LIMIT
+        $stmt->execute();
+
+        $data = $stmt->fetchAll(PDO::FETCH_ASSOC);
+        return $data;
+    }
+
+    public static function getStoreTabletsLimit($limit) {
+        $db = Database::getInstance()->getConnection();
+
+        // Dùng bindValue để tránh SQL Injection cho LIMIT
+        $stmt = $db->prepare("SELECT * FROM SanPham WHERE MaDM = 'DM002' LIMIT :limit");
+        $stmt->bindValue(':limit', (int)$limit, PDO::PARAM_INT); // Ép kiểu và gán giá trị LIMIT
+        $stmt->execute();
+
+        $data = $stmt->fetchAll(PDO::FETCH_ASSOC);
+        return $data;
+    }
+
+    public static function getStoreSmartHomeLimit($limit) {
+        $db = Database::getInstance()->getConnection();
+
+        // Dùng bindValue để tránh SQL Injection cho LIMIT
+        $stmt = $db->prepare("SELECT * FROM SanPham WHERE MaDM = 'DM003' LIMIT :limit");
+        $stmt->bindValue(':limit', (int)$limit, PDO::PARAM_INT); // Ép kiểu và gán giá trị LIMIT
+        $stmt->execute();
+
+        $data = $stmt->fetchAll(PDO::FETCH_ASSOC);
+        return $data;
+    }
+
     
     // Tìm sản phẩm theo mã
     public static function findSP($MaSP) {
@@ -52,7 +92,7 @@ class productModel {
         ]);
     }
 
-    // Cập nhật
+    // Cập nhật sản phẩm
     public static function updateSP($MaSP, $data) {
         $db = Database::getInstance()->getConnection();
         $stmt = $db->prepare("UPDATE SanPham SET TenSP = ?, Gia = ?, MoTa = ?, HinhAnh = ?, MaDM = ? WHERE MaSP = ?");

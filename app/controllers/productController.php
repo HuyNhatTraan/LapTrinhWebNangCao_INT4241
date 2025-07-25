@@ -19,5 +19,18 @@
             // Gửi sang view để hiển thị
             include __DIR__ .'/../views/pages/smart-home/index.php'; 
         }
+
+        public function showStorePage() {
+            // Gọi model lấy tất cả sản phẩm
+            $phoneList1 = ProductModel::getStorePhoneLimit(1);
+            $phoneList4 = ProductModel::getStorePhoneLimit(4);
+            $tabletList1 = ProductModel::getStoreTabletsLimit(1);
+            $tabletList4 = ProductModel::getStoreTabletsLimit(4);
+            $smartTVList1 = ProductModel::getStoreSmartHomeLimit(1);
+            $smartTVList4 = ProductModel::getStoreSmartHomeLimit(4);
+
+            // Gửi sang view để hiển thị
+            include __DIR__ .'/../views/components/store/smartphone-list.php'; 
+        }
     }
 ?>
