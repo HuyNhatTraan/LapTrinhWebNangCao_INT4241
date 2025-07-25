@@ -10,7 +10,7 @@
 </head>
 
 <body class="bg-[#f7f7f7]">
-    <?php include 'views/components/nav.php'; ?>
+    <?php require 'views/components/nav.php'; ?>
     <div class="flex justify-center m-auto mt-5 rounded-2xl">
         <div class="flex w-[90%] rounded-2xl h-40 md:h-50 xl:h-80 xl:w-[80%]">
             <div class="relative">

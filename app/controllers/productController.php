@@ -28,9 +28,9 @@
             $tabletList4 = ProductModel::getStoreTabletsLimit(4);
             $smartTVList1 = ProductModel::getStoreSmartHomeLimit(1);
             $smartTVList4 = ProductModel::getStoreSmartHomeLimit(4);
-
+        
             // Gửi sang view để hiển thị
-            include __DIR__ .'/../views/components/store/smartphone-list.php'; 
+            include 'views/pages/store/index.php';
         }
     }
 ?>
