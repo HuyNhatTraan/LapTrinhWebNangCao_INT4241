@@ -1,8 +1,8 @@
 <?php session_start(); ?>
 <nav class="bg-white border-gray-200 top-0 z-50 sticky">
     <div class="w-[85%] flex flex-wrap items-center justify-between mx-auto p-4">
-        <a href="/LapTrinhWebNangCao_INT4241/frontend/" class="flex items-center space-x-3 rtl:space-x-reverse">
-            <img class="w-8 h-8" src="/LapTrinhWebNangCao_INT4241/frontend/icon.png" alt="HT Tech Logo">
+        <a href="./" class="flex items-center space-x-3 rtl:space-x-reverse">
+            <img class="w-8 h-8" src="icon.png" alt="HT Tech Logo">
             <span class="self-center text-2xl font-semibold whitespace-nowrap text-black">HT Tech</span>
         </a>
         <button data-collapse-toggle="navbar-default" type="button"
@@ -23,7 +23,7 @@
                         aria-current="page">Cửa hàng</a>
                 </li>
                 <li>
-                    <a href="/LapTrinhWebNangCao_INT4241/frontend/pages/mobile/"
+                    <a href="mobile"
                         class="block py-2 px-3 text-gray-900 rounded-sm hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-black md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">Di
                         động</a>
                 </li>

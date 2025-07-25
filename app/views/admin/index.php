@@ -31,8 +31,8 @@ switch($page) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>HT Tech Admin - <?php echo $pageTitle; ?></title>
-    <link rel="icon" href="/LapTrinhWebNangCao_INT4241/frontend/icon.png" type="image/png" />
-    <link rel="stylesheet" href="/LapTrinhWebNangCao_INT4241/frontend/styles/output.css">
+    <link rel="icon" href="icon.png" type="image/png" />
+    <link rel="stylesheet" href="styles/output.css">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
 </head>
 <div class="min-h-full">
@@ -41,8 +41,8 @@ switch($page) {
             <div class="flex h-16 items-center justify-between">
                 <div class="flex items-center">
                     <div class="shrink-0">
-                        <a href="/LapTrinhWebNangCao_INT4241/frontend/">
-                            <img src="../icon.png" alt="HT Tech" class="size-8" />
+                        <a href="./">
+                            <img src="icon.png" alt="HT Tech" class="size-8" />
                         </a>
                         
                     </div>
@@ -134,6 +134,8 @@ switch($page) {
         <div id="mobile-menu" class="xl:hidden hidden">
             <div class="space-y-1 px-2 pt-2 pb-3 sm:px-3">
                 <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
+                <a href="./"
+                    class="block rounded-md text-white px-3 py-2 text-base font-medium">Về trang chủ</a>
                 <a href="?page=dashboard"
                     class="block rounded-md <?php echo $page == 'dashboard' ? 'bg-gray-900 text-white' : 'text-gray-300 hover:bg-gray-700 hover:text-white'; ?> px-3 py-2 text-base font-medium">Dashboard</a>
                 <a href="?page=don-hang"

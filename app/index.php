@@ -24,6 +24,7 @@ $routes = [
     '/account' => 'views/services/account.php',
     '/register' => 'views/services/register.php',
     '/login' => 'views/services/login.php',
+    '/admin' => 'views/admin/index.php',
 ];
 
 if (array_key_exists($uri, $routes)) {

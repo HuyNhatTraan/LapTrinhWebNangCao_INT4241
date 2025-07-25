@@ -5,7 +5,7 @@
     <div class="relative h-56 overflow-hidden md:h-96">
         <!-- Item 1 -->
         <div class="hidden duration-700 ease-in-out" data-carousel-item>
-            <img src="/LapTrinhWebNangCao_INT4241/frontend/images/homepage/banner/1.jpg" class="absolute block w-full h-full object-cover object-center top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2" alt="...">
+            <img src="images/homepage/banner/1.jpg" class="absolute block w-full h-full object-cover object-center top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2" alt="...">
             <div class="flex flex-col absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 
             md:left-[25%] md:translate-x-0 md:text-left text-center 
             w-[80%] md:w-auto text-black">
@@ -17,7 +17,7 @@
         </div>
         <!-- Item 2 -->
         <div class="hidden duration-700 ease-in-out text-white" data-carousel-item>
-            <img src="/LapTrinhWebNangCao_INT4241/frontend/images/homepage/banner/2.jpg" class="absolute block w-full h-full object-cover object-center top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2" alt="...">
+            <img src="images/homepage/banner/2.jpg" class="absolute block w-full h-full object-cover object-center top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2" alt="...">
             <div class="flex flex-col absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 
             md:left-[25%] md:translate-x-0 md:text-left text-center 
             w-[80%] md:w-auto text-white">
@@ -29,7 +29,7 @@
         </div>
         <!-- Item 3 -->
         <div class="hidden duration-700 ease-in-out text-black" data-carousel-item>
-            <img src="/LapTrinhWebNangCao_INT4241/frontend/images/homepage/banner/3.jpg" class="absolute block w-full h-full object-cover object-center top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2" alt="...">
+            <img src="images/homepage/banner/3.jpg" class="absolute block w-full h-full object-cover object-center top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2" alt="...">
             <div class="flex flex-col absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 
             md:left-[25%] md:translate-x-0 md:text-left text-center 
             w-[80%] md:w-auto text-black">
@@ -42,7 +42,7 @@
         </div>
         <!-- Item 4 -->
         <div class="hidden duration-700 ease-in-out" data-carousel-item>
-            <img src="/LapTrinhWebNangCao_INT4241/frontend/images/homepage/banner/4.jpg" class="absolute block w-full h-full object-cover object-center top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2" alt="...">
+            <img src="images/homepage/banner/4.jpg" class="absolute block w-full h-full object-cover object-center top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2" alt="...">
             <div class="flex flex-col absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 
             md:left-[25%] md:translate-x-0 md:text-left text-center 
             w-[80%] md:w-auto text-black">
