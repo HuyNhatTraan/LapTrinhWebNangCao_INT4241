@@ -33,7 +33,7 @@
             $giam = round((($giaBase - $giaHienTai) / $giaBase) * 100);
         ?>
         <a class="w-full " href="product?MaSP=<?=$row['MaSP']?>">  
-            <div class="bg-white rounded-lg flex justify-between p-3 shadow-lg h-full relative">                          
+            <div class="bg-white rounded-lg flex justify-between p-3 md:p-5 shadow-lg h-full relative">                          
                 <div class="flex flex-col w-fit">
                     <h2 class="text-md font-bold sm:text-2xl md:mb-3"><?=$row['TenSP']?> </h2>
                     <h3 class="hidden sm:flex text-sm p-2 rounded-xl bg-[#fbeed5] w-fit text-[#895a25]">Tiết kiệm <?= number_format($giaCuoi, 0, ',', '.') ?>đ</h3>
@@ -48,8 +48,7 @@
                 </div>
                 <div class="flex absolute right-0 bottom-0 z-0">
                     <img src="<?= $row['HinhAnhSP'] ?>" alt="<?= $row['TenSP'] ?>" class="w-20 sm:w-30 md:40 xl:w-45">
-                </div>
-                
+                </div>              
             </div>
         </a>             
         <?php endforeach; ?>
