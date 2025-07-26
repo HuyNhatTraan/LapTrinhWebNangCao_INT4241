@@ -32,5 +32,17 @@
             // Gửi sang view để hiển thị
             include 'views/pages/store/index.php';
         }
+
+        public function showChiTietSP() {
+            $MaSP = $_GET['MaSP'];
+            // Gọi model lấy tất cả sản phẩm
+            $mauSacHinhAnh = ProductModel::getBienTheSP($MaSP);
+            $dungLuong = ProductModel::getDungLuongSP($MaSP);
+            $products = ProductModel::getProductById($MaSP);
+            $thongSoKyThuat = ProductModel::getThongSoSP($MaSP);
+
+            // Gửi sang view để hiển thị
+            include __DIR__ .'/../views/product/index.php'; 
+        }
     }
 ?>

@@ -26,7 +26,7 @@ $routes = [
     '/register' => 'views/services/register.php',
     '/login' => 'views/services/login.php',
     '/admin' => 'views/admin/index.php',
-    '/product' => 'views/product/index.php',
+    '/product' => ['controller' => 'ProductController', 'action' => 'showChiTietSP'],
 ];
 
 // Kiểm tra xem đường dẫn URI người dùng truy cập có tồn tại trong mảng routes không

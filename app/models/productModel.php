@@ -74,6 +74,51 @@ class productModel {
         return $data;
     }
 
+    // Lấy biến thể màu sắc và hình ảnh của sản phẩm truyền MaSP vào
+    public static function getBienTheSP($MaSP) {
+        $db = Database::getInstance()->getConnection();
+
+        // Dùng bindValue để tránh SQL Injection cho LIMIT
+        $stmt = $db->prepare("Select HinhAnhBienThe, MauSac, MaMau From SanPham S Join BienTheSP B ON S.MaSP = B.MaSP Where S.MaSP = :MaSP");
+        $stmt->bindValue(':MaSP', $MaSP, PDO::PARAM_STR);
+        $stmt->execute();
+
+        $data = $stmt->fetchAll(PDO::FETCH_ASSOC);
+        return $data;
+    }
+
+    // Lấy thông tin sản phẩm theo mã sản phẩm
+    public static function getProductById($MaSP) {
+        $db = Database::getInstance()->getConnection();
+        $stmt = $db->prepare("SELECT * FROM SanPham WHERE MaSP = ?");
+        $stmt->execute([$MaSP]);
+        return $stmt->fetchAll(PDO::FETCH_ASSOC);
+    }
+
+    // Lấy chi tiết dung lượng theo mã sản phẩm
+    public static function getDungLuongSP($MaSP) {
+        $db = Database::getInstance()->getConnection();
+
+        // Dùng bindValue để tránh SQL Injection cho LIMIT
+        $stmt = $db->prepare("SELECT MIN(MaDLSP) AS MaDLSP, TenDLSP FROM DungLuongSP WHERE MaSP = :MaSP GROUP BY TenDLSP;");
+        $stmt->bindValue(':MaSP', $MaSP, PDO::PARAM_STR);
+        $stmt->execute();
+
+        $data = $stmt->fetchAll(PDO::FETCH_ASSOC);
+        return $data;
+    }
+    // Lấy thông số kỹ thuật của sản phẩm theo mã sản phẩm
+    public static function getThongSoSP($MaSP) {
+        $db = Database::getInstance()->getConnection();
+
+        // Dùng bindValue để tránh SQL Injection cho LIMIT
+        $stmt = $db->prepare("SELECT * FROM ThongSoKyThuat WHERE MaSP = :MaSP");
+        $stmt->bindValue(':MaSP', $MaSP, PDO::PARAM_STR);
+        $stmt->execute();
+
+        $data = $stmt->fetchAll(PDO::FETCH_ASSOC);
+        return $data;
+    }
     
     // Tìm sản phẩm theo mã
     public static function findSP($MaSP) {
