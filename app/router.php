@@ -26,6 +26,8 @@ $routes = [
     '/register' => 'views/services/register.php',
     '/login' => 'views/services/login.php',
     '/admin' => 'views/admin/index.php',
+    '/cart' => 'views/pages/cart/index.php',
+    '/search' => ['controller' => 'ProductController', 'action' => 'showSearchResults'],
     '/product' => ['controller' => 'ProductController', 'action' => 'showChiTietSP'],
 ];
 

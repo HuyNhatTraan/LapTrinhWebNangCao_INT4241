@@ -44,5 +44,15 @@
             // Gửi sang view để hiển thị
             include __DIR__ .'/../views/product/index.php'; 
         }
+    
+        public function showSearchResults() {
+            $TenSP = $_GET['queryStr'];
+            // Gọi model lấy tất cả sản phẩm
+            $products = ProductModel::findSP($TenSP);
+            // Gửi sang view để hiển thị
+            include __DIR__ .'/../views/pages/search/index.php'; 
+        }
+
+        
     }
 ?>

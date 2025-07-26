@@ -31,7 +31,7 @@
                                 <path d='M15 9L9 14.9999' stroke='#ffffff' stroke-width='1.5' stroke-linecap='round'></path>
                             </svg>                                      
                             <span class='text-3xl font-semibold text-white'>Bạn chưa đăng nhập!</span>
-                            <a class='text-white underline text-xl' href='/LapTrinhWebNangCao_INT4241/frontend/services/login.php'>Đăng nhập ngay</a>
+                            <a class='text-white underline text-xl' href='./login'>Đăng nhập ngay</a>
                         </div>
                     </div>                
                 ";
@@ -45,6 +45,8 @@
                 // NẾU ĐÃ ĐĂNG NHẬP THÌ CHẠY TRUY VẤN
                 try {
                     $emailSession = $_SESSION['user'];
+                    $db = Database::getInstance();
+                    $conn = $db->getConnection();
                     $stmt = $conn->prepare("SELECT email, full_name, img_url FROM test.account WHERE email = :email");
                     $stmt->bindParam(':email', $emailSession);
                     $stmt->execute();
@@ -108,7 +110,7 @@
                                 </div>
                                 <div class='flex items-center gap-6 p-4'>
                                     <div class='flex flex-col items-center gap-2'>
-                                        <a class='text-xl font-bold underline hover:text-[#3c81c6] duration-150' href='/LapTrinhWebNangCao_INT4241/backend/routes/logout.php'>Đăng xuất</a>
+                                        <a class='text-xl font-bold underline hover:text-[#3c81c6] duration-150' href='routes/logout.php'>Đăng xuất</a>
                                     </div>
                                 </div>
                             ";

@@ -107,6 +107,7 @@ class productModel {
         $data = $stmt->fetchAll(PDO::FETCH_ASSOC);
         return $data;
     }
+
     // Lấy thông số kỹ thuật của sản phẩm theo mã sản phẩm
     public static function getThongSoSP($MaSP) {
         $db = Database::getInstance()->getConnection();
@@ -120,12 +121,12 @@ class productModel {
         return $data;
     }
     
-    // Tìm sản phẩm theo mã
-    public static function findSP($MaSP) {
+    // Tìm sản phẩm theo bằng tên sản phẩm
+    public static function findSP($TenSP) {
         $db = Database::getInstance()->getConnection();
-        $stmt = $db->prepare("SELECT * FROM SanPham WHERE MaSP = ?");
-        $stmt->execute([$MaSP]);
-        return $stmt->fetch(PDO::FETCH_ASSOC);
+        $stmt = $db->prepare("SELECT * FROM SanPham WHERE TenSP like ?");
+        $stmt->execute(['%' . $TenSP . '%']);
+        return $stmt->fetchAll(PDO::FETCH_ASSOC);
     }
 
     // Thêm sản phẩm mới
@@ -146,7 +147,7 @@ class productModel {
         ]);
     }
 
-    // Xoá
+    // Xoá sản phẩm
     public static function deleteSP($MaSP) {
         $db = Database::getInstance()->getConnection();
         $stmt = $db->prepare("DELETE FROM SanPham WHERE MaSP = ?");

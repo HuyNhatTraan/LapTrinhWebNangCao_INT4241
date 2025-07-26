@@ -1,4 +1,4 @@
-<span class="KhamPhaXiaomi flex font-bold text-md justify-center m-auto mb-8 mt-20 md:text-3xl">Bộ phận hỗ trợ của Xiaomi</span>
+<span class="KhamPhaXiaomi flex font-bold text-md justify-center m-auto mb-8 mt-20 md:text-3xl">Bộ phận hỗ trợ của HT Tech</span>
 <div class="flex justify-center mt-3">
     <div class="grid gap-10 w-[70%] text-md sm:grid-cols-2 md:grid-cols-4">
         <div class="flex flex-col text-center items-center justify-center group cursor-pointer ">

@@ -3,9 +3,7 @@ require_once('../config/db.php');
 session_start();
 
 // Kiểm tra kết nối PDO
-if (!$conn) {
-    die("Kết nối thất bại!");
-}
+$conn = Database::getInstance()->getConnection();
 
 // HÀM SINH MÃ TỰ ĐỘNG (TK001, KH001,...)
 function generateNewCode($conn, $table, $column, $prefix) {
@@ -35,7 +33,8 @@ if (isset($_POST['register'])) {
     $password = password_hash($_POST['password'], PASSWORD_DEFAULT);
 
     // 1. Kiểm tra xem email đã tồn tại chưa
-    $stmt = $conn->prepare("SELECT * FROM Account WHERE Email = :email");
+    $stmt = $conn->prepare("SELECT * FROM Account WHERE LOWER(Email) = LOWER(:email)");
+
     $stmt->bindParam(':email', $email);
     $stmt->execute();
 
@@ -64,7 +63,7 @@ if (isset($_POST['register'])) {
         $conn->commit();
 
         // 7. Redirect về trang chính
-        header("Location: /LapTrinhWebNangCao_INT4241/frontend/");
+        header("Location: ../");
         exit;
     } catch (Exception $e) {
         // Rollback nếu có lỗi xảy ra

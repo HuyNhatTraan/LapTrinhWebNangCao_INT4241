@@ -1067,6 +1067,9 @@
   .p-10 {
     padding: calc(var(--spacing) * 10);
   }
+  .p-20 {
+    padding: calc(var(--spacing) * 20);
+  }
   .px-2 {
     padding-inline: calc(var(--spacing) * 2);
   }
@@ -1242,6 +1245,9 @@
   }
   .text-\[\#898989\] {
     color: #898989;
+  }
+  .text-\[\#fe6132\] {
+    color: #fe6132;
   }
   .text-\[\#ffa566\] {
     color: #ffa566;

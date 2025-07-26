@@ -2,5 +2,5 @@
     session_start();
     session_unset(); // Xoá toàn bộ session
     session_destroy(); // Hủy phiên
-    header("Location: /LapTrinhWebNangCao_INT4241/frontend/"); // hoặc homepage
+    header("Location: ../"); // hoặc homepage
     exit();
