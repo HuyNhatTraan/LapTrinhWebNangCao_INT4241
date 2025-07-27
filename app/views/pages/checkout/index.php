@@ -135,6 +135,9 @@
                                             <?php echo $item['TenSP']; ?>
                                             <?php echo $item['MauSac']; ?>
                                             <?php echo $item['TenDLSP']; ?>
+                                            <div class="mt-1">
+                                                Số lượng: <?php echo $item['SoLuong']; ?>
+                                            </div>
                                         </span>                                      
                                     </div>
                                     <div class="flex">                                                                            
