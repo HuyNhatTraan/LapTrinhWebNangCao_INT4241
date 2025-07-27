@@ -9,7 +9,7 @@
     <link rel="icon" href="icon.png" type="image/png" />
 </head>
 
-<body class="">
+<body>
     <?php require 'views/components/nav.php'; ?>
     <div class="bg-[#0f172a] flex items-center justify-center h-screen text-white">
         <div class="w-full max-w-md p-6 rounded-lg shadow-md border border-gray-700 pt-10 pb-6">

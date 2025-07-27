@@ -19,7 +19,7 @@ class cartModel {
     public function showGioHang($MaSP, $MaBienThe, $MaDLSP) {
         $db = Database::getInstance()->getConnection();
         $stmt = $db->prepare("
-            Select S.MaSP, TenSP, TenDLSP, HinhAnhBienThe, MauSac, MaMau, B.MaBienThe From SanPham S Join BienTheSP B ON S.MaSP = B.MaSP
+            Select S.MaSP, TenSP, GiaHienTai, TenDLSP, HinhAnhBienThe, MauSac, MaMau, B.MaBienThe From SanPham S Join BienTheSP B ON S.MaSP = B.MaSP
             Join DungLuongSP D ON S.MaSP = D.MaSP
             Where S.MaSP = :MaSP AND B.MaBienThe = :MaBienThe AND D.MaDLSP = :MaDLSP"
         );

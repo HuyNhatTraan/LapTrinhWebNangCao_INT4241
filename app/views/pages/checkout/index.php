@@ -1,16 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles/output.css">
     <link rel="icon" href="icon.png" type="image/png" />
-    <title>Giỏ hàng</title>
+    <title>HT Tech | Trang web lỏ nhất VN</title>
 </head>
-
 <body class="bg-[#f7f7f7]">
-    <?php require __DIR__ . '/../../components/nav.php' ?>
+    <?php require 'views/components/nav.php'; ?>
     <div class="font-bold mb-6 flex justify-center mt-5 bg-white ">
         <div class="flex items-center gap-1">
             <svg class="w-8" fill="#000000" viewBox="-1 0 19 19" xmlns="http://www.w3.org/2000/svg">
@@ -41,7 +39,7 @@
             </svg>
         </div>
         <div class="flex items-center gap-1">
-            <svg class="w-8" fill="#d0d0d0" viewBox="-1 0 19 19" xmlns="http://www.w3.org/2000/svg">
+            <svg class="w-8" fill="#000000" viewBox="-1 0 19 19" xmlns="http://www.w3.org/2000/svg">
                 <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
                 <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
                 <g id="SVGRepo_iconCarrier">
@@ -50,7 +48,7 @@
                     </path>
                 </g>
             </svg>
-            <span class="text-xl text-gray-400">Thanh toán</span>
+            <span class="text-xl text-black">Thanh toán</span>
         </div>
         <div class="">
             <svg class="w-30 h-20" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg"
@@ -83,59 +81,72 @@
     </div>
     <div class="w-[80%] flex m-auto flex-col">
         <div class="grid grid-cols-3 gap-3">
-            <?php if (empty($cartItems)): ?>
-                <div class="flex justify-center col-span-2 border-2 rounded-2xl bg-white border-gray-300 p-5">
-                    <h2 class="text-2xl font-bold p-5">Giỏ hàng trống</h2>
-                </div>
-            <?php endif; ?>
-            <?php foreach ($cartItems as $item): ?>
-                <div class="col-span-2 border-2 rounded-2xl bg-white border-gray-300 flex justify-between p-5">
-                    <a href="product?MaSP=<?php echo $item['MaSP']; ?>" class="flex w-[50%] h-fit">
-                        <img class="w-30 h-30" src="<?php echo $item['HinhAnhBienThe']; ?>"
-                            alt="<?php echo $item['HinhAnhBienThe']; ?>">
-                        <div class="flex flex-col">
-                            <span class="ml-4 font-bold text-2xl text-orange-500"><?php echo $item['TenSP']; ?></span>
-                            <span class="ml-4">Màu sắc: <?php echo $item['MauSac']; ?></span>
-                            <span class="ml-4">Dung lượng: <?php echo $item['TenDLSP']; ?></span>
-                        </div>
-                    </a>
-                    <div class="flex items-center">
-                        <form class="max-w-xs mx-auto">
-                            <div class="relative flex items-center max-w-[8rem]">
-                                <button type="button" id="decrement-button" data-input-counter-decrement="quantity-input"
-                                    class="bg-gray-100 dark:bg-gray-700 dark:hover:bg-gray-600 dark:border-gray-600 hover:bg-gray-200 border border-gray-300 rounded-s-lg p-3 h-11 focus:ring-gray-100 dark:focus:ring-gray-700 focus:ring-2 focus:outline-none">
-                                    <svg class="w-3 h-3 text-gray-900 dark:text-white" aria-hidden="true"
-                                        xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 18 2">
-                                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
-                                            stroke-width="2" d="M1 1h16" />
-                                    </svg>
-                                </button>
-                                <input type="text" name="SoLuong"
-                                    value="<?php echo isset($item['SoLuong']) ? $item['SoLuong'] : 1; ?>"
-                                    id="quantity-input" data-input-counter data-input-counter-min="1"
-                                    aria-describedby="helper-text-explanation"
-                                    class="bg-gray-50 border-x-0 border-gray-300 h-11 text-center text-gray-900 text-sm focus:ring-blue-500 focus:border-blue-500 block w-full py-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                                    placeholder="999" required />
-                                <button type="button" id="increment-button" data-input-counter-increment="quantity-input"
-                                    class="bg-gray-100 dark:bg-gray-700 dark:hover:bg-gray-600 dark:border-gray-600 hover:bg-gray-200 border border-gray-300 rounded-e-lg p-3 h-11 focus:ring-gray-100 dark:focus:ring-gray-700 focus:ring-2 focus:outline-none">
-                                    <svg class="w-3 h-3 text-gray-900 dark:text-white" aria-hidden="true"
-                                        xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 18 18">
-                                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
-                                            stroke-width="2" d="M9 1v16M1 9h16" />
-                                    </svg>
-                                </button>
-                            </div>
-                        </form>
+            <form class="w-full col-span-2 p-5 bg-white rounded-2xl border-2 border-gray-300">
+                <div class="font-bold text-3xl">Địa chỉ giao hàng</div>
+                <hr class="mt-5 mb-5 text-gray-400">
+                <div class="grid gap-6 mb-6 md:grid-cols-2">
+                    <div>
+                        <label for="name" class="block mb-2 text-xl text-gray-500 font-medium ">Tên *</label>
+                        <input type="text" id="name" class="bg-gray-50 border-2 border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5  dark:border-gray-600 dark:placeholder-gray-400  dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Tên của ní" required />
                     </div>
-                    <div class="flex items-center">
-                        <span class="cursor-pointer">Xoá</span>
+                    <div>
+                        <label for="last_name" class="block mb-2 text-xl text-gray-500 font-medium ">Họ</label>
+                        <input type="text" id="last_name" class="bg-gray-50 border-2 border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5  dark:border-gray-600 dark:placeholder-gray-400  dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Họ của bạn" required />
+                    </div>
+                    <div>
+                        <label for="company" class="block mb-2 text-xl text-gray-500 font-medium ">Tên người nhận</label>
+                        <input type="text" id="company" class="bg-gray-50 border-2 border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5  dark:border-gray-600 dark:placeholder-gray-400  dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Tên người nhận" required />
+                    </div>  
+                    <div>
+                        <label for="phone" class="block mb-2 text-xl text-gray-500 font-medium ">Số điện thoại *</label>
+                        <input type="tel" id="phone" class="bg-gray-50 border-2 border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5  dark:border-gray-600 dark:placeholder-gray-400  dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="0812235345" pattern="[0-9]{3}-[0-9]{2}-[0-9]{3}" required />
                     </div>
                 </div>
-            <?php endforeach; ?>
-            <!-- Thanh toán -->
+                <div class="mb-6">
+                    <label for="email" class="block mb-2 text-xl text-gray-500 font-medium ">Địa chỉ *</label>
+                    <input type="email" id="email" class="bg-gray-50 border-2 border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5  dark:border-gray-600 dark:placeholder-gray-400  dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Địa chỉ của ní" required />
+                </div> 
+                <div class="mb-6">
+                    <label for="email" class="block mb-2 text-xl text-gray-500 font-medium ">Email</label>
+                    <input type="email" id="email" class="bg-gray-50 border-2 border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5  dark:border-gray-600 dark:placeholder-gray-400  dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Địa chỉ email của bạn" required />
+                </div> 
+                
+                <button type="submit" class="text-white bg-black hover:bg-[#444444] focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:focus:ring-blue-800">Lưu thông tin giao hàng</button>
+            </form>
+            
+            <!-- Tóm tắt -->
             
             <div class="flex row-span-2 col-start-3 row-start-1 flex-col rounded-2xl sticky top-20 z-10">
                 <div class="border-2 rounded-2xl bg-white border-gray-300 p-5">
+                    <div class="flex justify-between text-2xl font-bold">Tóm tắt đơn hàng </span>
+                        <?php if (empty($cartItems)): ?>
+                            <div class="flex justify-center col-span-2 border-2 rounded-2xl bg-white border-gray-300 p-5">
+                                <h2 class="text-2xl font-bold p-5">Giỏ hàng trống</h2>
+                            </div>
+                        <?php endif; ?>
+                    </div>
+                    <div class="flex flex-col text-xl mt-3 text-gray-600">
+                        <?php foreach ($cartItems as $item): ?>
+                            <div class="flex mb-1">
+                                <a href="product?MaSP=<?php echo $item['MaSP']; ?>" class="flex justify-between w-full">                                 
+                                    <div class="flex">
+                                        <img class="w-20 h-20" src="<?php echo $item['HinhAnhBienThe']; ?>" alt="<?php echo $item['HinhAnhBienThe']; ?>">
+                                        <span class=" text-black text-[16px]">
+                                            <?php echo $item['TenSP']; ?>
+                                            <?php echo $item['MauSac']; ?>
+                                            <?php echo $item['TenDLSP']; ?>
+                                        </span>                                      
+                                    </div>
+                                    <div class="flex">                                                                            
+                                        <span class=" text-black text-[16px]">
+                                            <?php echo number_format($item['GiaHienTai'], 0, ',', '.'); ?>đ
+                                        </span>
+                                    </div>
+                                </a>                            
+                            </div>
+                        <?php endforeach; ?>
+                    </div>
+                    <hr class="text-gray-400 mt-3 mb-3">
                     <div class="flex justify-between text-2xl">Tổng cộng: <span class="font-bold text-orange-500">
                         <?php
                             $tongCong = 0;
@@ -149,27 +160,13 @@
                         </span>
                     </div>
                     <div class="flex justify-between text-xl mt-3 text-gray-600">
-                        <span>Tổng phụ: </span>
-                        <span class="font-bold">
-                            <?php
-                            $tongPhu = 0;
-                            foreach ($cartItems as $item) {
-                                $gia = isset($item['GiaHienTai']) ? $item['GiaHienTai'] : 0;
-                                $soLuong = isset($item['SoLuong']) ? $item['SoLuong'] : 1;
-                                $tongPhu += $gia * $soLuong;
-                            }
-                            echo number_format($tongPhu, 0, ',', '.');
-                            ?>đ
-                        </span>
-                    </div>
-                    <div class="flex justify-between text-xl mt-3 text-gray-600">
                         <span>Phí vận chuyển: </span>
                         <span class="text-orange-500">Miễn phí</span>
                     </div>
-                    <div class="flex justify-center text-xl mt-5 text-gray-600">
-                        <a href="./checkout" class="flex justify-center bg-black text-white py-2 rounded-xl w-full hover:bg-[#444444] duration-150 text-md">
-                            <button >Thanh toán</button>
-                        </a>
+                    <div class="flex justify-between text-xl mt-5 text-gray-600">
+                        <form action="" method="POST" class="w-full">
+                            <button class="bg-black text-white py-2 rounded-xl w-full hover:bg-[#444444] duration-150 text-md">Xác nhận và thanh toán ngay</button>
+                        </form>
                     </div>
                 </div>
                 <div class="border-2 rounded-2xl bg-white border-gray-300 p-5 mt-4">
@@ -196,7 +193,6 @@
                     </div>
                 </div>
             </div>
-            
         </div>
         <?php if (empty($cartItems)): ?>
             <div class="w-full flex justify-center items-center flex-col">
@@ -204,7 +200,6 @@
             </div>
         <?php endif; ?>
     </div>
-    <?php require 'views/components/footer.php' ?>
+    <?php require 'views/components/footer.php'; ?>
 </body>
-
 </html>
