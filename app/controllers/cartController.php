@@ -1,77 +1,116 @@
-<?php 
+<?php
 require_once __DIR__ . '/../models/cartModel.php';
-    session_start();
+session_start();
 
-// Xử lý thêm sản phẩm vào giỏ
-function themGioHang() {
-    if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['MaSP'], $_POST['MaBienThe'], $_POST['MaDLSP'])) {
-    $maSP = $_POST['MaSP'];
-    $maBienThe = $_POST['MaBienThe'];
-    $MaDLSP = $_POST['MaDLSP'];
+class CartController
+{
 
-    // Tạo sản phẩm
-    $newProduct = [
-        'MaSP' => $maSP,
-        'MaBienThe' => $maBienThe,
-        'MaDLSP' => $MaDLSP,
-        'SoLuong' => 1
-    ];
+    private $cartModel;
 
-    // Khởi tạo giỏ nếu chưa có
-    if (!isset($_SESSION['cart'])) {
-        $_SESSION['cart'] = [];
+    public function __construct()
+    {
+        $this->cartModel = new cartModel();
     }
 
-    $found = false;
-
-    // Duyệt xem sản phẩm đã tồn tại chưa
-    foreach ($_SESSION['cart'] as &$item) {
-        if (
-            $item['MaSP'] === $maSP &&
-            $item['MaBienThe'] === $maBienThe &&
-            $item['MaDLSP'] === $MaDLSP
-        ) {
-            $item['SoLuong'] += 1;
-            $found = true;
-            break;
-        }
-    }
-
-    // Nếu chưa có thì thêm mới
-    if (!$found) {
-        $_SESSION['cart'][] = $newProduct;
-    }
-
-    // Debug thử
-    // echo "<pre>";
-    // print_r($_SESSION['cart']);
-    // echo "</pre>";
-}
-}
-
-
-class CartController {
-
-    public function __construct() {}
-
-    public function hienThiGioHang() {
-        
+    public function xuLyVaHienThiGioHang()
+    {
+        // Luôn luôn đảm bảo session cart tồn tại
         if (!isset($_SESSION['cart'])) {
             $_SESSION['cart'] = [];
         }
-        $cartModel = new cartModel();
-        $cartItems = [];
-        $cart = $_SESSION['cart'];
-        foreach ($cart as $product) {
-        $chiTietList = $cartModel->showGioHang($product['MaSP'], $product['MaBienThe'], $product['MaDLSP']);
-        
-        foreach ($chiTietList as $chiTiet) {
-            
-            $cartItems[] = $chiTiet;
+
+        // Xử lý nếu là POST hợp lệ
+        if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+            $maSP = $_POST['MaSP'] ?? null;
+            $maBienThe = $_POST['MaBienThe'] ?? null;
+            $maDLSP = $_POST['MaDLSP'] ?? null;
+            $soLuong = isset($_POST['SoLuong']) ? max(1, intval($_POST['SoLuong'])) : 1;
+
+            // Xử lý xóa sản phẩm
+            if (isset($_POST['delete']) && $maSP && $maBienThe && $maDLSP) {
+                foreach ($_SESSION['cart'] as $index => $item) {
+                    if (
+                        $item['MaSP'] === $maSP &&
+                        $item['MaBienThe'] === $maBienThe &&
+                        $item['MaDLSP'] === $maDLSP
+                    ) {
+                        unset($_SESSION['cart'][$index]);
+                        $_SESSION['cart'] = array_values($_SESSION['cart']); // reset key
+                        break;
+                    }
+                }
+                header('Location: /LapTrinhWebNangCao_INT4241/app/cart');
+                exit;
+            }
+
+            // Xử lý cập nhật số lượng
+            if (isset($_POST['update']) && $maSP && $maBienThe && $maDLSP) {
+                foreach ($_SESSION['cart'] as $index => $item) {
+                    if (
+                        $item['MaSP'] === $maSP &&
+                        $item['MaBienThe'] === $maBienThe &&
+                        $item['MaDLSP'] === $maDLSP
+                    ) {
+                        $_SESSION['cart'][$index]['SoLuong'] = $soLuong;
+                        break;
+                    }
+                }
+                header('Location: /LapTrinhWebNangCao_INT4241/app/cart');
+                exit;
+            }
+
+            // Xử lý thêm mới như cũ
+            if (!$maSP || !$maBienThe || !$maDLSP) {
+                return;
+            }
+            $newProduct = [
+                'MaSP' => $maSP,
+                'MaBienThe' => $maBienThe,
+                'MaDLSP' => $maDLSP,
+                'SoLuong' => $soLuong
+            ];
+            $foundIndex = -1;
+            foreach ($_SESSION['cart'] as $index => $item) {
+                if (
+                    $item['MaSP'] === $maSP &&
+                    $item['MaBienThe'] === $maBienThe &&
+                    $item['MaDLSP'] === $maDLSP
+                ) {
+                    $foundIndex = $index;
+                    break;
+                }
+            }
+            if ($foundIndex !== -1) {
+                $_SESSION['cart'][$foundIndex]['SoLuong'] += $soLuong;
+            } else {
+                $_SESSION['cart'][] = $newProduct;
+            }
         }
-}
 
-        include 'views/pages/cart/index.php';
+        if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+            // Hiển thị thông báo thành công trên trang sản phẩm
+            $_SESSION['add_to_cart_success'] = true;
+            // Quay lại trang trước (sản phẩm)
+            header('Location: ' . $_SERVER['HTTP_REFERER']);
+            exit;
+        } else {
+            // Hiển thị giỏ hàng như cũ
+            $cartItems = [];
+            foreach ($_SESSION['cart'] as $product) {
+                if (!is_array($product) || !isset($product['MaSP'], $product['MaBienThe'], $product['MaDLSP'])) {
+                    continue;
+                }
+                $chiTietList = $this->cartModel->showGioHang(
+                    $product['MaSP'],
+                    $product['MaBienThe'],
+                    $product['MaDLSP']
+                );
+                foreach ($chiTietList as $chiTiet) {
+                    $chiTiet['SoLuong'] = $product['SoLuong'];
+                    $cartItems[] = $chiTiet;
+                }
+            }
+            include 'views/pages/cart/index.php';
+        }
     }
-
 }

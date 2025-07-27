@@ -16,17 +16,18 @@ class cartModel {
     //     return $this->maGH;
     // }
 
-        public function showGioHang($MaSP, $MaBienThe, $MaDLSP) {
-            $db = Database::getInstance()->getConnection();
-            $stmt = $db->prepare("Select S.MaSP, TenSP, TenDLSP, HinhAnhBienThe, MauSac, MaMau, B.MaBienThe From SanPham S Join BienTheSP B ON S.MaSP = B.MaSP
-	Join DungLuongSP D ON S.MaSP = D.MaSP
-    Where S.MaSP = :MaSP AND B.MaBienThe = :MaBienThe AND D.MaDLSP = :MaDLSP");
-            $stmt->bindValue(':MaSP', $MaSP, PDO::PARAM_STR);
-            $stmt->bindValue(':MaBienThe', $MaBienThe, PDO::PARAM_STR);
-            $stmt->bindValue(':MaDLSP', $MaDLSP, PDO::PARAM_STR);
-            $stmt->execute();
-            $data = $stmt->fetchAll(PDO::FETCH_ASSOC);
-            return $data;
-        }
-    
+    public function showGioHang($MaSP, $MaBienThe, $MaDLSP) {
+        $db = Database::getInstance()->getConnection();
+        $stmt = $db->prepare("
+            Select S.MaSP, TenSP, TenDLSP, HinhAnhBienThe, MauSac, MaMau, B.MaBienThe From SanPham S Join BienTheSP B ON S.MaSP = B.MaSP
+            Join DungLuongSP D ON S.MaSP = D.MaSP
+            Where S.MaSP = :MaSP AND B.MaBienThe = :MaBienThe AND D.MaDLSP = :MaDLSP"
+        );
+        $stmt->bindValue(':MaSP', $MaSP, PDO::PARAM_STR);
+        $stmt->bindValue(':MaBienThe', $MaBienThe, PDO::PARAM_STR);
+        $stmt->bindValue(':MaDLSP', $MaDLSP, PDO::PARAM_STR);
+        $stmt->execute();
+        $data = $stmt->fetchAll(PDO::FETCH_ASSOC);
+        return $data;
+    }
 }

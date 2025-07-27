@@ -71,98 +71,60 @@
                     <div class="xl:p-15 p-6 flex flex-col">
                         <?php foreach ($products as $product): ?>
                             <input type="hidden" name="MaSP" value="<?= htmlspecialchars($product['MaSP']) ?>">
-                            <span
-                                class="xl:text-4xl text-4xl font-bold xl:mb-5 text-orange-500"><?= htmlspecialchars($product['TenSP']) ?></span>
-
+                            <span class="xl:text-4xl text-4xl font-bold xl:mb-5 text-orange-500"><?= htmlspecialchars($product['TenSP']) ?></span>
                             <div class="flex items-center mt-3">
-                                <span
-                                    class="text-2xl font-bold xl:text-4xl xl:font-bold"><?= number_format($product['GiaHienTai'], 0, ',', '.') ?>đ</span>
-                                <span
-                                    class="text-lg xl:text-4xl text-[#757575] line-through ml-3"><?= number_format($product['GiaBase'], 0, ',', '.') ?>đ</span>
+                                <span class="text-2xl font-bold xl:text-4xl xl:font-bold"><?= number_format($product['GiaHienTai'], 0, ',', '.') ?>đ</span>
+                                <span class="text-lg xl:text-4xl text-[#757575] line-through ml-3"><?= number_format($product['GiaBase'], 0, ',', '.') ?>đ</span>
                             </div>
                         <?php endforeach; ?>
-
                         <span class="font-bold text-2xl mt-6 mb-5">Dung lượng</span>
                         <div class="grid grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5">
                             <?php foreach ($dungLuong as $item): ?>
-                                <label
-                                    class="flex text-center items-center justify-center p-4 flex-col rounded-xl border-2 peer-checked:border-orange-500 peer-checked:shadow-lg cursor-pointer duration-200 shadow-md relative group">
-                                    <input type="radio" name="MaDLSP" value="<?= htmlspecialchars($item['MaDLSP']) ?>"
-                                        class="hidden peer" required>
+                                <label class="flex text-center items-center justify-center p-4 flex-col rounded-xl border-2 peer-checked:border-orange-500 peer-checked:shadow-lg cursor-pointer duration-200 shadow-md relative group">
+                                    <input type="radio" name="MaDLSP" value="<?= htmlspecialchars($item['MaDLSP']) ?>" class="hidden peer" required>
                                     <span class="px-2 py-2"><?= htmlspecialchars($item['TenDLSP']) ?></span>
-                                    <svg class="absolute top-2 right-2 w-5 h-5 text-orange-500 opacity-0 peer-checked:opacity-100 transition-opacity duration-200"
-                                        fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3"
-                                            d="M5 13l4 4L19 7" />
+                                    <svg class="absolute top-2 right-2 w-5 h-5 text-orange-500 opacity-0 peer-checked:opacity-100 transition-opacity duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7" />
                                     </svg>
                                 </label>
                             <?php endforeach; ?>
                         </div>
-
                         <span class="font-bold text-2xl mt-6 mb-5">Màu sắc</span>
                         <div class="grid grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5">
                             <?php foreach ($mauSacHinhAnh as $item): ?>
-                                <label
-                                    class="flex text-center items-center justify-center p-4 flex-col rounded-xl border-2 peer-checked:border-orange-500 peer-checked:shadow-lg cursor-pointer duration-200 shadow-md relative group">
-                                    <input type="radio" name="MaBienThe" value="<?= htmlspecialchars($item['MaBienThe']) ?>"
-                                        class="hidden peer" required>
-                                    <span
-                                        class="inline-block w-8 h-8 rounded-full bg-<?= htmlspecialchars($item['MaMau']) ?> peer-checked:ring-4 peer-checked:ring-orange-500 transition duration-200"></span>
+                                <label class="flex text-center items-center justify-center p-4 flex-col rounded-xl border-2 peer-checked:border-orange-500 peer-checked:shadow-lg cursor-pointer duration-200 shadow-md relative group">
+                                    <input type="radio" name="MaBienThe" value="<?= htmlspecialchars($item['MaBienThe']) ?>" class="hidden peer" required>
+                                    <span class="inline-block w-8 h-8 rounded-full bg-<?= htmlspecialchars($item['MaMau']) ?> peer-checked:ring-4 peer-checked:ring-orange-500 transition duration-200"></span>
                                     <span class="mt-3"><?= htmlspecialchars($item['MauSac']) ?></span>
-                                    <svg class="absolute top-2 right-2 w-5 h-5 text-orange-500 opacity-0 peer-checked:opacity-100 transition-opacity duration-200"
-                                        fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3"
-                                            d="M5 13l4 4L19 7" />
+                                    <svg class="absolute top-2 right-2 w-5 h-5 text-orange-500 opacity-0 peer-checked:opacity-100 transition-opacity duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7" />
                                     </svg>
                                 </label>
                             <?php endforeach; ?>
                         </div>
-
                         <hr class="mt-5">
                         <div class="flex items-center justify-between w-full mt-5 mb-5">
                             <span class="font-bold text-2xl">Số lượng</span>
-
-
-
                             <div class="relative flex items-center max-w-[8rem]">
-                                <button type="button" id="decrement-button"
-                                    data-input-counter-decrement="quantity-input"
-                                    class="bg-gray-100 dark:bg-gray-700 dark:hover:bg-gray-600 dark:border-gray-600 hover:bg-gray-200 border border-gray-300 rounded-s-lg p-3 h-11 focus:ring-gray-100 dark:focus:ring-gray-700 focus:ring-2 focus:outline-none">
-                                    <svg class="w-3 h-3 text-gray-900 dark:text-white" aria-hidden="true"
-                                        xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 18 2">
-                                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
-                                            stroke-width="2" d="M1 1h16" />
+                                <button type="button" id="decrement-button" data-input-counter-decrement="quantity-input" class="bg-gray-100 dark:bg-gray-700 dark:hover:bg-gray-600 dark:border-gray-600 hover:bg-gray-200 border border-gray-300 rounded-s-lg p-3 h-11 focus:ring-gray-100 dark:focus:ring-gray-700 focus:ring-2 focus:outline-none">
+                                    <svg class="w-3 h-3 text-gray-900 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 18 2">
+                                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 1h16"/>
                                     </svg>
                                 </button>
-                                <input type="text" id="quantity-input" data-input-counter data-input-counter-min="1"
-                                    data-input-counter-max="50" aria-describedby="helper-text-explanation"
-                                    class="bg-gray-50 border-x-0 border-gray-300 h-11 text-center text-gray-900 text-sm focus:ring-blue-500 focus:border-blue-500 block w-full py-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                                    placeholder="999" value="1" required />
-                                <button type="button" id="increment-button"
-                                    data-input-counter-increment="quantity-input"
-                                    class="bg-gray-100 dark:bg-gray-700 dark:hover:bg-gray-600 dark:border-gray-600 hover:bg-gray-200 border border-gray-300 rounded-e-lg p-3 h-11 focus:ring-gray-100 dark:focus:ring-gray-700 focus:ring-2 focus:outline-none">
-                                    <svg class="w-3 h-3 text-gray-900 dark:text-white" aria-hidden="true"
-                                        xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 18 18">
-                                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
-                                            stroke-width="2" d="M9 1v16M1 9h16" />
+                                <input type="text" name="SoLuong" value="1" id="quantity-input" data-input-counter data-input-counter-min="1" aria-describedby="helper-text-explanation" class="bg-gray-50 border-x-0 border-gray-300 h-11 text-center text-gray-900 text-sm focus:ring-blue-500 focus:border-blue-500 block w-full py-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="999" required />
+                                <button type="button" id="increment-button" data-input-counter-increment="quantity-input" class="bg-gray-100 dark:bg-gray-700 dark:hover:bg-gray-600 dark:border-gray-600 hover:bg-gray-200 border border-gray-300 rounded-e-lg p-3 h-11 focus:ring-gray-100 dark:focus:ring-gray-700 focus:ring-2 focus:outline-none">
+                                    <svg class="w-3 h-3 text-gray-900 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 18 18">
+                                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 1v16M1 9h16"/>
                                     </svg>
                                 </button>
                             </div>
-
-
-
                         </div>
                         <div class="flex items-center justify-between w-full mt-5 mb-5">
                             <span class="font-bold text-2xl">Tổng cộng</span>
-                            <span
-                                class="font-bold text-red-500 text-xl"><?= number_format($product['GiaHienTai'], 0, ',', '.') ?>đ</span>
+                            <span class="font-bold text-red-500 text-xl"><?= number_format($product['GiaHienTai'], 0, ',', '.') ?>đ</span>
                         </div>
-
                         <div class="w-full">
-                            <button type="submit"
-                                class="bg-red-500 text-white font-bold rounded-xl w-full p-4 hover:bg-red-800 duration-200 cursor-pointer">
-                                Thêm vào giỏ hàng
-                            </button>
+                            <button type="submit" class="bg-red-500 text-white font-bold rounded-xl w-full p-4 hover:bg-red-800 duration-200 cursor-pointer">Thêm vào giỏ hàng</button>
                         </div>
                     </div>
                 </form>
