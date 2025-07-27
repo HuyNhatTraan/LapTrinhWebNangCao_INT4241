@@ -56,8 +56,8 @@ class CartController {
 
         $cartModel = new cartModel();
         $cartItems = [];
-        
-        foreach ($_SESSION['cart'] as $product) {
+        $cart = $_SESSION['cart'];
+        foreach ($cart as $product) {
         $chiTietList = $cartModel->showGioHang($product['MaSP'], $product['MaBienThe'], $product['MaDLSP']);
         
         foreach ($chiTietList as $chiTiet) {

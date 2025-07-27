@@ -51,8 +51,6 @@
             $products = ProductModel::findSP($TenSP);
             // Gửi sang view để hiển thị
             include __DIR__ .'/../views/pages/search/index.php'; 
-        }
-
-        
+        }        
     }
 ?>
