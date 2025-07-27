@@ -65,7 +65,7 @@
         <?php endforeach; ?>
         <?php if (empty($cartItems)): ?>
             <div class="w-full flex justify-center items-center flex-col">
-                <h2 class="text-5xl font-bold mt-4">Giỏ hàng trống</h2>
+                <h2 class="text-2xl font-bold mt-4">Giỏ hàng trống</h2>
             </div>
         <?php endif; ?>
     </div>

@@ -3,7 +3,8 @@ require_once __DIR__ . '/../models/cartModel.php';
     session_start();
 
 // Xử lý thêm sản phẩm vào giỏ
-if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['MaSP'], $_POST['MaBienThe'], $_POST['MaDLSP'])) {
+function themGioHang() {
+    if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['MaSP'], $_POST['MaBienThe'], $_POST['MaDLSP'])) {
     $maSP = $_POST['MaSP'];
     $maBienThe = $_POST['MaBienThe'];
     $MaDLSP = $_POST['MaDLSP'];
@@ -46,6 +47,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['MaSP'], $_POST['MaBie
     // print_r($_SESSION['cart']);
     // echo "</pre>";
 }
+}
+
 
 class CartController {
 
@@ -53,7 +56,9 @@ class CartController {
 
     public function hienThiGioHang() {
         
-
+        if (!isset($_SESSION['cart'])) {
+            $_SESSION['cart'] = [];
+        }
         $cartModel = new cartModel();
         $cartItems = [];
         $cart = $_SESSION['cart'];
