@@ -9,7 +9,7 @@
 </head>
 <body class="bg-[#f7f7f7]">
     <?php require 'views/components/nav.php'; ?>
-    <div class="font-bold mb-6 flex justify-center mt-5 bg-white ">
+    <div class="hidden font-bold mb-6 sm:flex justify-center mt-5 bg-white">
         <div class="flex items-center gap-1">
             <svg class="w-8" fill="#000000" viewBox="-1 0 19 19" xmlns="http://www.w3.org/2000/svg">
                 <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
@@ -79,9 +79,10 @@
             <span class="text-xl text-gray-400">Thành công</span>
         </div>
     </div>
-    <div class="w-[80%] flex m-auto flex-col">
-        <div class="grid grid-cols-3 gap-3">
-            <form class="w-full col-span-2 p-5 bg-white rounded-2xl border-2 border-gray-300">
+    <div class="w-[90%] md:w-[80%] flex m-auto flex-col">
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-3">
+            
+            <form class="w-full lg:col-span-2 border-2 rounded-2xl bg-white border-gray-300 flex flex-col justify-between p-5">
                 <div class="font-bold text-3xl">Địa chỉ giao hàng</div>
                 <hr class="mt-5 mb-5 text-gray-400">
                 <div class="grid gap-6 mb-6 md:grid-cols-2">
@@ -116,7 +117,7 @@
             
             <!-- Tóm tắt -->
             
-            <div class="flex row-span-2 col-start-3 row-start-1 flex-col rounded-2xl sticky top-20 z-10">
+            <div class="flex lg:row-span-2 lg:col-start-3 lg:row-start-1 flex-col rounded-2xl lg:sticky lg:top-20 lg:z-10">
                 <div class="border-2 rounded-2xl bg-white border-gray-300 p-5">
                     <div class="flex justify-between text-2xl font-bold">Tóm tắt đơn hàng </span>
                         <?php if (empty($cartItems)): ?>

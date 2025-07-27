@@ -11,7 +11,7 @@
 
 <body class="bg-[#f7f7f7]">
     <?php require __DIR__ . '/../../components/nav.php' ?>
-    <div class="font-bold mb-6 flex justify-center mt-5 bg-white ">
+    <div class="hidden font-bold mb-6 sm:flex justify-center mt-5 bg-white">
         <div class="flex items-center gap-1">
             <svg class="w-8" fill="#000000" viewBox="-1 0 19 19" xmlns="http://www.w3.org/2000/svg">
                 <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
@@ -81,16 +81,16 @@
             <span class="text-xl text-gray-400">Thành công</span>
         </div>
     </div>
-    <div class="w-[80%] flex m-auto flex-col">
-        <div class="grid grid-cols-3 gap-3">
+    <div class="w-[90%] md:w-[80%] flex m-auto flex-col">
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-3">
             <?php if (empty($cartItems)): ?>
                 <div class="flex justify-center col-span-2 border-2 rounded-2xl bg-white border-gray-300 p-5">
                     <h2 class="text-2xl font-bold p-5">Giỏ hàng trống</h2>
                 </div>
             <?php endif; ?>
             <?php foreach ($cartItems as $item): ?>
-                <div class="col-span-2 border-2 rounded-2xl bg-white border-gray-300 flex justify-between p-5">
-                    <a href="product?MaSP=<?php echo $item['MaSP']; ?>" class="flex w-[50%] h-fit">
+                <div class="lg:col-span-2 border-2 rounded-2xl bg-white border-gray-300 flex flex-col sm:flex-row justify-between p-5">
+                    <a href="product?MaSP=<?php echo $item['MaSP']; ?>" class="flex w-fit sm:w-[50%] h-fit">
                         <img class="w-30 h-30" src="<?php echo $item['HinhAnhBienThe']; ?>"
                             alt="<?php echo $item['HinhAnhBienThe']; ?>">
                         <div class="flex flex-col">
@@ -99,7 +99,7 @@
                             <span class="ml-4">Dung lượng: <?php echo $item['TenDLSP']; ?></span>
                         </div>
                     </a>
-                    <div class="flex items-center">
+                    <div class="flex items-center mt-5 sm:mt-0">
                         <form class="max-w-xs mx-auto">
                             <div class="relative flex items-center max-w-[8rem]">
                                 <button type="button" id="decrement-button" data-input-counter-decrement="quantity-input"
@@ -127,14 +127,14 @@
                             </div>
                         </form>
                     </div>
-                    <div class="flex items-center">
+                    <div class="flex items-center justify-center w-full sm:w-fit mt-5 sm:mt-0">
                         <span class="cursor-pointer">Xoá</span>
                     </div>
                 </div>
             <?php endforeach; ?>
             <!-- Thanh toán -->
             
-            <div class="flex row-span-2 col-start-3 row-start-1 flex-col rounded-2xl sticky top-20 z-10">
+            <div class="flex lg:row-span-2 lg:col-start-3 lg:row-start-1 flex-col rounded-2xl lg:sticky lg:top-20 lg:z-10">
                 <div class="border-2 rounded-2xl bg-white border-gray-300 p-5">
                     <div class="flex justify-between text-2xl">Tổng cộng: <span class="font-bold text-orange-500">
                         <?php
