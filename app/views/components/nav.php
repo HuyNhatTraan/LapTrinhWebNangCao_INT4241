@@ -10,8 +10,10 @@
 </head>
 
 <body>
-    <?php session_start(); ?>
-    <nav class="bg-white border-gray-200 top-0 z-40 sticky">
+    <?php if (session_status() === PHP_SESSION_NONE) {
+        session_start();
+    } ?>
+        <nav class="bg-white border-gray-200 top-0 z-40 sticky">
         <div class="w-[85%] flex flex-wrap items-center justify-between mx-auto p-4">
             <a href="./" class="flex items-center space-x-3 rtl:space-x-reverse">
                 <img class="w-8 h-8" src="icon.png" alt="HT Tech Logo">

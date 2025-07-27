@@ -14,6 +14,7 @@ $uri = '/' . trim($uri, '/'); // Chuẩn hoá: nếu rỗng thì là '/'
 // echo "URI: " . $uri;
 
 require_once 'controllers/productController.php'; // Nạp controller cần dùng
+require_once 'controllers/cartController.php'; // Nạp controller cần dùng
 
 $routes = [
     '/' => 'views/home.php',
@@ -26,7 +27,7 @@ $routes = [
     '/register' => 'views/services/register.php',
     '/login' => 'views/services/login.php',
     '/admin' => 'views/admin/index.php',
-    '/cart' => 'views/pages/cart/index.php',
+    '/cart' => ['controller' => 'CartController', 'action' => 'hienThiGioHang'],
     '/search' => ['controller' => 'ProductController', 'action' => 'showSearchResults'],
     '/product' => ['controller' => 'ProductController', 'action' => 'showChiTietSP'],
 ];
