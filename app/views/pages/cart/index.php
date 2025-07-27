@@ -29,7 +29,6 @@
                         </div>
                     </a>
                     <div class="">
-
                         <form class="max-w-xs mx-auto">
                             <label for="counter-input"
                                 class="block mb-1 text-sm font-medium text-gray-900 dark:text-white">Choose
@@ -56,7 +55,6 @@
                                 </button>
                             </div>
                         </form>
-
                     </div>
                     <div class="flex items-center">
                         <span class="cursor-pointer">Xoá</span>
