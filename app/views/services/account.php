@@ -4,9 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script defer src="/LapTrinhWebNangCao_INT4241/frontend/scripts/index.js"></script>
     <link rel="stylesheet" href="styles/output.css">
-    <link rel="icon" href="/LapTrinhWebNangCao_INT4241/frontend/icon.png" type="image/png" />
+    <link rel="icon" href="icon.png" type="image/png" />
     <title>Tài khoản</title>
 </head>
 
@@ -47,14 +46,14 @@
                     $emailSession = $_SESSION['user'];
                     $db = Database::getInstance();
                     $conn = $db->getConnection();
-                    $stmt = $conn->prepare("SELECT email, full_name, img_url FROM test.account WHERE email = :email");
+                    $stmt = $conn->prepare("SELECT email, TenKH, Hinh FROM KhachHang WHERE email = :email");
                     $stmt->bindParam(':email', $emailSession);
                     $stmt->execute();
 
                     if ($stmt->rowCount() > 0) {
                         while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
-                            $avartar = $row["img_url"];
-                            $name = $row["full_name"];
+                            $avartar = $row["Hinh"];
+                            $name = $row["TenKH"];
                             $email = $row["email"];
 
                             echo "

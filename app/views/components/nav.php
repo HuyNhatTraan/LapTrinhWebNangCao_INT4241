@@ -13,7 +13,7 @@
     <?php if (session_status() === PHP_SESSION_NONE) {
         session_start();
     } ?>
-        <nav class="bg-white border-gray-200 top-0 z-40 sticky">
+    <nav class="bg-white border-gray-200 top-0 z-40 sticky">
         <div class="w-[85%] flex flex-wrap items-center justify-between mx-auto p-4">
             <a href="./" class="flex items-center space-x-3 rtl:space-x-reverse">
                 <img class="w-8 h-8" src="icon.png" alt="HT Tech Logo">
@@ -31,7 +31,7 @@
             </button>
             <div class="hidden w-full md:block md:w-auto" id="navbar-default">
                 <ul
-                    class="font-medium flex flex-col p-4 md:p-0 mt-4 border border-gray-100 rounded-lg bg-gray-50 md:flex-row md:space-x-8 rtl:space-x-reverse md:mt-0 md:border-0 md:bg-white dark:border-gray-700">
+                    class="items-center font-medium flex flex-col p-4 md:p-0 mt-4 border border-gray-100 rounded-lg bg-gray-50 md:flex-row md:space-x-8 rtl:space-x-reverse md:mt-0 md:border-0 md:bg-white dark:border-gray-700">
                     <li>
                         <a href="./store"
                             class="block py-2 px-3 text-gray-900 rounded-sm hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-black md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"
@@ -79,23 +79,23 @@
                                 </svg>
                                 <span id="cart-number"
                                     class="absolute top-3 right-2 z-50 bg-red-500 text-white text-xs font-bold w-5 h-5 flex items-center justify-center rounded-full shadow-md">
-<?php
-    $cartCount = 0;
-    if (isset($_SESSION['cart']) && is_array($_SESSION['cart'])) {
-        foreach ($_SESSION['cart'] as $item) {
-            if (isset($item['SoLuong'])) {
-                $cartCount += $item['SoLuong'];
-            }
-        }
-    }
-    echo $cartCount;
-?>
-</span>
+                                    <?php
+                                    $cartCount = 0;
+                                    if (isset($_SESSION['cart']) && is_array($_SESSION['cart'])) {
+                                        foreach ($_SESSION['cart'] as $item) {
+                                            if (isset($item['SoLuong'])) {
+                                                $cartCount += $item['SoLuong'];
+                                            }
+                                        }
+                                    }
+                                    echo $cartCount;
+                                    ?>
+                                </span>
                             </div>
                         </a>
                     </li>
                     <li>
-                        <?php if (isset($_SESSION['user'])): ?>
+                        <?php if (!empty($_SESSION['user'])): ?>
                             <a href="account">
                                 <?php
                                 require_once __DIR__ . '/../../config/db.php';
@@ -104,7 +104,7 @@
                                 // Dùng prepare để chống SQL Injection
                                 $db = Database::getInstance();
                                 $conn = $db->getConnection();
-                                $stmt = $conn->prepare("SELECT K.Hinh AS Hinh FROM Account A Join KhachHang K ON A.MaTK = K.MaTK WHERE Email = ?");
+                                $stmt = $conn->prepare("SELECT K.Hinh AS Hinh FROM Account A Join KhachHang K ON A.MaTK = K.MaTK WHERE A.Email = ?");
                                 $stmt->execute([$user]);
 
                                 if ($stmt->rowCount() > 0) {
@@ -121,7 +121,8 @@
                                 }
                                 ?>
                             </a>
-                        <?php else: ?>
+                        <?php endif; ?>
+                        <?php if (empty($_SESSION['user'])): ?>
                             <a href="login">
                                 <svg class="w-6 h-6 hover:stroke-[#3c81c6] duration-150" xmlns="http://www.w3.org/2000/svg"
                                     fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">

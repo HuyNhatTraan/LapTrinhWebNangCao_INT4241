@@ -1,6 +1,7 @@
 <?php
     session_start();
-    session_unset(); // Xoá toàn bộ session
-    session_destroy(); // Hủy phiên
+    unset($_SESSION['isLoginSuccess']); // Xoá trạng thái check đăng nhập
+    unset($_SESSION['user']); // Xoá user
+    
     header("Location: ../"); // hoặc homepage
     exit();
