@@ -82,7 +82,7 @@
     <div class="w-[90%] md:w-[80%] flex m-auto flex-col">
         <div class="grid grid-cols-1 lg:grid-cols-3 gap-3">
             
-            <form class="w-full lg:col-span-2 border-2 rounded-2xl bg-white border-gray-300 flex flex-col justify-between p-5">
+            <form class="w-full lg:col-span-2 border-2 rounded-2xl bg-white border-gray-300 flex flex-col justify-between p-7">
                 <div class="font-bold text-3xl">Địa chỉ giao hàng</div>
                 <hr class="mt-5 mb-5 text-gray-400">
                 <div class="grid gap-6 mb-6 md:grid-cols-2">
