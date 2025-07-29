@@ -19,7 +19,20 @@ class AuthModel {
 
         return null; // Không tìm thấy
     }
-    
+    public static function getKhachHangByEmail($email) {
+        $db = Database::getInstance();
+        $conn = $db->getConnection();
+
+        $stmt = $conn->prepare("SELECT * FROM KhachHang WHERE Email = :email");
+        $stmt->bindParam(':email', $email);
+        $stmt->execute();
+
+        if ($stmt->rowCount() === 1) {
+            return $stmt->fetch(PDO::FETCH_ASSOC); // Trả về thông tin người dùng
+        }
+
+        return null; // Không tìm thấy
+    }
     public function isEmailExists($email) {
         $db = Database::getInstance();
         $conn = $db->getConnection();
@@ -73,7 +86,7 @@ class AuthModel {
         $stmt->execute();
 
         if ($stmt->rowCount() === 1) {
-            return $stmt->fetch(PDO::FETCH_ASSOC); // Trả về thông tin người dùng
+            return $stmt->fetchAll(PDO::FETCH_ASSOC); // Trả về thông tin người dùng
         }
 
         return null; // Không tìm thấy

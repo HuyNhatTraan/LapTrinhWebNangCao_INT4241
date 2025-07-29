@@ -60,16 +60,23 @@ class AuthController {
 
     public function hienThiDivToAdmin() {
         if (isset($_SESSION['user'])) {
-            $user = AuthModel::getRoleUser($_SESSION['user']);
-            if ($user && isset($user['Role'])) {
-                $_SESSION['role'] = $user['Role'];
+            $userRole = AuthModel::getRoleUser($_SESSION['user']);
+            $userInfo = AuthModel::getKhachHangByEmail($_SESSION['user']);
+            
+            if ($userRole && isset($userRole['Role'])) {
+                $_SESSION['role'] = $userRole['Role'];
             }
+            
         }
 
         // Gọi view account, không phân biệt quyền
-        require_once 'views/services/account.php';
+        require 'views/services/account.php';
     }
     
+    public function hienThiThongTinUser() {
+        $user = AuthModel::getKhachHangByEmail($_SESSION['user']);
+    }
+
     public function register() {
         if (isset($_POST['register'])) {
             $full_name = $_POST['fullName'];
