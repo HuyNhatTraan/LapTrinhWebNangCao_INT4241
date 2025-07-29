@@ -6,7 +6,7 @@
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
     <title>403 Forbidden</title>
 </head>
-<body class="bg-gray-100">
+<body class="">
     <?php include __DIR__ . '/../components/nav.php';?>
     <main class="grid h-screen place-items-center bg-white px-6 py-24 sm:py-32 lg:px-8">
         <div class="text-center">
