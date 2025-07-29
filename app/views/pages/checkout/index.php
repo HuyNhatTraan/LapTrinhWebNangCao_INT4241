@@ -119,9 +119,9 @@
             
             <div class="flex lg:row-span-2 lg:col-start-3 lg:row-start-1 flex-col rounded-2xl lg:sticky lg:top-20 lg:z-10">
                 <div class="border-2 rounded-2xl bg-white border-gray-300 p-5">
-                    <div class="flex justify-between text-2xl font-bold">Tóm tắt đơn hàng </span>
+                    <div class="flex flex-col justify-between text-2xl font-bold">Tóm tắt đơn hàng </span>
                         <?php if (empty($cartItems)): ?>
-                            <div class="flex justify-center col-span-2 border-2 rounded-2xl bg-white border-gray-300 p-5">
+                            <div class="flex justify-center items-center bg-white border-gray-300 p-5">
                                 <h2 class="text-2xl font-bold p-5">Giỏ hàng trống</h2>
                             </div>
                         <?php endif; ?>
@@ -133,9 +133,12 @@
                                     <div class="flex">
                                         <img class="w-20 h-20" src="<?php echo $item['HinhAnhBienThe']; ?>" alt="<?php echo $item['HinhAnhBienThe']; ?>">
                                         <span class=" text-black text-[16px]">
-                                            <?php echo $item['TenSP']; ?>
-                                            <?php echo $item['MauSac']; ?>
-                                            <?php echo $item['TenDLSP']; ?>
+                                            <div class="flex flex-col">
+                                                <div class="font-bold"><?php echo $item['TenSP']; ?></div>
+                                                <div class="text-gray-600"><?php echo $item['MauSac']; ?></div>
+                                                <div class="text-gray-600"><?php echo $item['TenDLSP']; ?></div>
+                                            </div>
+                                            
                                             <div class="mt-1">
                                                 Số lượng: <?php echo $item['SoLuong']; ?>
                                             </div>
