@@ -19,6 +19,7 @@ class AuthModel {
 
         return null; // Không tìm thấy
     }
+    
     public function isEmailExists($email) {
         $db = Database::getInstance();
         $conn = $db->getConnection();
@@ -41,26 +42,40 @@ class AuthModel {
     }
 
     public function registerAccount($email, $password, $fullName, $sdt = '') {
-    $db = Database::getInstance()->getConnection();
-    
-    try {
-        $db->beginTransaction();
+        $db = Database::getInstance()->getConnection();
+        
+        try {
+            $db->beginTransaction();
 
-        $maTK = $this->generateNewCode("Account", "MaTK", "TK");
-        $maKH = $this->generateNewCode("KhachHang", "MaKH", "KH");
+            $maTK = $this->generateNewCode("Account", "MaTK", "TK");
+            $maKH = $this->generateNewCode("KhachHang", "MaKH", "KH");
 
-        $stmt1 = $db->prepare("INSERT INTO Account (MaTK, Email, Password, Role) VALUES (?, ?, ?, 'Khách hàng')");
-        $stmt1->execute([$maTK, $email, $password]);
+            $stmt1 = $db->prepare("INSERT INTO Account (MaTK, Email, Password, Role) VALUES (?, ?, ?, 'Khách hàng')");
+            $stmt1->execute([$maTK, $email, $password]);
 
-        $stmt2 = $db->prepare("INSERT INTO KhachHang (MaKH, MaTK, TenKH, Email, SDT) VALUES (?, ?, ?, ?, ?)");
-        $stmt2->execute([$maKH, $maTK, $fullName, $email, $sdt]);
+            $stmt2 = $db->prepare("INSERT INTO KhachHang (MaKH, MaTK, TenKH, Email, SDT) VALUES (?, ?, ?, ?, ?)");
+            $stmt2->execute([$maKH, $maTK, $fullName, $email, $sdt]);
 
-        $db->commit();  
-        return true;
-    } catch (Exception $e) {
-        $db->rollBack();
-        throw $e;
+            $db->commit();  
+            return true;
+        } catch (Exception $e) {
+            $db->rollBack();
+            throw $e;
+        }
     }
-}
 
+    public static function getRoleUser($email) {
+        $db = Database::getInstance();
+        $conn = $db->getConnection();
+
+        $stmt = $conn->prepare("SELECT Role AS Role FROM Account WHERE email = :email");
+        $stmt->bindParam(':email', $email);
+        $stmt->execute();
+
+        if ($stmt->rowCount() === 1) {
+            return $stmt->fetch(PDO::FETCH_ASSOC); // Trả về thông tin người dùng
+        }
+
+        return null; // Không tìm thấy
+    }
 }

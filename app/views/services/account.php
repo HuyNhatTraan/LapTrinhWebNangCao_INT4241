@@ -207,6 +207,7 @@
                         <span>Theo dõi, kiểm tra điểm tích luỹ bạn đang có</span>
                     </div>
                 </div>
+
                 <div
                     class="bg-[#f5f5f5] rounded-xl flex flex-col items-center justify-center p-5 shadow-2xl hover:shadow-[2px_1px_10px_8px_rgba(0,_0,_0,_0.35)] duration-350 py-8">
                     <svg width="64px" height="64px" viewBox="0 0 24 24" id="Layer_1" data-name="Layer 1"
@@ -235,6 +236,35 @@
                         <span>Chỉnh sửa thông tin cá nhân</span>
                     </div>
                 </div>
+                <?php if (isset($_SESSION['role']) && $_SESSION['role'] === 'Admin'): ?>
+                <div class="bg-[#f5f5f5] rounded-xl flex flex-col items-center justify-center p-5 shadow-2xl hover:shadow-[2px_1px_10px_8px_rgba(0,_0,_0,_0.35)] duration-350 py-8">
+                    <svg width="64px" height="64px" viewBox="0 0 24 24" id="Layer_1" data-name="Layer 1"
+                        xmlns="http://www.w3.org/2000/svg" fill="#000000">
+                        <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                        <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+                        <g id="SVGRepo_iconCarrier">
+                            <defs>
+                                <style>
+                                    .cls-1 {
+                                        fill: none;
+                                        stroke: #020202;
+                                        stroke-miterlimit: 10;
+                                        stroke-width: 1.91px;
+                                    }
+                                </style>
+                            </defs>
+                            <circle class="cls-1" cx="12" cy="7.25" r="5.73"></circle>
+                            <path class="cls-1"
+                                d="M1.5,23.48l.37-2.05A10.3,10.3,0,0,1,12,13h0a10.3,10.3,0,0,1,10.13,8.45l.37,2.05">
+                            </path>
+                        </g>
+                    </svg>
+                    <a href="./admin" class="flex flex-col items-center gap-2 p-4">
+                        <span class="text-3xl font-bold">Admin Dashboard</span>
+                        <span>Trang quản lý thông tin</span>
+                    </a>
+                </div>
+                <?php endif; ?>
             </div>
         </div>
 

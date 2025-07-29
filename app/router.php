@@ -24,7 +24,7 @@ $routes = [
     '/smart-home' => ['controller' => 'ProductController', 'action' => 'showSmartTV'],
     '/discover' => 'views/pages/discover/index.php',
     '/support' => 'views/pages/support/index.php',
-    '/account' => 'views/services/account.php',
+    '/account' => ['controller' => 'AuthController', 'action' => 'hienThiDivToAdmin'],
     '/register' => 'views/services/register.php',
     '/return-policy' => 'views/pages/support/return-policy.php',
     '/chinh-sach-bao-hanh' => 'views/pages/support/chinh-sach-bao-hanh.php',
@@ -33,11 +33,12 @@ $routes = [
     '/register/submit' => ['controller' => 'AuthController', 'action' => 'register'],
     '/login' => 'views/services/login.php',
     '/login/submit' => ['controller' => 'AuthController', 'action' => 'login'],
-    '/admin' => 'views/admin/index.php',
+    '/admin' => ['controller' => 'AuthController', 'action' => 'getAdminDashboard'],
     '/checkout' => ['controller' => 'CartController', 'action' => 'xuLyVaHienThiCheckOut'],
     '/cart' => ['controller' => 'CartController', 'action' => 'xuLyVaHienThiGioHang'],
     '/search' => ['controller' => 'ProductController', 'action' => 'showSearchResults'],
     '/product' => ['controller' => 'ProductController', 'action' => 'showChiTietSP'],
+    
 ];
 
 // Kiểm tra xem đường dẫn URI người dùng truy cập có tồn tại trong mảng routes không

@@ -29,6 +29,45 @@ class AuthController {
             }
         }
     }
+
+    public function getRoleUser() {
+        if (isset($_SESSION['user'])) {
+            $user = AuthModel::getRoleUser($_SESSION['user']);
+            if ($user && $user['Role'] === 'Khách hàng') {
+                include './account.php';
+                header('Location: ./admin/index.php');
+            } else {
+                echo "Bạn không có quyền truy cập vào trang quản trị.";
+            }
+        } else {
+            exit();
+        }
+    }
+
+    public function getAdminDashboard() {
+        if (isset($_SESSION['user'])) {
+            $user = AuthModel::getRoleUser($_SESSION['user']);
+            if ($user && $user['Role'] === 'Admin') {
+                require_once 'views/admin/index.php';
+            } else {
+                echo "Bạn không có quyền truy cập vào trang quản trị.";
+            }
+        } else {
+            exit();
+        }
+    }
+
+    public function hienThiDivToAdmin() {
+        if (isset($_SESSION['user'])) {
+            $user = AuthModel::getRoleUser($_SESSION['user']);
+            if ($user && isset($user['Role'])) {
+                $_SESSION['role'] = $user['Role'];
+            }
+        }
+
+        // Gọi view account, không phân biệt quyền
+        require_once 'views/services/account.php';
+    }
     
     public function register() {
         if (isset($_POST['register'])) {

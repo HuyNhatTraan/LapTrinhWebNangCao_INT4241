@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/flowbite@3.1.2/dist/flowbite.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
     <link rel="stylesheet" href="styles/output.css">
     <link rel="icon" href="/icon.png" type="image/png" />
 </head>
@@ -31,7 +32,7 @@
             </button>
             <div class="hidden w-full md:block md:w-auto" id="navbar-default">
                 <ul
-                    class="items-center lg:gap-10 md:gap-5 font-medium flex flex-col p-4 md:p-0 mt-4 border border-gray-100 rounded-lg bg-gray-50 md:flex-row md:space-x-8 rtl:space-x-reverse md:mt-0 md:border-0 md:bg-white dark:border-gray-700">
+                    class="md:items-center lg:gap-10 md:gap-5 font-medium flex flex-col p-4 md:p-0 mt-4 border border-gray-100 rounded-lg bg-gray-50 md:flex-row md:space-x-8 rtl:space-x-reverse md:mt-0 md:border-0 md:bg-white dark:border-gray-700">
                     <li class="mr-0">
                         <a href="./store"
                             class="block py-2 px-3 text-gray-900 rounded-sm hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-black md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"
@@ -59,18 +60,20 @@
                     </li>
                     <li class="mr-0">
                         <button id="mega-menu-full-dropdown-button" data-collapse-toggle="mega-menu-full-dropdown"
-                            class=" flex items-center justify-between w-full py-2 px-3 text-gray-900 rounded-sm md:w-auto hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-600 md:p-0  md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-blue-500 md:dark:hover:bg-transparent dark:border-gray-700">
+                            class=" flex items-center w-full py-2 px-3 text-gray-900 rounded-sm md:w-auto hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-600 md:p-0  md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-blue-500 md:dark:hover:bg-transparent dark:border-gray-700">
                             <svg class="w-6 h-6 hover:stroke-[#3c81c6] duration-150" xmlns="http://www.w3.org/2000/svg"
                                 fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
                                 <path stroke-linecap="round" stroke-linejoin="round"
                                     d="m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.607 10.607Z" />
                             </svg>
+                            <span class="text-black ms-2 md:hidden">Tìm kiếm</span>
                         </button>
+                        
                     </li>
                     <li class="w-fit mr-0">
                         <a href="./cart"
-                            class=" flex items-center justify-between w-full py-2 px-3 text-gray-900 rounded-sm md:w-auto hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-600 md:p-0  md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-blue-500 md:dark:hover:bg-transparent dark:border-gray-700">
-                            <div class="relative">
+                            class=" flex items-center justify-between py-2 px-3 text-gray-900 rounded-sm md:w-auto hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-600 md:p-0  md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-blue-500 md:dark:hover:bg-transparent dark:border-gray-700">
+                            <div class="relative items-center">
                                 <svg class="w-6 h-6 hover:stroke-[#3c81c6] duration-150"
                                     xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
                                     stroke-width="1.5" stroke="currentColor">
@@ -91,12 +94,14 @@
                                     echo $cartCount;
                                     ?>
                                 </span>
+                                
                             </div>
+                            <span class="text-black ms-2 md:hidden">Giỏ hàng</span>
                         </a>
                     </li>
                     <li class="mr-0">
                         <?php if (!empty($_SESSION['user'])): ?>
-                            <a href="account">
+                            <a href="account" class="w-fit flex p-2 md:p-0 items-center">
                                 <?php
                                 require_once __DIR__ . '/../../config/db.php';
                                 $user = $_SESSION['user'];
@@ -112,7 +117,8 @@
                                         $HinhAnh = $row['Hinh'];
                                         echo '    
                                         <img src="' . $HinhAnh . '" alt="Avartar" class="w-8 h-8 rounded-full">
-                                    ';
+                                        <span class="text-black ms-2 md:hidden">Tài khoản</span>
+                                        ';
                                     }
                                 } else {
                                     echo '           
@@ -136,8 +142,8 @@
             </div>
 
         </div>
-        <div id="mega-menu-full-dropdown"
-            class="hidden mt-1 border-gray-200 shadow-xs bg-gray-50 md:bg-white border-y ">
+        <div  id="mega-menu-full-dropdown"
+            class="hidden mt-1 animate__animated animate__faster animate__fadeInDown border-gray-200 shadow-xs bg-gray-50 md:bg-white border-y ">
             <div class="flex w-90%  m-auto px-4 py-5 mx-auto text-gray-900 dark:text-white sm:grid-cols-2 md:px-6">
                 <form action="./search" method="GET" class="w-full flex justify-center items-center mb-4">
                     <label for="search"
@@ -163,7 +169,7 @@
         </div>
     </nav>
     <script defer src="https://cdn.jsdelivr.net/npm/flowbite@3.1.2/dist/flowbite.min.js"></script>
-
+    
 </body>
 
 </html>
