@@ -50,7 +50,8 @@ class AuthController {
             if ($user && $user['Role'] === 'Admin') {
                 require_once 'views/admin/index.php';
             } else {
-                echo "Bạn không có quyền truy cập vào trang quản trị.";
+                include 'views/errors/403.php';
+                
             }
         } else {
             exit();
