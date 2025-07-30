@@ -254,8 +254,7 @@
                     </div>
                 </div>
                 <?php if (isset($_SESSION['role']) && $_SESSION['role'] === 'Admin'): ?>
-                    <div
-                        class="bg-[#f5f5f5] rounded-xl flex flex-col items-center justify-center p-5 shadow-2xl hover:shadow-[2px_1px_10px_8px_rgba(0,_0,_0,_0.35)] duration-350 py-8">
+                    <div class="bg-[#f5f5f5] rounded-xl flex flex-col items-center justify-center p-5 shadow-2xl hover:shadow-[2px_1px_10px_8px_rgba(0,_0,_0,_0.35)] duration-350 py-8">
                         <svg width="64px" height="64px" viewBox="0 0 24 24" id="Layer_1" data-name="Layer 1"
                             xmlns="http://www.w3.org/2000/svg" fill="#000000">
                             <g id="SVGRepo_bgCarrier" stroke-width="0"></g>

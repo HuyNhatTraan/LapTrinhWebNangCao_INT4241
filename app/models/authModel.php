@@ -86,7 +86,7 @@ class AuthModel {
         $stmt->execute();
 
         if ($stmt->rowCount() === 1) {
-            return $stmt->fetchAll(PDO::FETCH_ASSOC); // Trả về thông tin người dùng
+            return $stmt->fetch(PDO::FETCH_ASSOC); // Trả về thông tin người dùng
         }
 
         return null; // Không tìm thấy

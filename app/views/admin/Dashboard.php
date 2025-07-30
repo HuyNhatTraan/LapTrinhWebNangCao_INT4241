@@ -6,7 +6,7 @@
                 <path stroke-linecap="round" stroke-linejoin="round" d="m4.5 19.5 15-15m0 0H8.25m11.25 0v11.25" />
             </svg>
         </div>
-        <span class="text-5xl">24</span>
+        <span class="text-5xl"><?php echo $_SESSION['SoLuongDonHang'];?></span>
         <span>Bỏ hàm so sánh số lượng đơn hàng tháng trước so với tháng này</span>
     </a>
     <a href="?page=danh-muc" class="flex flex-col bg-white p-6 rounded-lg shadow gap-3 text-black">
@@ -16,7 +16,7 @@
                 <path stroke-linecap="round" stroke-linejoin="round" d="m4.5 19.5 15-15m0 0H8.25m11.25 0v11.25" />
             </svg>
         </div>
-        <span class="text-5xl">24</span>
+        <span class="text-5xl"><?php echo $_SESSION['SoLuongDanhMuc'];?></span>
         <span>Bỏ hàm so sánh số lượng đơn hàng tháng trước so với tháng này</span>
     </a>
     <a href="?page=khach-hang" class="flex flex-col bg-white p-6 rounded-lg shadow gap-3 text-black">
@@ -26,7 +26,7 @@
                 <path stroke-linecap="round" stroke-linejoin="round" d="m4.5 19.5 15-15m0 0H8.25m11.25 0v11.25" />
             </svg>
         </div>
-        <span class="text-5xl">24</span>
+        <span class="text-5xl"><?php echo $_SESSION['SoLuongKH'];?></span>
         <span>Bỏ hàm so sánh số lượng đơn hàng tháng trước so với tháng này</span>
     </a>
     <a href="?page=san-pham" class="flex flex-col bg-white p-6 rounded-lg shadow gap-3 text-black">
@@ -36,7 +36,7 @@
                 <path stroke-linecap="round" stroke-linejoin="round" d="m4.5 19.5 15-15m0 0H8.25m11.25 0v11.25" />
             </svg>
         </div>
-        <span class="text-5xl">24</span>
+        <span class="text-5xl"><?php echo $_SESSION['SoLuongSP'];?></span>
         <span>Bỏ hàm so sánh số lượng đơn hàng tháng trước so với tháng này</span>
     </a>
 </div>

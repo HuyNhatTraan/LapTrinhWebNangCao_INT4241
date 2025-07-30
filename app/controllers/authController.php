@@ -1,5 +1,6 @@
 <?php
 require_once __DIR__ . '/../models/authModel.php';
+include __DIR__ . '/../controllers/adminController.php';
 
 class AuthController {
     public function login() {
@@ -49,9 +50,12 @@ class AuthController {
             $user = AuthModel::getRoleUser($_SESSION['user']);
             if ($user && $user['Role'] === 'Admin') {
                 require_once 'views/admin/index.php';
+                AdminController::hienThiTongDonHang();
+                AdminController::hienThiTongDanhMuc();
+                AdminController::hienThiTongKH();
+                AdminController::hienThiTongSP();
             } else {
-                include 'views/errors/403.php';
-                
+                include 'views/errors/403.php';                
             }
         } else {
             exit();
@@ -64,18 +68,15 @@ class AuthController {
             $userInfo = AuthModel::getKhachHangByEmail($_SESSION['user']);
             
             if ($userRole && isset($userRole['Role'])) {
-                $_SESSION['role'] = $userRole['Role'];
+                $_SESSION['role'] = $userRole['Role'];             
             }
             
         }
-
         // Gọi view account, không phân biệt quyền
         require 'views/services/account.php';
     }
     
-    public function hienThiThongTinUser() {
-        $user = AuthModel::getKhachHangByEmail($_SESSION['user']);
-    }
+    
 
     public function register() {
         if (isset($_POST['register'])) {

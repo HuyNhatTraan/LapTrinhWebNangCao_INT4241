@@ -64,5 +64,5 @@ if (array_key_exists($uri, $routes)) {
 } else {
     // Nếu route không khớp với bất kỳ key nào trong mảng routes => trả về lỗi 404
     http_response_code(404); 
-    include __DIR__. '/views/errors/404.php'; // Hiển thị trang 404
+    include  'views/errors/404.php'; // Hiển thị trang 404
 }
