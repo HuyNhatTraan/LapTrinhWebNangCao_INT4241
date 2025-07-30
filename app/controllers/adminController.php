@@ -20,4 +20,12 @@ class AdminController {
         $items = AdminModel::getSoLuongSP(); 
         $_SESSION['SoLuongSP'] = $items['SoLuongSP']; // Lưu vào session để sử dụng sau này
     }
+    public static function hienThiTongDoanhThuThangNay() {
+        $items = AdminModel::getTongDoanhThuThang(); 
+        $_SESSION['TongDoanhThuThang'] = $items['TongDoanhThuThang']; // Lưu vào session để sử dụng sau này
+    }
+    public static function hienThiTongDoanhThuThangTruoc() {
+        $items = AdminModel::getTongDoanhThuThangTruoc(); 
+        $_SESSION['TongDoanhThuThangTruoc'] = $items['TongDoanhThuThangTruoc']; // Lưu vào session để sử dụng sau này
+    }
 }

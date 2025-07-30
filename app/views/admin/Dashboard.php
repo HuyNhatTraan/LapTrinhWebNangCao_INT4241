@@ -41,13 +41,34 @@
     </a>
 </div>
 <div class="mt-5 grid grid-cols-1 lg:grid-cols-2 gap-5">
-    <div class="bg-white p-6 rounded-lg shadow ">
+    <div class="bg-white p-6 rounded-lg shadow gap-5 flex flex-col">
         <span class="text-2xl font-bold">Tổng doanh thu tháng này</span>
-        <div class="">a</div>
-        <div class="">a</div>
-        <div class="">a</div>
-        <div class="">a</div>
-        <div class="">a</div>
+        <span class="text-5xl font-bold text-red-500"><?php echo number_format($_SESSION['TongDoanhThuThang'], 0, '', '.') . 'đ'; ?></span>
+        <?php 
+            $tongDoanhThuThang = $_SESSION['TongDoanhThuThang'] ?? 0;
+            $tongDoanhThuThangTruoc = $_SESSION['TongDoanhThuThangTruoc'] ?? 0;
+
+            if ($tongDoanhThuThangTruoc == 0) {
+                if ($tongDoanhThuThang == 0) {
+                    $growthText = "Không thay đổi so với tháng trước";
+                } else {
+                    $growthText = "Tăng 100% so với tháng trước"; // Giả định mặc định khi tháng trước là 0
+                }
+            } else {
+                $growthPercent = (($tongDoanhThuThang - $tongDoanhThuThangTruoc) / $tongDoanhThuThangTruoc) * 100;
+
+                if ($growthPercent > 0) {
+                    $growthText = "Tăng " . round($growthPercent, 2) . "% so với tháng trước";
+                } elseif ($growthPercent < 0) {
+                    $growthText = "Giảm " . abs(round($growthPercent, 2)) . "% so với tháng trước";
+                } else {
+                    $growthText = "Không thay đổi so với tháng trước";
+                }
+            }
+
+            
+        ?>
+        <span class="text-xl font-semibold"><?php echo $growthText; ?></span>
     </div>
     <div class="bg-white p-6 rounded-lg shadow">
         <span class="text-2xl font-bold">Các sản phẩm bán chạy</span>
@@ -56,5 +77,5 @@
         <div class="">a</div>
         <div class="">a</div>
         <div class="">a</div>
-    </div>x
+    </div>
 </div>

@@ -42,4 +42,28 @@ class AdminModel {
 
         return $stmt->fetch();
     }
+    public static function getTongDoanhThuThang() {
+        $db = Database::getInstance();
+        $conn = $db->getConnection();
+
+        $stmt = $conn->prepare("SELECT SUM(C.SoLuong * C.GiaTien) AS TongDoanhThuThang 
+        FROM DonHang D JOIN ChiTietDonhang C ON D.MaDonHang = C.MaDonHang
+        WHERE MONTH(D.NgayTao) = MONTH(NOW()) AND YEAR(D.NgayTao) = YEAR(NOW());");
+  
+        $stmt->execute();
+
+        return $stmt->fetch();
+    }
+    public static function getTongDoanhThuThangTruoc() {
+        $db = Database::getInstance();
+        $conn = $db->getConnection();
+
+        $stmt = $conn->prepare("SELECT SUM(C.SoLuong * C.GiaTien) AS TongDoanhThuThangTruoc 
+        FROM DonHang D JOIN ChiTietDonhang C ON D.MaDonHang = C.MaDonHang
+        WHERE MONTH(D.NgayTao) = MONTH(NOW() - INTERVAL 1 MONTH) AND YEAR(D.NgayTao) = YEAR(NOW());");
+
+        $stmt->execute();
+
+        return $stmt->fetch();
+    }
 }
