@@ -4,20 +4,35 @@
     class ProductController {
         // Hiển thị danh sách điện thoại và tablets
         public function showPhones() {
-            // Gọi model lấy tất cả sản phẩm
-            $products = ProductModel::getAllPhones();
+            if (isset($_GET['related'])) {
+                $products = ProductModel::getAllPhones();
+            } else if (isset($_GET['new'])) {
+                $products = ProductModel::getAllPhonesNewest();
+            } else if (isset($_GET['priceLowToHigh'])) {
+                $products = ProductModel::getAllPhonesPriceLowToHigh();
+            } else {
+                $products = ProductModel::getAllPhones();
+            }
 
-            // Gửi sang view để hiển thị
             include __DIR__ .'/../views/pages/mobile/index.php'; 
         }
 
+
         // Hiển thị danh sách Nhà thông minh AKA Smart TV       
         public function showSmartTV() {
-            // Gọi model lấy tất cả sản phẩm
-            $products = ProductModel::getAllSmartTV();
+            // Gọi model lấy tất cả sản phẩm       
+            if (isset($_GET['related'])) {
+                $products = ProductModel::getAllSmartTV();
+            } else if (isset($_GET['new'])) {
+                $products = ProductModel::getAllSmartTVNewest();
+            } else if (isset($_GET['priceLowToHigh'])) {
+                $products = ProductModel::getAllSmartTVPriceLowToHigh();
+            } else {
+                $products = ProductModel::getAllSmartTV();
+            }
 
-            // Gửi sang view để hiển thị
-            include __DIR__ .'/../views/pages/smart-home/index.php'; 
+            include __DIR__ .'/../views/pages/mobile/index.php'; 
+
         }
 
         public function showStorePage() {

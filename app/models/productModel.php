@@ -28,6 +28,38 @@ class productModel {
         return $data;
     }
 
+    public static function getAllPhonesNewest() {
+        $db = Database::getInstance()->getConnection();
+        $stmt = $db->prepare("SELECT * FROM SanPham WHERE MaDM IN ('DM001', 'DM002') ORDER BY MaSP DESC");
+        $stmt->execute();
+        $data = $stmt->fetchAll(PDO::FETCH_ASSOC);
+        return $data;
+    }
+
+    public static function getAllPhonesPriceLowToHigh() {
+        $db = Database::getInstance()->getConnection();
+        $stmt = $db->prepare("SELECT * FROM SanPham WHERE MaDM IN ('DM001', 'DM002') ORDER BY GiaHienTai ASC");
+        $stmt->execute();
+        $data = $stmt->fetchAll(PDO::FETCH_ASSOC);
+        return $data;
+    }
+
+    public static function getAllSmartTVNewest() {
+        $db = Database::getInstance()->getConnection();
+        $stmt = $db->prepare("SELECT * FROM SanPham WHERE MaDM = 'DM003' ORDER BY MaSP DESC");
+        $stmt->execute();
+        $data = $stmt->fetchAll(PDO::FETCH_ASSOC);
+        return $data;
+    }
+
+    public static function getAllSmartTVPriceLowToHigh() {
+        $db = Database::getInstance()->getConnection();
+        $stmt = $db->prepare("SELECT * FROM SanPham WHERE MaDM = 'DM003' ORDER BY GiaHienTai ASC");
+        $stmt->execute();
+        $data = $stmt->fetchAll(PDO::FETCH_ASSOC);
+        return $data;
+    }
+
     // Lấy toàn bộ sản phẩm là Nhà thông minh AKA Smart TV
     public static function getAllSmartTV() {
         $db = Database::getInstance()->getConnection();
