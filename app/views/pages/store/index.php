@@ -12,7 +12,7 @@
 <body class="bg-[#f7f7f7]">
     <?php require 'views/components/nav.php'; ?>
     <div class="flex justify-center m-auto mt-5 rounded-2xl">
-        <div class="flex w-[90%] rounded-2xl h-40 md:h-50 xl:h-80 xl:w-[80%]">
+        <div class="flex w-[90%] rounded-2xl h-40 md:h-50 xl:h-80">
             <div class="relative">
                 <img class="h-full w-fit object-cover object-center rounded-xl"
                     src="https://i02.appmifile.com/745_operator_vn/23/05/2025/d58bf0cf902e1e8f4045b220bf81e32e.png?thumb=1&w=2560&f=webp&q=85"

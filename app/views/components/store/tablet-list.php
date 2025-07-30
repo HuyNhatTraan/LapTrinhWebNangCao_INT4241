@@ -1,5 +1,5 @@
 <h1 class="flex justify-center text-xl md:text-3xl font-bold mt-10 mb-10">Tablets</h1>
-<div class="w-[95%] xl:w-[80%]  justify-center m-auto mt-5 rounded-2xl cursor-pointer">
+<div class="w-[90%] justify-center m-auto mt-5 rounded-2xl cursor-pointer">
     <?php foreach ($tabletList1 as $row): 
         $giaBase = $row['GiaBase'];
         $giaHienTai = $row['GiaHienTai'];

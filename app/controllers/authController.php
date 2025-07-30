@@ -78,8 +78,6 @@ class AuthController {
         require 'views/services/account.php';
     }
     
-    
-
     public function register() {
         if (isset($_POST['register'])) {
             $full_name = $_POST['fullName'];
