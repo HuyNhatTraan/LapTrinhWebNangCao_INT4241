@@ -90,7 +90,7 @@ class AuthController {
             $model = new AuthModel();
 
         if ($model->isEmailExists($email)) {
-            echo "❌ Email đã được sử dụng!";
+            echo "Email đã được sử dụng!";
             exit;
         }
 
@@ -100,7 +100,7 @@ class AuthController {
             header('Location: ' . $_SERVER['HTTP_REFERER']);
             exit;
         } catch (Exception $e) {
-            echo "❌ Lỗi khi đăng ký: " . $e->getMessage();
+            echo "Lỗi khi đăng ký: " . $e->getMessage();
             $_SESSION['isRegisterSuccess'] = 0;
             header('Location: ' . $_SERVER['HTTP_REFERER']);
         }
