@@ -6,9 +6,9 @@
             <img src="images/homepage/banner/1.jpg"
                 class="absolute block w-full h-full object-cover object-center top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"
                 alt="...">
-            <div class="flex flex-col absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 
-            md:left-[25%] md:translate-x-0 md:text-left text-center 
-            w-[80%] md:w-auto text-black">
+            <div class="flex flex-col absolute top-1/2 left-1/2  -translate-x-1/2 -translate-y-1/2 md:left-[25%] md:translate-x-0 md:text-left w-[80%] md:w-auto text-black">
+
+
                 <span class="text-sm md:text-4xl md:mb-5 font-bold">Xiaomi Smart Band 10</span>
                 <span class="text-sm md:text-xl md:mb-5">Chuẩn dáng bật chất chuyên nghiệp</span>
                 <span class="">Từ <span class="text-md md:text-3xl ml-1 font-bold">1.090.000</span></span>
@@ -23,7 +23,7 @@
                 class="absolute block w-full h-full object-cover object-center top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"
                 alt="...">
             <div class="flex flex-col absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 
-            md:left-[25%] md:translate-x-0 md:text-left text-center 
+            md:left-[25%] md:translate-x-0 md:text-left  
             w-[80%] md:w-auto text-white">
                 <span class="text-sm md:text-4xl md:mb-5 font-bold">New Beginnings</span>
                 <span class="text-sm md:text-xl md:mb-5">Sự kiện ra mắt [Human x Car x Home]</span>
@@ -39,7 +39,7 @@
                 class="absolute block w-full h-full object-cover object-center top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"
                 alt="...">
             <div class="flex flex-col absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 
-            md:left-[25%] md:translate-x-0 md:text-left text-center 
+            md:left-[25%] md:translate-x-0 md:text-left  
             w-[80%] md:w-auto text-black">
                 <span class="text-sm md:text-4xl md:mb-5 font-bold">Xiaomi TV A Pro 75 2026</span>
                 <span class="text-sm md:text-xl md:mb-5">Tuyệt đỉnh thị giác</span>
@@ -56,7 +56,7 @@
                 class="absolute block w-full h-full object-cover object-center top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"
                 alt="...">
             <div class="flex flex-col absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 
-            md:left-[25%] md:translate-x-0 md:text-left text-center 
+            md:left-[25%] md:translate-x-0 md:text-left  
             w-[80%] md:w-auto text-black">
                 <span class="text-black text-sm md:text-4xl md:mb-5 font-bold">Xiaomi TV A Pro 65 2026</span>
                 <span class="text-black text-sm md:text-xl md:mb-5">Giải trí đỉnh cao</span>
