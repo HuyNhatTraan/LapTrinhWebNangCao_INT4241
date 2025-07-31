@@ -58,6 +58,54 @@ class AdminModel {
         return $stmt->fetchAll();
     }
 
+    public static function getDanhSachDonHang() {
+        $db = Database::getInstance();
+        $conn = $db->getConnection();
+
+        $stmt = $conn->prepare("SELECT D.MaDonHang, K.TenKH, K.Email, D.NgayTao, SUM(C.SoLuong * C.GiaTien) AS TongTien, D.TrangThai FROM DonHang D
+            JOIN ChiTietDonHang C ON D.MaDonHang = C.MaDonHang 
+            JOIN KhachHang K ON K.MaKH = D.MaKH
+            GROUP BY D.MaDonHang");
+        $stmt->execute();
+
+        return $stmt->fetchAll();
+    }
+
+    public static function getDanhSachDanhMuc() {
+        $db = Database::getInstance();
+        $conn = $db->getConnection();
+
+        $stmt = $conn->prepare("SELECT D.MaDM, D.TenDanhMucSP, SUM(DL.SoLuong) AS SoLuong
+            FROM DanhMucSP D
+            JOIN SanPham S ON S.MaDM = D.MaDM
+            JOIN DungLuongSP DL ON DL.MaSP = S.MaSP
+            GROUP BY D.MaDM, D.TenDanhMucSP;");
+        $stmt->execute();
+
+        return $stmt->fetchAll();
+    }
+
+    public static function getDanhSachKH() {
+        $db = Database::getInstance();
+        $conn = $db->getConnection();
+
+        $stmt = $conn->prepare("SELECT MaKH, TenKH, Email, SDT, NgaySinh, TrangThaiKH FROM KhachHang");
+
+        $stmt->execute();
+
+        return $stmt->fetchAll();
+    }
+    public static function getDanhSachSP() {
+        $db = Database::getInstance();
+        $conn = $db->getConnection();
+
+        $stmt = $conn->prepare("SELECT MaSP, MaDM, TenSP, HinhAnhSP, TrangThaiSP, GiaBase, GiaHienTai FROM SanPham");
+
+        $stmt->execute();
+
+        return $stmt->fetchAll();
+    }
+
     public static function getTongDoanhThuThang() {
         $db = Database::getInstance();
         $conn = $db->getConnection();

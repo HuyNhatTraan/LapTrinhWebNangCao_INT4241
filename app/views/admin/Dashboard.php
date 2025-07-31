@@ -43,7 +43,7 @@
 <div class="mt-5 grid grid-cols-1 lg:grid-cols-2 gap-5">
     <div class="bg-white p-6 rounded-lg shadow gap-5 flex flex-col">
         <span class="text-2xl font-bold">Tổng doanh thu tháng này</span>
-        <span class="text-5xl font-bold text-red-500"><?php echo number_format($_SESSION['TongDoanhThuThang'], 0, '', '.') . 'đ'; ?></span>
+        <span class="text-2xl md:text-5xl font-bold text-red-500"><?php echo number_format($_SESSION['TongDoanhThuThang'], 0, '', '.') . 'đ'; ?></span>
         <?php 
             $tongDoanhThuThang = $_SESSION['TongDoanhThuThang'] ?? 0;
             $tongDoanhThuThangTruoc = $_SESSION['TongDoanhThuThangTruoc'] ?? 0;
@@ -68,7 +68,7 @@
 
             
         ?>
-        <span class="text-xl font-semibold"><?php echo $growthText; ?></span>
+        <span class="text-md md:text-xl font-semibold"><?php echo $growthText; ?></span>
     </div>
     <div class="bg-white p-6 rounded-lg shadow">
         <span class="text-2xl font-bold">Các sản phẩm bán gần đây</span>

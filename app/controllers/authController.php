@@ -57,6 +57,10 @@ class AuthController {
                 AdminController::hienThiTongDoanhThuThangNay();
                 AdminController::hienThiTongDoanhThuThangTruoc();
                 AdminController::hienThiSPBanGanDay();
+                AdminController::hienThiDanhSachDonhang();
+                AdminController::hienThiDanhSachDanhMuc();
+                AdminController::hienThiDanhSachKH();
+                AdminController::hienThiDanhSachSP();
             } else {
                 include 'views/errors/403.php';                
             }

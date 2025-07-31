@@ -33,4 +33,24 @@ class AdminController {
         $_SESSION['SPBanGanDay'] = $items; // Lưu vào session để sử dụng sau này
         // echo $items;
     }
+    public static function hienThiDanhSachDonhang() {
+        $items = AdminModel::getDanhSachDonHang(); 
+        $_SESSION['DanhSachDonHang'] = $items; // Lưu vào session để sử dụng sau này
+        // echo $items;
+    }
+    public static function hienThiDanhSachDanhMuc() {
+        $items = AdminModel::getDanhSachDanhMuc(); 
+        $_SESSION['DanhSachDanhMuc'] = $items; // Lưu vào session để sử dụng sau này
+        // echo $items;
+    }
+    public static function hienThiDanhSachKH() {
+        $items = AdminModel::getDanhSachKH(); 
+        $_SESSION['DanhSachKH'] = $items; // Lưu vào session để sử dụng sau này
+        // echo $items;
+    }
+    public static function hienThiDanhSachSP() {
+        $items = AdminModel::getDanhSachSP(); 
+        $_SESSION['DanhSachSP'] = $items; // Lưu vào session để sử dụng sau này
+        // echo $items;
+    }
 }

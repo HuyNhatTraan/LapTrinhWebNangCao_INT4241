@@ -181,7 +181,7 @@ switch ($page) {
         </div>
     </header>
     <main>
-        <div class="mx-auto w-[90%] px-4 py-6 sm:px-6 lg:px-8">
+        <div class="mx-auto w-[95%] md:w-[90%]">
             <?php
             // Include nội dung theo page
             switch ($page) {
