@@ -71,11 +71,23 @@
         <span class="text-xl font-semibold"><?php echo $growthText; ?></span>
     </div>
     <div class="bg-white p-6 rounded-lg shadow">
-        <span class="text-2xl font-bold">Các sản phẩm bán chạy</span>
-        <div class="">a</div>
-        <div class="">a</div>
-        <div class="">a</div>
-        <div class="">a</div>
-        <div class="">a</div>
+        <span class="text-2xl font-bold">Các sản phẩm bán gần đây</span>
+        <div class="mt-3 flex flex-col">    
+            <?php if (!empty($_SESSION['SPBanGanDay'])): ?>               
+                <?php foreach ($_SESSION['SPBanGanDay'] as $product): ?>   
+                    <div class="flex justify-between items-center">     
+                        <div class="flex w-[40%]">
+                            <img src="<?php echo htmlspecialchars($product['HinhAnhBienThe']); ?>" alt="<?php echo htmlspecialchars($product['TenSP']); ?>" class="w-16 h-16 object-cover rounded-md inline-block ml-2">                
+                            <span class="font-semibold"><?php echo htmlspecialchars($product['TenSP']); ?></span>
+                        </div>                                                                                       
+                        <span class="text-gray-500"><?php echo date('d-m-Y H:i', strtotime($product['NgayTao'])); ?></span>                    
+                        <span class="text-gray-600"><?php echo number_format($product['SoLuong'], 0, '', '.') . ' sản phẩm'; ?></span>                    
+                    </div>
+                    <hr class="mt-2 mb-2 text-gray-400">
+                <?php endforeach; ?>               
+            <?php else: ?>
+                <p class="text-gray-500">Không có sản phẩm bán gần đây.</p>
+            <?php endif; ?>
+        </div>
     </div>
 </div>

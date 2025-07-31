@@ -28,4 +28,9 @@ class AdminController {
         $items = AdminModel::getTongDoanhThuThangTruoc(); 
         $_SESSION['TongDoanhThuThangTruoc'] = $items['TongDoanhThuThangTruoc']; // Lưu vào session để sử dụng sau này
     }
+    public static function hienThiSPBanGanDay() {
+        $items = AdminModel::getSPBanGanDay(); 
+        $_SESSION['SPBanGanDay'] = $items; // Lưu vào session để sử dụng sau này
+        // echo $items;
+    }
 }

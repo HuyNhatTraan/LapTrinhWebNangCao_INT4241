@@ -1,3 +1,13 @@
+<?php 
+    echo '
+    <script>
+    if (!sessionStorage.getItem("pageReloaded")) {
+        sessionStorage.setItem("pageReloaded", "true");
+        location.reload(); // chỉ gọi 1 lần refresh duy nhất
+    }
+    </script>
+';
+?>
 <?php
 // Xử lý routing
 $page = isset($_GET['page']) ? $_GET['page'] : 'dashboard';

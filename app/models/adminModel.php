@@ -42,6 +42,22 @@ class AdminModel {
 
         return $stmt->fetch();
     }
+
+    public static function getSPBanGanDay() {
+        $db = Database::getInstance();
+        $conn = $db->getConnection();
+
+        $stmt = $conn->prepare("SELECT S.TenSP, D.NgayTao, C.SoLuong, B.HinhAnhBienThe
+            FROM DonHang AS D 
+            JOIN ChiTietDonHang AS C ON D.MaDonHang = C.MaDonHang 
+            JOIN BienTheSP AS B ON B.MaBienThe = C.MaBienThe 
+            JOIN SanPham AS S ON B.MaSP = S.MaSP
+            ORDER BY D.NgayTao DESC LIMIT 5");
+        $stmt->execute();
+
+        return $stmt->fetchAll();
+    }
+
     public static function getTongDoanhThuThang() {
         $db = Database::getInstance();
         $conn = $db->getConnection();
