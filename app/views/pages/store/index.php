@@ -21,7 +21,7 @@
                     <div class="flex flex-col">
                         <span class="font-bold md:text-xl lg:text-3xl">Xiaomi TV A Pro 2026 Series</span>
                         <span class="text-sm md:text-md lg:text-xl mt-2">Tuyệt tác thị giác</span>
-                        <button class="rounded-xl p-3 bg-black text-white w-fit mt-3 cursor-pointer hover:scale-105 duration-150">Tìm hiểu thêm</button>
+                        <a href="./search?queryStr=Xiaomi+TV+A+" class="rounded-xl p-3 bg-black text-white w-fit mt-3 cursor-pointer hover:scale-105 duration-150">Tìm hiểu thêm</a>
                     </div>
                 </div>
             </div>

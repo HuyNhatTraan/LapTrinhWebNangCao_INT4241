@@ -18,7 +18,7 @@ require_once 'controllers/cartController.php'; // Nạp controller cần dùng
 require_once 'controllers/authController.php'; // Nạp controller cần dùng
 
 $routes = [
-    '/' => 'views/home.php',
+    '/' => ['controller' => 'ProductController', 'action' => 'showHomepageStore'],
     '/store' => ['controller' => 'ProductController', 'action' => 'showStorePage'],
     '/mobile' => ['controller' => 'ProductController', 'action' => 'showPhones'],
     '/smart-home' => ['controller' => 'ProductController', 'action' => 'showSmartTV'],

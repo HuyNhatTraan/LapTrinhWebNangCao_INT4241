@@ -160,6 +160,12 @@ class productModel {
         $stmt->execute(['%' . $TenSP . '%']);
         return $stmt->fetchAll(PDO::FETCH_ASSOC);
     }
+    public static function findSPHomePage($TenSP) {
+        $db = Database::getInstance()->getConnection();
+        $stmt = $db->prepare("SELECT * FROM SanPham WHERE TenSP like ? LIMIT 4");
+        $stmt->execute(['%' . $TenSP . '%']);
+        return $stmt->fetchAll(PDO::FETCH_ASSOC);
+    }
 
     // Thêm sản phẩm mới
     public static function createSP($data) {

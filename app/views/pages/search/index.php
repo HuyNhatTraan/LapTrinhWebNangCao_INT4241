@@ -18,19 +18,19 @@
                 $giam = round((($giaBase - $giaHienTai) / $giaBase) * 100);
             ?>
                 <div class="flex bg-white">
-                    <a href="product?MaSP=<?= $row['MaSP'] ?>" class="relative flex flex-row sm:flex-col w-full bg-white p-4 sm:py-15">
+                    <a href="product?MaSP=<?= $row['MaSP'] ?>" class="relative flex flex-row sm:flex-col w-full bg-white p-4 sm:py-15 group">
                         <div class="flex sm:justify-center flex-col items-center text-center">
                             <h2 class="hidden text-md font-bold xl:text-4xl sm:text-2xl md:text-2xl sm:flex"><?= htmlspecialchars($row['TenSP']) ?></h2>
                             <h3 class="hidden sm:flex text-lg font-bold mt-2"><?= number_format($row['GiaHienTai'], 0, ',', '.') ?>đ</h3>
-                        <img src="<?= $row['HinhAnhSP'] ?>" alt="<?= $row['TenSP'] ?>" class="w-30 h-30 sm:w-50 sm:h-50 md:w-60 "> 
-                        <h3 class="absolute hidden sm:flex top-3 left-3 border-2 border-[#ffa566] font-bold text-xs p-2 rounded-lg bg-[#fbeed5] mt-1 w-fit text-[#ffa566]">Giảm <?= $giam ?>%</h3>                     
-                    </div>                                              
-                    <div class="md:p-2 lg:m-auto lg:text-center lg:items-center lg:justify-center">
-                        <h2 class="text-md font-bold sm:text-xl md:text-2xl sm:hidden"><?= htmlspecialchars($row['TenSP']) ?></h2>
-                        <h3 class="text-xs p-2 rounded-xl bg-[#fbeed5] mt-1 w-fit font-black border-2 border-[#ffa566] text-[#ffa566] sm:hidden">Giảm <?= $giam ?>%</h3>
-                        <h3 class="text-lg font-bold mt-2 sm:hidden"><?= number_format($row['GiaHienTai'], 0, ',', '.') ?>đ</h3>
-                    </div>
-                </a>
+                            <img src="<?= $row['HinhAnhSP'] ?>" alt="<?= $row['TenSP'] ?>" class="group-hover:scale-110 duration-150 w-30 h-30 sm:w-50 sm:h-50 md:w-60 "> 
+                            <h3 class="absolute hidden sm:flex top-3 left-3 border-2 border-[#ffa566] font-bold text-xs p-2 rounded-lg bg-[#fbeed5] mt-1 w-fit text-[#ffa566]">Giảm <?= $giam ?>%</h3>                     
+                        </div>                                              
+                        <div class="md:p-2 lg:m-auto lg:text-center lg:items-center lg:justify-center">
+                            <h2 class="text-md font-bold sm:text-xl md:text-2xl sm:hidden"><?= htmlspecialchars($row['TenSP']) ?></h2>
+                            <h3 class="text-xs p-2 rounded-xl bg-[#fbeed5] mt-1 w-fit font-black border-2 border-[#ffa566] text-[#ffa566] sm:hidden">Giảm <?= $giam ?>%</h3>
+                            <h3 class="text-lg font-bold mt-2 sm:hidden"><?= number_format($row['GiaHienTai'], 0, ',', '.') ?>đ</h3>
+                        </div>
+                    </a>
                 </div>                  
             <?php endforeach; ?>
         </div>

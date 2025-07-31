@@ -48,6 +48,22 @@
             include 'views/pages/store/index.php';
         }
 
+        public function showHomepageStore() {
+            // Gọi model lấy tất cả sản phẩm
+            $redmiList = ProductModel::findSPHomePage('Redmi');
+            $pocoList = ProductModel::findSPHomePage('Poco');
+            $tabletList = ProductModel::findSPHomePage('Pad');
+            $smartTVList = ProductModel::findSPHomePage('TV');
+            
+            // Lưu vào Session để sử dụng trong view
+            $_SESSION['redmiList'] = $redmiList;
+            $_SESSION['pocoList'] = $pocoList;
+            $_SESSION['tabletList'] = $tabletList;
+            $_SESSION['smartTVList'] = $smartTVList;
+
+            require_once 'views/home.php'; // Hiển thị trang chủ
+        }
+    
         public function showChiTietSP() {
             $MaSP = $_GET['MaSP'];
             // Gọi model lấy tất cả sản phẩm

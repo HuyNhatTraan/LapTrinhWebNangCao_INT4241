@@ -6,7 +6,7 @@
         $giaCuoi = $giaBase - $giaHienTai;
     ?>
     <a class="w-full" href="product?MaSP=<?=$row['MaSP']?>">  
-        <div class="bg-white rounded-xl flex justify-between p-3 shadow-lg items-center">                          
+        <div class="bg-white rounded-xl flex justify-between p-3 shadow-lg items-center group">                          
             <div class="p-4 md:w-80">
                 <h2 class="text-lg font-bold sm:text-3xl mb-3"><?=$row['TenSP']?> </h2>
                 <h3 class="text-sm p-2 rounded-xl bg-[#fbeed5] w-fit text-[#895a25]">Tiết kiệm <?= number_format($giaCuoi, 0, ',', '.') ?>đ</h3>
@@ -19,7 +19,7 @@
                 </div>
             </div>
             <a href="product/?MaSP=<?= $row['MaSP'] ?>">
-                <img src="<?= $row['HinhAnhSP'] ?>" alt="<?= $row['TenSP'] ?>" class="w-30 h-30 sm:w-50 sm:h-50 md:w-60 md:h-60">
+                <img src="<?= $row['HinhAnhSP'] ?>" alt="<?= $row['TenSP'] ?>" class="group-hover:scale-110 duration-150 w-30 h-30 sm:w-50 sm:h-50 md:w-60 md:h-60">
             </a>                            
         </div>
     </a>             
@@ -32,7 +32,7 @@
             $giaCuoi = $giaBase - $giaHienTai;
             $giam = round((($giaBase - $giaHienTai) / $giaBase) * 100);
         ?>
-        <a class="w-full " href="product?MaSP=<?=$row['MaSP']?>">  
+        <a class="w-full group" href="product?MaSP=<?=$row['MaSP']?>">  
             <div class="bg-white rounded-lg flex justify-between p-3 md:p-5 shadow-lg h-full relative">                          
                 <div class="flex flex-col w-fit">
                     <h2 class="text-md font-bold sm:text-2xl md:mb-3"><?=$row['TenSP']?> </h2>
@@ -47,7 +47,7 @@
                     </div>
                 </div>
                 <div class="flex absolute right-0 bottom-0 z-0">
-                    <img src="<?= $row['HinhAnhSP'] ?>" alt="<?= $row['TenSP'] ?>" class="w-20 sm:w-30 md:40 xl:w-45">
+                    <img src="<?= $row['HinhAnhSP'] ?>" alt="<?= $row['TenSP'] ?>" class="group-hover:scale-110 duration-150 w-20 sm:w-30 md:40 xl:w-45">
                 </div>
                 
             </div>
