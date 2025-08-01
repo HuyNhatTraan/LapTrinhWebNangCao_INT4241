@@ -67,7 +67,7 @@
                         </button>
                     </div>
                 </div>
-                <form action="cart" method="POST">
+                <form id="cartForm" action="./cart" method="POST">
                     <div class="xl:p-15 p-6 flex flex-col">
                         <?php foreach ($products as $product): ?>
                             <input type="hidden" name="MaSP" value="<?= htmlspecialchars($product['MaSP']) ?>">
@@ -86,9 +86,11 @@
                                     <svg class="absolute top-2 right-2 w-5 h-5 text-orange-500 opacity-0 peer-checked:opacity-100 transition-opacity duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7" />
                                     </svg>
-                                </label>
-                            <?php endforeach; ?>
+                                </label>                                
+                            <?php endforeach; ?>   
+                                                     
                         </div>
+                        <div id="error-dungluong" class="text-red-500 text-sm mt-2"></div>
                         <span class="font-bold text-2xl mt-6 mb-5">Màu sắc</span>
                         <div class="grid grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5">
                             <?php foreach ($mauSacHinhAnh as $item): ?>
@@ -102,6 +104,7 @@
                                 </label>
                             <?php endforeach; ?>
                         </div>
+                        <div id="error-mausac" class="text-red-500 text-sm mt-2"></div>
                         <hr class="mt-5">
                         <div class="flex items-center justify-between w-full mt-5 mb-5">
                             <span class="font-bold text-2xl">Số lượng</span>
@@ -128,7 +131,7 @@
                         </div>
                     </div>
                 </form>
-
+                         
             </div>
         </div>
 
@@ -150,7 +153,36 @@
         </div>
 
         <?php include 'views/components/footer.php' ?>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const form = document.getElementById("cartForm");
 
+            form.addEventListener("submit", function (e) {
+                // Xóa lỗi cũ
+                document.getElementById("error-dungluong").innerText = "";
+                document.getElementById("error-mausac").innerText = "";
+
+                let valid = true;
+
+                // Lấy radio dung lượng trong form
+                const dungLuongSelected = form.querySelector('input[name="MaDLSP"]:checked');
+                const mauSacSelected = form.querySelector('input[name="MaBienThe"]:checked');
+
+                if (!dungLuongSelected) {
+                    document.getElementById("error-dungluong").innerText = "Vui lòng chọn dung lượng.";
+                    valid = false;
+                }
+
+                if (!mauSacSelected) {
+                    document.getElementById("error-mausac").innerText = "Vui lòng chọn màu sắc.";
+                    valid = false;
+                }
+
+                if (!valid) {
+                    e.preventDefault(); // Chặn submit nếu có lỗi
+                }
+            });
+        });
+    </script>
 </body>
-
 </html> 
