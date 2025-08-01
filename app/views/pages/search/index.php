@@ -9,7 +9,7 @@
 </head>
 <body class="bg-[#f7f7f7]">
     <?php require 'views/components/nav.php' ?>
-    <span class="flex font-bold text-2xl md:text-4xl p-10 gap-2">Kết quả tìm kiếm '<span class="text-[#ffa566]"><?= htmlspecialchars($_GET['queryStr']) ?></span>'</span>
+    <span class="flex font-bold text-2xl md:text-4xl p-10 mt-10 gap-2">Kết quả tìm kiếm '<span class="text-[#ffa566]"><?= htmlspecialchars($_GET['queryStr']) ?></span>'</span>
     <div class="w-full m-auto ">
         <div class="grid sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 w-full sm:gap-3 md:gap-3">
             <?php foreach ($products as $row): 

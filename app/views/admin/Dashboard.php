@@ -75,13 +75,25 @@
         <div class="mt-3 flex flex-col">    
             <?php if (!empty($_SESSION['SPBanGanDay'])): ?>               
                 <?php foreach ($_SESSION['SPBanGanDay'] as $product): ?>   
-                    <div class="flex justify-between items-center">     
+                    <div class="hidden md:flex justify-between items-center">     
                         <div class="flex w-[40%]">
                             <img src="<?php echo htmlspecialchars($product['HinhAnhBienThe']); ?>" alt="<?php echo htmlspecialchars($product['TenSP']); ?>" class="w-16 h-16 object-cover rounded-md inline-block ml-2">                
                             <span class="font-semibold"><?php echo htmlspecialchars($product['TenSP']); ?></span>
                         </div>                                                                                       
                         <span class="text-gray-500"><?php echo date('d-m-Y H:i', strtotime($product['NgayTao'])); ?></span>                    
                         <span class="text-gray-600"><?php echo number_format($product['SoLuong'], 0, '', '.') . ' sản phẩm'; ?></span>                    
+                    </div>
+                    <div class="flex flex-col md:hidden justify-between">     
+                        <div class="flex ">
+                            <div class="">
+                                <img src="<?php echo htmlspecialchars($product['HinhAnhBienThe']); ?>" alt="<?php echo htmlspecialchars($product['TenSP']); ?>" class="w-16 h-16 object-cover rounded-md inline-block ml-2">
+                            </div>  
+                            <div class="flex flex-col">
+                                <span class="font-semibold"><?php echo htmlspecialchars($product['TenSP']); ?></span>                                                                                                           
+                                <span class="text-gray-500"><?php echo date('d-m-Y H:i', strtotime($product['NgayTao'])); ?></span>                    
+                                <span class="text-gray-600">Số lượng: <?php echo number_format($product['SoLuong'], 0, '', '.'); ?></span>                
+                            </div>
+                        </div>
                     </div>
                     <hr class="mt-2 mb-2 text-gray-400">
                 <?php endforeach; ?>               
