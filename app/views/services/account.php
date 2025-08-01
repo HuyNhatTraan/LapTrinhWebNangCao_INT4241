@@ -147,7 +147,7 @@
                 <span class='text-md font-bold text-black mb-2'>Xin chào:
                     <?php echo $userInfo['TenKH']; ?></span>
                 <span class='text-xs text-white-600'>Email: <?php echo $userInfo['Email']; ?></span>
-                <a href=''>
+                <a href='./edit-user-info'>
                     <span class='text-xs underline mt-3 hover:text-[#3c81c6] duration-200'>Chỉnh sửa thông
                         tin</span>
                 </a>
@@ -231,7 +231,7 @@
                 </div>
 
                 <div
-                    class="bg-[#f5f5f5] rounded-xl flex flex-col items-center justify-center p-2 shadow-2xl hover:shadow-[2px_1px_10px_8px_rgba(0,_0,_0,_0.35)] duration-350 py-8">
+                    class="cursor-pointer bg-[#f5f5f5] rounded-xl flex flex-col items-center justify-center p-2 shadow-2xl hover:shadow-[2px_1px_10px_8px_rgba(0,_0,_0,_0.35)] duration-350 py-8">
                     <svg width="64px" height="64px" viewBox="0 0 24 24" id="Layer_1" data-name="Layer 1"
                         xmlns="http://www.w3.org/2000/svg" fill="#000000">
                         <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
@@ -253,10 +253,10 @@
                             </path>
                         </g>
                     </svg>
-                    <div class="flex flex-col items-center gap-2 p-4">
+                    <a href="./edit-user-info" class="cursor-pointer flex flex-col items-center gap-2 p-4">
                         <span class="text-xl md:text-3xl font-bold">Thông tin cá nhân</span>
                         <span>Chỉnh sửa thông tin cá nhân</span>
-                    </div>
+                    </a>
                 </div>
                 <?php if (isset($_SESSION['role']) && $_SESSION['role'] === 'Admin'): ?>
                     <div class="bg-[#f5f5f5] rounded-xl flex flex-col items-center justify-center p-2 shadow-2xl hover:shadow-[2px_1px_10px_8px_rgba(0,_0,_0,_0.35)] duration-350 py-8">

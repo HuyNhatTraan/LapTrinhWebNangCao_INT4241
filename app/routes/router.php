@@ -17,6 +17,7 @@ require_once 'controllers/productController.php'; // Nạp controller cần dùn
 require_once 'controllers/cartController.php'; // Nạp controller cần dùng
 require_once 'controllers/authController.php'; // Nạp controller cần dùng
 require_once 'controllers/danhMucSPController.php'; // Nạp controller cần dùng
+require_once 'controllers/userInfoController.php'; // Nạp controller cần dùng
 
 $routes = [
     '/' => ['controller' => 'ProductController', 'action' => 'showHomepageStore'],
@@ -26,7 +27,8 @@ $routes = [
     '/discover' => 'views/pages/discover/index.php',
     '/support' => 'views/pages/support/index.php',
     '/account' => ['controller' => 'AuthController', 'action' => 'hienThiDivToAdmin'],
-    '/edit-user-info' => 'views/services/editAccount.php',
+    '/edit-user-info' => ['controller' => 'UserInfoController', 'action' => 'hientThiThongTinTaiKhoan'],
+    '/edit-user-info/submit' => ['controller' => 'UserInfoController', 'action' => 'capNhatThongTinTaiKhoan'],
     '/register' => 'views/services/register.php',
     '/return-policy' => 'views/pages/support/return-policy.php',
     '/chinh-sach-bao-hanh' => 'views/pages/support/chinh-sach-bao-hanh.php',
