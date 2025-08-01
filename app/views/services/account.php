@@ -5,14 +5,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles/output.css">
-    <link rel="icon" href="icon.png" type="image/png" />
+    <link rel="icon" href="icon.png" type="image/png">
     <title>Tài khoản</title>
 </head>
 
 <body class="bg-[#f5f5f5]">
-    <?php require 'views/components/nav.php'; ?>
+    <?php include 'views/components/nav.php'; ?>
     <div class="w-full h-[100%] relative shrink-0">
-        <img src="https://i02.appmifile.com/756_operatorx_operatorx_opx/10/12/2021/e02f348a785e05a0aaf82bfabfc1be24.jpg"
+        <img src="images/account/e02f348a785e05a0aaf82bfabfc1be24.jpg"
             alt="" class="flex w-full  object-cover">
 
         <div class="hidden md:absolute inset-0 md:flex justify-center items-center">
@@ -42,9 +42,8 @@
                             <span class='text-2xl font-bold text-white mb-2'>Xin chào:
                                 <?php echo $userInfo['TenKH']; ?></span>
                             <span class='text-lg text-white-600'>Email: <?php echo $userInfo['Email']; ?></span>
-                            <a href=''>
-                                <span class='text-lg underline mt-3 hover:text-[#3c81c6] duration-200'>Chỉnh sửa thông
-                                    tin</span>
+                            <a href='./edit-user-info'>
+                                <span class='text-lg underline mt-3 hover:text-[#3c81c6] duration-200'>Chỉnh sửa thông tin</span>                                    
                             </a>
                         </div>
                     </div>

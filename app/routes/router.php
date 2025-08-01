@@ -16,6 +16,7 @@ $uri = '/' . trim($uri, '/'); // Chuẩn hoá: nếu rỗng thì là '/'
 require_once 'controllers/productController.php'; // Nạp controller cần dùng
 require_once 'controllers/cartController.php'; // Nạp controller cần dùng
 require_once 'controllers/authController.php'; // Nạp controller cần dùng
+require_once 'controllers/danhMucSPController.php'; // Nạp controller cần dùng
 
 $routes = [
     '/' => ['controller' => 'ProductController', 'action' => 'showHomepageStore'],
@@ -25,6 +26,7 @@ $routes = [
     '/discover' => 'views/pages/discover/index.php',
     '/support' => 'views/pages/support/index.php',
     '/account' => ['controller' => 'AuthController', 'action' => 'hienThiDivToAdmin'],
+    '/edit-user-info' => 'views/services/editAccount.php',
     '/register' => 'views/services/register.php',
     '/return-policy' => 'views/pages/support/return-policy.php',
     '/chinh-sach-bao-hanh' => 'views/pages/support/chinh-sach-bao-hanh.php',
@@ -34,6 +36,7 @@ $routes = [
     '/login' => 'views/services/login.php',
     '/login/submit' => ['controller' => 'AuthController', 'action' => 'login'],
     '/admin' => ['controller' => 'AuthController', 'action' => 'getAdminDashboard'],
+    '/admin/ThemDM' => ['controller' => 'DanhMucSPController', 'action' => 'themDanhMucSP'],
     '/checkout' => ['controller' => 'CartController', 'action' => 'xuLyVaHienThiCheckOut'],
     '/cart' => ['controller' => 'CartController', 'action' => 'xuLyVaHienThiGioHang'],
     '/cart/deleteItem' => ['controller' => 'CartController', 'action' => 'deleteItem'],

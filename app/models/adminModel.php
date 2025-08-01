@@ -75,11 +75,9 @@ class AdminModel {
         $db = Database::getInstance();
         $conn = $db->getConnection();
 
-        $stmt = $conn->prepare("SELECT D.MaDM, D.TenDanhMucSP, SUM(DL.SoLuong) AS SoLuong
-            FROM DanhMucSP D
-            JOIN SanPham S ON S.MaDM = D.MaDM
-            JOIN DungLuongSP DL ON DL.MaSP = S.MaSP
-            GROUP BY D.MaDM, D.TenDanhMucSP;");
+        $stmt = $conn->prepare("SELECT D.MaDM, D.TenDanhMucSP
+            FROM DanhMucSP D");
+            
         $stmt->execute();
 
         return $stmt->fetchAll();
