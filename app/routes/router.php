@@ -36,9 +36,10 @@ $routes = [
     '/admin' => ['controller' => 'AuthController', 'action' => 'getAdminDashboard'],
     '/checkout' => ['controller' => 'CartController', 'action' => 'xuLyVaHienThiCheckOut'],
     '/cart' => ['controller' => 'CartController', 'action' => 'xuLyVaHienThiGioHang'],
+    '/cart/deleteItem' => ['controller' => 'CartController', 'action' => 'deleteItem'],
+    '/cart/updateItem' => ['controller' => 'CartController', 'action' => 'updateItem'],
     '/search' => ['controller' => 'ProductController', 'action' => 'showSearchResults'],
     '/product' => ['controller' => 'ProductController', 'action' => 'showChiTietSP'],
-    
 ];
 
 // Kiểm tra xem đường dẫn URI người dùng truy cập có tồn tại trong mảng routes không

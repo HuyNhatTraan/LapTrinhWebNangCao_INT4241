@@ -83,12 +83,12 @@
     </div>
     <div class="w-[90%] md:w-[80%] flex m-auto flex-col">
         <div class="grid grid-cols-1 lg:grid-cols-3 gap-3">
-            <?php if (empty($cartItems)): ?>
+            <?php if (empty($_SESSION['cartItems'])): ?>
                 <div class="flex justify-center col-span-2 border-2 rounded-2xl bg-white border-gray-300 p-5">
                     <h2 class="text-2xl font-bold p-5">Giỏ hàng trống</h2>
                 </div>
             <?php endif; ?>
-            <?php foreach ($cartItems as $item): ?>
+            <?php foreach ($_SESSION['cartItems'] as $item): ?>
                 <div class="lg:col-span-2 border-2 rounded-2xl bg-white border-gray-300 flex flex-col sm:flex-row justify-between p-5">
                     <a href="product?MaSP=<?php echo $item['MaSP']; ?>" class="flex w-fit sm:w-[50%] h-fit">
                         <img class="w-30 h-30" src="<?php echo $item['HinhAnhBienThe']; ?>"
@@ -100,24 +100,26 @@
                         </div>
                     </a>
                     <div class="flex items-center mt-5 sm:mt-0">
-                        <form class="max-w-xs mx-auto">
+                        <form method="POST" action="./cart/updateItem" class="max-w-xs mx-auto">
                             <div class="relative flex items-center max-w-[8rem]">
-                                <button type="button" id="decrement-button" data-input-counter-decrement="quantity-input"
-                                    class="bg-gray-100 dark:bg-gray-700 dark:hover:bg-gray-600 dark:border-gray-600 hover:bg-gray-200 border border-gray-300 rounded-s-lg p-3 h-11 focus:ring-gray-100 dark:focus:ring-gray-700 focus:ring-2 focus:outline-none">
+                                <button type="button" id="decrement-button" 
+                                    class="decrement-btn bg-gray-100 dark:bg-gray-700 dark:hover:bg-gray-600 dark:border-gray-600 hover:bg-gray-200 border border-gray-300 rounded-s-lg p-3 h-11 focus:ring-gray-100 dark:focus:ring-gray-700 focus:ring-2 focus:outline-none">
                                     <svg class="w-3 h-3 text-gray-900 dark:text-white" aria-hidden="true"
                                         xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 18 2">
                                         <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
                                             stroke-width="2" d="M1 1h16" />
                                     </svg>
                                 </button>
+                                <input type="hidden" name="MaSP" value="<?php echo $item['MaSP']; ?>">
+                                <input type="hidden" name="MaBienThe" value="<?php echo $item['MaBienThe']; ?>">
                                 <input type="text" name="SoLuong"
                                     value="<?php echo isset($item['SoLuong']) ? $item['SoLuong'] : 1; ?>"
                                     id="quantity-input" data-input-counter data-input-counter-min="1"
                                     aria-describedby="helper-text-explanation"
-                                    class="bg-gray-50 border-x-0 border-gray-300 h-11 text-center text-gray-900 text-sm focus:ring-blue-500 focus:border-blue-500 block w-full py-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                                    class="quantity-input bg-gray-50 border-x-0 border-gray-300 h-11 text-center text-gray-900 text-sm focus:ring-blue-500 focus:border-blue-500 block w-full py-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                                     placeholder="999" required />
-                                <button type="button" id="increment-button" data-input-counter-increment="quantity-input"
-                                    class="bg-gray-100 dark:bg-gray-700 dark:hover:bg-gray-600 dark:border-gray-600 hover:bg-gray-200 border border-gray-300 rounded-e-lg p-3 h-11 focus:ring-gray-100 dark:focus:ring-gray-700 focus:ring-2 focus:outline-none">
+                                <button type="button" id="increment-button" 
+                                    class="increment-btn bg-gray-100 dark:bg-gray-700 dark:hover:bg-gray-600 dark:border-gray-600 hover:bg-gray-200 border border-gray-300 rounded-e-lg p-3 h-11 focus:ring-gray-100 dark:focus:ring-gray-700 focus:ring-2 focus:outline-none">
                                     <svg class="w-3 h-3 text-gray-900 dark:text-white" aria-hidden="true"
                                         xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 18 18">
                                         <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
@@ -126,12 +128,41 @@
                                 </button>
                             </div>
                         </form>
+                        <script>
+                            document.querySelectorAll('.decrement-btn').forEach(btn => {
+                                btn.addEventListener('click', function () {
+                                    const input = this.closest('form').querySelector('.quantity-input');
+                                    let value = parseInt(input.value) || 1;
+                                    if (value > 1) {
+                                        input.value = value - 1;
+                                    }
+                                    this.closest('form').submit();
+                                });
+                            });
+
+                            document.querySelectorAll('.increment-btn').forEach(btn => {
+                                btn.addEventListener('click', function () {
+                                    const input = this.closest('form').querySelector('.quantity-input');
+                                    let value = parseInt(input.value) || 1;
+                                    input.value = value + 1;
+                                    this.closest('form').submit();
+                                });
+                            });
+                        </script>
+
                     </div>
-                    <div class="flex items-center justify-center w-full sm:w-fit mt-5 sm:mt-0">
-                        <span class="cursor-pointer">Xoá</span>
-                    </div>
+                    <!-- <?php print_r($_SESSION['cartItems']);?> -->
+                    <form method="POST" action="./cart/deleteItem" class="flex items-center">                                                                                                                               
+                        <input type="hidden" name="MaSP" value="<?php echo $item['MaSP']; ?>">
+                        <input type="hidden" name="MaBienThe" value="<?php echo $item['MaBienThe']; ?>">                                                                       
+                        <button type="submit" name="delete" class="cursor-pointer text-red-500 hover:text-red-700">
+                            Xoá
+                        </button>                       
+                    </form>
+                    
                 </div>
-            <?php endforeach; ?>
+                <?php endforeach; ?>
+           
             <!-- Thanh toán -->
             
             <div class="flex lg:row-span-2 lg:col-start-3 lg:row-start-1 flex-col rounded-2xl lg:sticky lg:top-20 lg:z-10">

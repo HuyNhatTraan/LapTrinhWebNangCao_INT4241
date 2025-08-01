@@ -71,7 +71,7 @@
             $dungLuong = ProductModel::getDungLuongSP($MaSP);
             $products = ProductModel::getProductById($MaSP);
             $thongSoKyThuat = ProductModel::getThongSoSP($MaSP);
-
+            $_SESSION['dungLuong'] = $dungLuong; // Lưu sản phẩm vào session để sử dụng trong giỏ hàng
             // Gửi sang view để hiển thị
             include __DIR__ .'/../views/product/index.php'; 
         }
