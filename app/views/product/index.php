@@ -87,8 +87,7 @@
                                     </svg>
                                     <input type="radio" name="MaDLSP" value="<?= htmlspecialchars($item['MaDLSP']) ?>" class="peer" required>
                                 </label>                                
-                            <?php endforeach; ?>   
-                                                     
+                            <?php endforeach; ?>                                                        
                         </div>
                         <div id="error-dungluong" class="text-red-500 text-sm mt-2"></div>
                         <span class="font-bold text-2xl mt-6 mb-5">Màu sắc</span>
