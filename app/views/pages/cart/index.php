@@ -128,27 +128,7 @@
                                 </button>
                             </div>
                         </form>
-                        <script>
-                            document.querySelectorAll('.decrement-btn').forEach(btn => {
-                                btn.addEventListener('click', function () {
-                                    const input = this.closest('form').querySelector('.quantity-input');
-                                    let value = parseInt(input.value) || 1;
-                                    if (value > 1) {
-                                        input.value = value - 1;
-                                    }
-                                    this.closest('form').submit();
-                                });
-                            });
-
-                            document.querySelectorAll('.increment-btn').forEach(btn => {
-                                btn.addEventListener('click', function () {
-                                    const input = this.closest('form').querySelector('.quantity-input');
-                                    let value = parseInt(input.value) || 1;
-                                    input.value = value + 1;
-                                    this.closest('form').submit();
-                                });
-                            });
-                        </script>
+                        
 
                     </div>
                     <!-- <?php print_r($_SESSION['cartItems']);?> -->
@@ -236,6 +216,27 @@
         <?php endif; ?>
     </div>
     <?php require 'views/components/footer.php' ?>
+    <script>
+        document.querySelectorAll('.decrement-btn').forEach(btn => {
+            btn.addEventListener('click', function () {
+                const input = this.closest('form').querySelector('.quantity-input');
+                let value = parseInt(input.value) || 1;
+                if (value > 1) {
+                    input.value = value - 1;
+                }
+                this.closest('form').submit();
+            });
+        });
+
+        document.querySelectorAll('.increment-btn').forEach(btn => {
+            btn.addEventListener('click', function () {
+                const input = this.closest('form').querySelector('.quantity-input');
+                let value = parseInt(input.value) || 1;
+                input.value = value + 1;
+                this.closest('form').submit();
+            });
+        });
+    </script>
 </body>
 
 </html>
