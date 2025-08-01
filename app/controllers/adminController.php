@@ -21,7 +21,7 @@ class AdminController {
         $_SESSION['SoLuongSP'] = $items['SoLuongSP']; // Lưu vào session để sử dụng sau này
     }
     public static function hienThiTongDoanhThuThangNay() {
-        $items = AdminModel::getTongDoanhThuThang(); 
+        $items = AdminModel::getTongDoanhThuThang();        
         $_SESSION['TongDoanhThuThang'] = $items['TongDoanhThuThang']; // Lưu vào session để sử dụng sau này
     }
     public static function hienThiTongDoanhThuThangTruoc() {

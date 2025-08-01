@@ -44,7 +44,7 @@
     <div class="bg-white p-6 rounded-lg shadow gap-5 flex flex-col">
         <span class="text-2xl font-bold">Tổng doanh thu tháng này</span>
         <span class="text-2xl md:text-5xl font-bold text-red-500"><?php echo number_format($_SESSION['TongDoanhThuThang'], 0, '', '.') . 'đ'; ?></span>
-        <?php 
+        <?php             
             $tongDoanhThuThang = $_SESSION['TongDoanhThuThang'] ?? 0;
             $tongDoanhThuThangTruoc = $_SESSION['TongDoanhThuThangTruoc'] ?? 0;
 

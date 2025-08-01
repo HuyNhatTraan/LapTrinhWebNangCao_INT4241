@@ -112,7 +112,7 @@ class AdminModel {
 
         $stmt = $conn->prepare("SELECT SUM(C.SoLuong * C.GiaTien) AS TongDoanhThuThang 
         FROM DonHang D JOIN ChiTietDonhang C ON D.MaDonHang = C.MaDonHang
-        WHERE MONTH(D.NgayTao) = MONTH(NOW()) AND YEAR(D.NgayTao) = YEAR(NOW());");
+        WHERE MONTH(D.NgayTao) = MONTH(NOW()) AND YEAR(D.NgayTao) = YEAR(NOW())");
   
         $stmt->execute();
 
