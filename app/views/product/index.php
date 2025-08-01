@@ -80,12 +80,12 @@
                         <span class="font-bold text-2xl mt-6 mb-5">Dung lượng</span>
                         <div class="grid grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5">
                             <?php foreach ($dungLuong as $item): ?>
-                                <label class="flex text-center items-center justify-center p-4 flex-col rounded-xl border-2 peer-checked:border-orange-500 peer-checked:shadow-lg cursor-pointer duration-200 shadow-md relative group">
-                                    <input type="radio" name="MaDLSP" value="<?= htmlspecialchars($item['MaDLSP']) ?>" class="hidden peer" required>
+                                <label class="flex text-center items-center justify-center p-4 flex-col rounded-xl border-2 peer-checked:border-orange-500 peer-checked:shadow-lg cursor-pointer duration-200 shadow-md relative group">                                    
                                     <span class="px-2 py-2"><?= htmlspecialchars($item['TenDLSP']) ?></span>
                                     <svg class="absolute top-2 right-2 w-5 h-5 text-orange-500 opacity-0 peer-checked:opacity-100 transition-opacity duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7" />
                                     </svg>
+                                    <input type="radio" name="MaDLSP" value="<?= htmlspecialchars($item['MaDLSP']) ?>" class="peer" required>
                                 </label>                                
                             <?php endforeach; ?>   
                                                      
@@ -94,13 +94,13 @@
                         <span class="font-bold text-2xl mt-6 mb-5">Màu sắc</span>
                         <div class="grid grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5">
                             <?php foreach ($mauSacHinhAnh as $item): ?>
-                                <label class="flex text-center items-center justify-center p-4 flex-col rounded-xl border-2 peer-checked:border-orange-500 peer-checked:shadow-lg cursor-pointer duration-200 shadow-md relative group">
-                                    <input type="radio" name="MaBienThe" value="<?= htmlspecialchars($item['MaBienThe']) ?>" class="hidden peer" required>
+                                <label class="flex text-center items-center justify-center p-4 flex-col rounded-xl border-2 peer-checked:border-orange-500 peer-checked:shadow-lg cursor-pointer duration-200 shadow-md relative group">                                    
                                     <span class="inline-block w-8 h-8 rounded-full bg-<?= htmlspecialchars($item['MaMau']) ?> peer-checked:ring-4 peer-checked:ring-orange-500 transition duration-200"></span>
                                     <span class="mt-3"><?= htmlspecialchars($item['MauSac']) ?></span>
                                     <svg class="absolute top-2 right-2 w-5 h-5 text-orange-500 opacity-0 peer-checked:opacity-100 transition-opacity duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7" />
                                     </svg>
+                                    <input type="radio" name="MaBienThe" value="<?= htmlspecialchars($item['MaBienThe']) ?>" class=" peer" required>
                                 </label>
                             <?php endforeach; ?>
                         </div>
@@ -184,6 +184,5 @@
             });
         });
     </script>
-    
 </body>
 </html> 
