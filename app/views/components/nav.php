@@ -99,7 +99,7 @@
                             <span class="text-black ms-2 md:hidden">Giỏ hàng</span>
                         </a>
                     </li>
-                    <li class="mr-0">
+                    <li class="mr-0 w-fit">
                         <?php if (!empty($_SESSION['user'])): ?>
                             <a href="account" class="w-fit flex p-2 md:p-0 items-center">
                                 <?php
@@ -129,12 +129,13 @@
                             </a>
                         <?php endif; ?>
                         <?php if (empty($_SESSION['user'])): ?>
-                            <a href="login">
+                            <a href="login" class="flex p-2 w-fit h-fit">
                                 <svg class="w-6 h-6 hover:stroke-[#3c81c6] duration-150" xmlns="http://www.w3.org/2000/svg"
                                     fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
                                     <path stroke-linecap="round" stroke-linejoin="round"
                                         d="M15.75 6a3.75 3.75 0 1 1-7.5 0 3.75 3.75 0 0 1 7.5 0ZM4.501 20.118a7.5 7.5 0 0 1 14.998 0A17.933 17.933 0 0 1 12 21.75c-2.676 0-5.216-.584-7.499-1.632Z" />
                                 </svg>
+                                <span class="text-black ms-2 md:hidden">Đăng ký</span>
                             </a>
                         <?php endif; ?>
                     </li>
@@ -148,7 +149,7 @@
                 <form action="./search" method="GET" class="w-full flex justify-center items-center mb-4">
                     <label for="search"
                         class="mb-2 text-sm font-medium text-gray-900 sr-only dark:text-white">Search</label>
-                    <div class="flex relative w-[70%] items-center justify-center">
+                    <div class="flex relative w-[95%] md:w-[70%] items-center justify-center">
                         <div class="absolute inset-y-0 start-0 flex items-center ps-3 pointer-events-none">
                             <svg class="w-4 h-4 text-gray-500 dark:text-gray-400" xmlns="http://www.w3.org/2000/svg"
                                 fill="none" viewBox="0 0 20 20">

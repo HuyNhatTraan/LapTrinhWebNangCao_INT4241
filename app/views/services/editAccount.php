@@ -11,7 +11,7 @@
     <?php require 'views/components/nav.php'; ?>
     <span class="flex items-center justify-center font-bold text-lg md:text-3xl mt-10 mb-10">Chỉnh sửa thông tin tài khoản</span>
     <div class="flex items-center justify-center">
-        <form class="bg-white w-[95%] md:w-[80%] p-5 md:p-10 rounded-2xl" method="POST" action="edit-user-info/submit">
+        <form class="bg-white w-[95%] md:w-[80%] p-5 md:p-10 rounded-2xl shadow-lg border-2 border-gray-300" method="POST" action="edit-user-info/submit">
             <?php foreach($_SESSION['userInfo'] as $userInfo): ?>
             <div class="grid gap-6 mb-6 md:grid-cols-2">                
                 <div>
@@ -32,8 +32,8 @@
                 </div>               
             </div>
             <div class="mb-6">
-                <label for="email" class="block mb-2 text-sm font-medium text-gray-900 ">Thêm hình ảnh</label>
-                <input type="file" id="image" class="text-gray-900 text-sm rounded-2xl focus:ring-blue-500 focus:border-blue-500 block w-fit p-2.5  dark:placeholder-gray-400  dark:focus:ring-blue-500 dark:focus:border-blue-500"/>
+                <label for="image" class="block mb-2 text-sm font-medium text-gray-900 ">Thêm hình ảnh</label>
+                <input type="file" id="image" class="text-gray-900 text-sm focus:ring-blue-500 focus:border-blue-500 flex w-full dark:placeholder-gray-400  dark:focus:ring-blue-500 dark:focus:border-blue-500"/>
             </div>
             <div class="flex justify-center">
                 <button type="submit" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-lg w-full sm:w-auto px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Cập nhật thông tin</button>
@@ -41,7 +41,6 @@
             <?php endforeach; ?>   
         </form>
     </div>
-    
 
     <?php require_once 'views/components/footer.php'; ?>
 </body>
