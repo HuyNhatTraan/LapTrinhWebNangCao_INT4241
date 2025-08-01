@@ -64,9 +64,7 @@
                 } else {
                     $growthText = "Không thay đổi so với tháng trước";
                 }
-            }
-
-            
+            }            
         ?>
         <span class="text-md md:text-xl font-semibold"><?php echo $growthText; ?></span>
     </div>
