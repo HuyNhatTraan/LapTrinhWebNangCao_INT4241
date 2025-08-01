@@ -83,32 +83,32 @@
         <div class="grid grid-cols-1 lg:grid-cols-3 gap-3">
             
             <form class="w-full lg:col-span-2 border-2 rounded-2xl bg-white border-gray-300 flex flex-col justify-between p-7">
-                <div class="font-bold text-3xl">Địa chỉ giao hàng</div>
+                <div class="font-bold text-xl md:text-3xl">Địa chỉ giao hàng</div>
                 <hr class="mt-5 mb-5 text-gray-400">
                 <div class="grid gap-6 mb-6 md:grid-cols-2">
                     <div>
-                        <label for="name" class="block mb-2 text-xl text-gray-500 font-medium ">Tên *</label>
+                        <label for="name" class="block mb-2 text-md md:text-xl text-gray-500 font-medium ">Tên *</label>
                         <input type="text" id="name" class="bg-gray-50 border-2 border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5  dark:border-gray-600 dark:placeholder-gray-400  dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Tên của ní" required />
                     </div>
                     <div>
-                        <label for="last_name" class="block mb-2 text-xl text-gray-500 font-medium ">Họ</label>
+                        <label for="last_name" class="block mb-2 text-md md:text-xl text-gray-500 font-medium ">Họ</label>
                         <input type="text" id="last_name" class="bg-gray-50 border-2 border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5  dark:border-gray-600 dark:placeholder-gray-400  dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Họ của bạn" required />
                     </div>
                     <div>
-                        <label for="company" class="block mb-2 text-xl text-gray-500 font-medium ">Tên người nhận</label>
+                        <label for="company" class="block mb-2 text-md md:text-xl text-gray-500 font-medium ">Tên người nhận</label>
                         <input type="text" id="company" class="bg-gray-50 border-2 border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5  dark:border-gray-600 dark:placeholder-gray-400  dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Tên người nhận" required />
                     </div>  
                     <div>
-                        <label for="phone" class="block mb-2 text-xl text-gray-500 font-medium ">Số điện thoại *</label>
+                        <label for="phone" class="block mb-2 text-md md:text-xl text-gray-500 font-medium ">Số điện thoại *</label>
                         <input type="tel" id="phone" class="bg-gray-50 border-2 border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5  dark:border-gray-600 dark:placeholder-gray-400  dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="0812235345" pattern="[0-9]{3}-[0-9]{2}-[0-9]{3}" required />
                     </div>
                 </div>
                 <div class="mb-6">
-                    <label for="email" class="block mb-2 text-xl text-gray-500 font-medium ">Địa chỉ *</label>
+                    <label for="email" class="block mb-2 text-md md:text-xl text-gray-500 font-medium ">Địa chỉ *</label>
                     <input type="email" id="email" class="bg-gray-50 border-2 border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5  dark:border-gray-600 dark:placeholder-gray-400  dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Địa chỉ của ní" required />
                 </div> 
                 <div class="mb-6">
-                    <label for="email" class="block mb-2 text-xl text-gray-500 font-medium ">Email</label>
+                    <label for="email" class="block mb-2 text-md md:text-xl text-gray-500 font-medium ">Email</label>
                     <input type="email" id="email" class="bg-gray-50 border-2 border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5  dark:border-gray-600 dark:placeholder-gray-400  dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Địa chỉ email của bạn" required />
                 </div> 
                 
@@ -119,7 +119,7 @@
             
             <div class="flex lg:row-span-2 lg:col-start-3 lg:row-start-1 flex-col rounded-2xl lg:sticky lg:top-20 lg:z-10">
                 <div class="border-2 rounded-2xl bg-white border-gray-300 p-5">
-                    <div class="flex flex-col justify-between text-2xl font-bold">Tóm tắt đơn hàng </span>
+                    <div class="flex flex-col justify-between text-xl md:text-2xl font-bold">Tóm tắt đơn hàng </span>
                         <?php if (empty($cartItems)): ?>
                             <div class="flex justify-center items-center bg-white border-gray-300 p-5">
                                 <h2 class="text-2xl font-bold p-5">Giỏ hàng trống</h2>
@@ -128,33 +128,39 @@
                     </div>
                     <div class="flex flex-col text-xl mt-3 text-gray-600">
                         <?php foreach ($cartItems as $item): ?>
-                            <div class="flex mb-1">
+                            <div class="flex mb-2">
                                 <a href="product?MaSP=<?php echo $item['MaSP']; ?>" class="flex justify-between w-full">                                 
-                                    <div class="flex">
+                                    <div class="hidden md:flex">
                                         <img class="w-20 h-20" src="<?php echo $item['HinhAnhBienThe']; ?>" alt="<?php echo $item['HinhAnhBienThe']; ?>">
                                         <span class=" text-black text-[16px]">
                                             <div class="flex flex-col">
                                                 <div class="font-bold"><?php echo $item['TenSP']; ?></div>
                                                 <div class="text-gray-600"><?php echo $item['MauSac']; ?></div>
                                                 <div class="text-gray-600"><?php echo $item['TenDLSP']; ?></div>
-                                            </div>
-                                            
+                                            </div>                                            
                                             <div class="mt-1">
                                                 Số lượng: <?php echo $item['SoLuong']; ?>
                                             </div>
                                         </span>                                      
                                     </div>
-                                    <div class="flex">                                                                            
-                                        <span class=" text-black text-[16px]">
+                                    <div class="flex md:hidden">
+                                        <img class="w-20 h-20" src="<?php echo $item['HinhAnhBienThe']; ?>" alt="<?php echo $item['HinhAnhBienThe']; ?>">
+                                        <div class="flex flex-col text-black">                                            
+                                            <span class="font-bold text-sm"><?php echo $item['TenSP']; ?></span>
+                                            <span class="text-gray-700 text-sm">Màu sắc: <?php echo $item['MauSac']; ?></span>
+                                            <span class="text-gray-700 text-sm">Dung lượng:<?php echo $item['TenDLSP']; ?></span>
+                                            <span class="text-gray-700 text-sm">Số lượng: <?php echo $item['SoLuong']; ?></span>
+                                            <span class=" font-bold text-sm"> Giá
                                             <?php echo number_format($item['GiaHienTai'], 0, ',', '.'); ?>đ
-                                        </span>
-                                    </div>
+                                        </span>                                        
+                                        </div>                                      
+                                    </div>                                   
                                 </a>                            
                             </div>
                         <?php endforeach; ?>
                     </div>
                     <hr class="text-gray-400 mt-3 mb-3">
-                    <div class="flex justify-between text-2xl">Tổng cộng: <span class="font-bold text-orange-500">
+                    <div class="flex justify-between text-lg">Tổng cộng: <span class="font-bold text-orange-500">
                         <?php
                             $tongCong = 0;
                             foreach ($cartItems as $item) {
@@ -167,17 +173,17 @@
                         </span>
                     </div>
                     <div class="flex justify-between text-xl mt-3 text-gray-600">
-                        <span>Phí vận chuyển: </span>
-                        <span class="text-orange-500">Miễn phí</span>
+                        <span class="text-sm md:text-md">Phí vận chuyển: </span>
+                        <span class="text-sm md:text-md text-orange-500">Miễn phí</span>
                     </div>
                     <div class="flex justify-between text-xl mt-5 text-gray-600">
                         <form action="" method="POST" class="w-full">
-                            <button class="bg-black text-white py-2 rounded-xl w-full hover:bg-[#444444] duration-150 text-md">Xác nhận và thanh toán ngay</button>
+                            <button class="bg-black text-white py-2 rounded-xl w-full hover:bg-[#444444] duration-150 text-sm md:text-md">Xác nhận và thanh toán ngay</button>
                         </form>
                     </div>
                 </div>
                 <div class="border-2 rounded-2xl bg-white border-gray-300 p-5 mt-4">
-                    <span class="flex justify-between text-2xl font-semibold">Tại sao nên mua từ HT Tech</span>
+                    <span class="flex justify-between text-lg md:text-2xl font-semibold">Tại sao nên mua từ HT Tech</span>
                     <hr class="text-gray-400 mt-3 mb-3">
                     <div class="flex flex-col text-lg">
                         <div class="flex items-center gap-3 mb-3">

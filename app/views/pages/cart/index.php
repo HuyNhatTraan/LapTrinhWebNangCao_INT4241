@@ -89,9 +89,9 @@
                 </div>
             <?php endif; ?>
             <?php foreach ($_SESSION['cartItems'] as $item): ?>
-                <div class="lg:col-span-2 border-2 rounded-2xl bg-white border-gray-300 flex flex-col sm:flex-row justify-between p-5">
-                    <a href="product?MaSP=<?php echo $item['MaSP']; ?>" class="flex w-fit sm:w-[50%] h-fit">
-                        <img class="w-30 h-30" src="<?php echo $item['HinhAnhBienThe']; ?>"
+                <div class="lg:col-span-2 border-2 rounded-2xl bg-white border-gray-300 flex flex-col sm:flex-row justify-between p-2 md:p-5">
+                    <a href="product?MaSP=<?php echo $item['MaSP']; ?>" class="flex w-fit sm:w-[50%] h-fit items-center">
+                        <img class="w-20 h-20 md:w-30 md:h-30" src="<?php echo $item['HinhAnhBienThe']; ?>"
                             alt="<?php echo $item['HinhAnhBienThe']; ?>">
                         <div class="flex flex-col">
                             <span class="ml-4 font-bold text-2xl text-orange-500"><?php echo $item['TenSP']; ?></span>
@@ -132,7 +132,7 @@
 
                     </div>
                     <!-- <?php print_r($_SESSION['cartItems']);?> -->
-                    <form method="POST" action="./cart/deleteItem" class="flex items-center">                                                                                                                               
+                    <form method="POST" action="./cart/deleteItem" class="flex items-center justify-center mt-5 sm:mt-0">                                                                                                                               
                         <input type="hidden" name="MaSP" value="<?php echo $item['MaSP']; ?>">
                         <input type="hidden" name="MaBienThe" value="<?php echo $item['MaBienThe']; ?>">                                                                       
                         <button type="submit" name="delete" class="cursor-pointer text-red-500 hover:text-red-700">

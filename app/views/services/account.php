@@ -175,7 +175,7 @@
                                 <path
                                     d="m 326,505.76367 a 1,1 0 0 0 -0.70703,0.29297 l -1.79297,1.79297 -0.79297,-0.79297 a 1,1 0 0 0 -1.41406,0 1,1 0 0 0 0,1.41406 l 1.5,1.5 a 1.0001,1.0001 0 0 0 1.41406,0 l 2.5,-2.5 a 1,1 0 0 0 0,-1.41406 A 1,1 0 0 0 326,505.76367 Z"
                                     id="path453753"
-                                    style="color:#000000;fill:#000000;fill-rule:evenodd;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4.1;-inkscape-stroke:none">
+                                    style="color:#000000;fill:#000000;fill-rule:evenodd;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4.1;">
                                 </path>
                                 <path
                                     d="m 307,504.01367 a 1,1 0 0 0 -1,1 1,1 0 0 0 1,1 h 3 a 1,1 0 0 0 1,-1 1,1 0 0 0 -1,-1 z"
@@ -192,7 +192,7 @@
                     </svg>
                     <div class="flex flex-col items-center gap-2 p-4">
                         <span class="text-xl md:text-3xl font-bold">Đơn hàng của bạn</span>
-                        <span>Theo dõi chỉnh sửa hoặc huỷ đơn hàng của bạn</span>
+                        <span class="text-sm md:text-md">Theo dõi đơn hàng của bạn</span>
                     </div>
                 </div>
                 <div

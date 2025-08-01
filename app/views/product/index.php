@@ -136,8 +136,8 @@
 
         <br><br><br>
         <span class="flex justify-center mt-10 text-2xl md:text-4xl font-bold">Thông Số Kỹ Thuật</span>
-        <div class="ThongSo flex w-[70%] justify-center m-auto mt-6">
-            <table class="table-auto w-full border border-gray-300 text-left">
+        <div class="ThongSo flex  justify-center m-auto mt-6">
+            <table class="table-auto w-[70%] border border-gray-300 text-left">
                 <tbody>
                     <?php foreach ($thongSoKyThuat as $item): ?>
                         <tr class="border-b border-gray-200">
