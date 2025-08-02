@@ -26,6 +26,7 @@ $routes = [
     '/smart-home' => ['controller' => 'ProductController', 'action' => 'showSmartTV'],
     '/discover' => 'views/pages/discover/index.php',
     '/support' => 'views/pages/support/index.php',
+    '/order' => ['controller' => 'UserInfoController', 'action' => 'hienThiDonHang'],
     '/account' => ['controller' => 'AuthController', 'action' => 'hienThiDivToAdmin'],
     '/edit-user-info' => ['controller' => 'UserInfoController', 'action' => 'hientThiThongTinTaiKhoan'],
     '/edit-user-info/submit' => ['controller' => 'UserInfoController', 'action' => 'capNhatThongTinTaiKhoan'],

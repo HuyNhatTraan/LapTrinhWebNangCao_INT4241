@@ -20,7 +20,7 @@
                 </div>
                 <div>
                     <label for="email" class="block mb-2 text-sm font-medium text-gray-900 ">Email address</label>
-                    <input type="email" name="Email" id="Email" value="<?php echo $userInfo['Email']; ?>" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:border-gray-600 dark:placeholder-gray-400  dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="EmailCuaBan@gmail.com" required />
+                    <input type="email" name="Email" id="Email" value="<?php echo $userInfo['Email']; ?>" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:border-gray-600 dark:placeholder-gray-400  dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="EmailCuaBan@gmail.com" readonly />
                 </div>
                 <div>
                     <label for="DiaChiGiaoHang" class="block mb-2 text-sm font-medium text-gray-900 ">Địa chỉ</label>

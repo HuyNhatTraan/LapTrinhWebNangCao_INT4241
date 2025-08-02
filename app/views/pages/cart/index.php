@@ -81,6 +81,9 @@
             <span class="text-xl text-gray-400">Thành công</span>
         </div>
     </div>
+    <div class="flex md:hidden justify-center">
+        <span class="font-bold text-2xl p-5">Giỏ hàng</span>
+    </div>
     <div class="w-[90%] md:w-[80%] flex m-auto flex-col">
         <div class="grid grid-cols-1 lg:grid-cols-3 gap-3">
             <?php if (empty($_SESSION['cartItems'])): ?>

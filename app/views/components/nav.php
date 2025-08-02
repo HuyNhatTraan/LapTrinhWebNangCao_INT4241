@@ -20,34 +20,32 @@
                 <img class="w-8 h-8" src="icon.png" alt="HT Tech Logo">
                 <span class="self-center text-2xl font-semibold whitespace-nowrap text-black">HT Tech</span>
             </a>
-            <div class="flex items-center">
-                <a href="./cart"
-                            class=" flex md:hidden items-center justify-between py-2 px-3 text-gray-900 rounded-sm md:w-auto hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-600 md:p-0  md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-blue-500 md:dark:hover:bg-transparent dark:border-gray-700">
-                            <div class="relative items-center">
-                                <svg class="w-6 h-6 hover:stroke-[#3c81c6] duration-150"
-                                    xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-                                    stroke-width="1.5" stroke="currentColor">
-                                    <path stroke-linecap="round" stroke-linejoin="round"
-                                        d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 0 0-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.684 2.924-7.138a60.114 60.114 0 0 0-16.536-1.84M7.5 14.25 5.106 5.272M6 20.25a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Zm12.75 0a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Z" />
-                                </svg>
-                                <span id="cart-number"
-                                    class="absolute top-3 right-2 z-50 bg-red-500 text-white text-xs font-bold w-5 h-5 flex items-center justify-center rounded-full shadow-md">
-                                    <?php
-                                    $cartCount = 0;
-                                    if (isset($_SESSION['cart']) && is_array($_SESSION['cart'])) {
-                                        foreach ($_SESSION['cart'] as $item) {
-                                            if (isset($item['SoLuong'])) {
-                                                $cartCount += $item['SoLuong'];
-                                            }
-                                        }
+            <div class="flex items-center">                
+                <a href="./cart" class=" flex md:hidden items-center justify-between py-2 px-3 text-gray-900 rounded-sm md:w-auto hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-600 md:p-0  md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-blue-500 md:dark:hover:bg-transparent dark:border-gray-700">
+                    <div class="relative items-center">
+                        <svg class="w-6 h-6 hover:stroke-[#3c81c6] duration-150"
+                            xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                            stroke-width="1.5" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round"
+                                d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 0 0-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.684 2.924-7.138a60.114 60.114 0 0 0-16.536-1.84M7.5 14.25 5.106 5.272M6 20.25a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Zm12.75 0a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Z" />
+                        </svg>
+                        <span id="cart-number"
+                            class="absolute top-3 right-2 z-50 bg-red-500 text-white text-xs font-bold w-5 h-5 flex items-center justify-center rounded-full shadow-md">
+                            <?php
+                            $cartCount = 0;
+                            if (isset($_SESSION['cart']) && is_array($_SESSION['cart'])) {
+                                foreach ($_SESSION['cart'] as $item) {
+                                    if (isset($item['SoLuong'])) {
+                                        $cartCount += $item['SoLuong'];
                                     }
-                                    echo $cartCount;
-                                    ?>
-                                </span>
-                                
-                            </div>
-                            
-                        </a>
+                                }
+                            }
+                            echo $cartCount;
+                            ?>
+                        </span>
+                        
+                    </div>                    
+                </a>
                 <button data-collapse-toggle="navbar-default" type="button"
                 class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
                 aria-controls="navbar-default" aria-expanded="false">

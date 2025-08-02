@@ -76,7 +76,7 @@
                                 </g>
                             </svg>
                             <span class='text-[20px] font-semibold text-white'>Đơn hàng</span>
-                            <span class='text-[20px] font-bold text-white-600'>1</span>
+                            <span class='text-[20px] font-bold text-white-600'>0</span>
                         </div>
                     </div>
                     <div class='hidden lg:flex items-center gap-6 p-4'>
@@ -140,7 +140,7 @@
     </div>
     </div>
     <div class="w-full flex md:hidden justify-center">
-        <div class="w-[90%] mt-3 rounded-xl bg-white flex flex-col items-center justify-center gap-3 p-4">
+        <div class="w-[90%] mt-5 shadow-lg rounded-xl bg-white flex flex-col items-center justify-center gap-3 p-4">
             <img class="h-[80px] object-cover rounded-full border-2 border-white shadow"
                 src="<?php echo $userInfo['Hinh']; ?>" alt="avatar">
             <div class='flex flex-col justify-center text-center'>
@@ -163,7 +163,7 @@
         <div class="w-[90%] md:w-[90%] bg-white p-5 md:p-10 rounded-lg shadow-lg">
             <span class="text-xl font-bold mb-10 md:text-3xl">Công cụ hữu ích</span>
             <div class="grid sm:grid-cols-2 lg:sm:grid-cols-3 gap-2 sm:gap-5 mt-5 text-center">
-                <div
+                <a href="./order"
                     class="bg-[#f5f5f5] rounded-xl flex flex-col items-center justify-center p-2 shadow-2xl hover:shadow-[2px_1px_10px_8px_rgba(0,_0,_0,_0.35)] duration-350 py-8">
                     <svg width="64px" height="64px" viewBox="0 0 32 32" id="svg5" version="1.1"
                         xmlns="http://www.w3.org/2000/svg" xmlns:svg="http://www.w3.org/2000/svg" fill="#000000">
@@ -194,8 +194,8 @@
                         <span class="text-xl md:text-3xl font-bold">Đơn hàng của bạn</span>
                         <span class="text-sm md:text-md">Theo dõi đơn hàng của bạn</span>
                     </div>
-                </div>
-                <div
+                </a>
+                <a href=""
                     class="bg-[#f5f5f5] rounded-xl flex flex-col items-center justify-center p-2 shadow-2xl hover:shadow-[2px_1px_10px_8px_rgba(0,_0,_0,_0.35)] duration-350 py-8">
                     <svg width="64px" height="64px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
@@ -210,8 +210,8 @@
                         <span class="text-xl md:text-3xl font-bold">Danh sách địa chỉ</span>
                         <span>Thêm, xoá hoặc chỉnh sửa danh sách địa chỉ của bạn</span>
                     </div>
-                </div>
-                <div
+                </a>
+                <a href=""
                     class="bg-[#f5f5f5] rounded-xl flex flex-col items-center justify-center p-2 shadow-2xl hover:shadow-[2px_1px_10px_8px_rgba(0,_0,_0,_0.35)] duration-350 py-8">
                     <svg width="64px" height="64px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
@@ -233,9 +233,9 @@
                         <span class="text-xl md:text-3xl font-bold">Điểm tích luỹ</span>
                         <span>Theo dõi, kiểm tra điểm tích luỹ bạn đang có</span>
                     </div>
-                </div>
+                </a>
 
-                <div
+                <a href="./edit-user-info"
                     class="cursor-pointer bg-[#f5f5f5] rounded-xl flex flex-col items-center justify-center p-2 shadow-2xl hover:shadow-[2px_1px_10px_8px_rgba(0,_0,_0,_0.35)] duration-350 py-8">
                     <svg width="64px" height="64px" viewBox="0 0 24 24" id="Layer_1" data-name="Layer 1"
                         xmlns="http://www.w3.org/2000/svg" fill="#000000">
@@ -258,13 +258,13 @@
                             </path>
                         </g>
                     </svg>
-                    <a href="./edit-user-info" class="cursor-pointer flex flex-col items-center gap-2 p-4">
+                    <div class="cursor-pointer flex flex-col items-center gap-2 p-4">
                         <span class="text-xl md:text-3xl font-bold">Thông tin cá nhân</span>
                         <span>Chỉnh sửa thông tin cá nhân</span>
-                    </a>
-                </div>
+                    </div>
+                </a>
                 <?php if (isset($_SESSION['role']) && $_SESSION['role'] === 'Admin'): ?>
-                    <div class="bg-[#f5f5f5] rounded-xl flex flex-col items-center justify-center p-2 shadow-2xl hover:shadow-[2px_1px_10px_8px_rgba(0,_0,_0,_0.35)] duration-350 py-8">
+                    <a href="./admin" class="bg-[#f5f5f5] rounded-xl flex flex-col items-center justify-center p-2 shadow-2xl hover:shadow-[2px_1px_10px_8px_rgba(0,_0,_0,_0.35)] duration-350 py-8">
                         <svg width="64px" height="64px" viewBox="0 0 24 24" id="Layer_1" data-name="Layer 1"
                             xmlns="http://www.w3.org/2000/svg" fill="#000000">
                             <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
@@ -286,11 +286,11 @@
                                 </path>
                             </g>
                         </svg>
-                        <a href="./admin" class="flex flex-col items-center gap-2 p-4">
+                        <div class="flex flex-col items-center gap-2 p-4">
                             <span class="text-xl md:text-3xl font-bold">Admin Dashboard</span>
                             <span>Trang quản lý thông tin</span>
-                        </a>
-                    </div>
+                        </div>
+                    </a>
                 <?php endif; ?>
             </div>
         </div>

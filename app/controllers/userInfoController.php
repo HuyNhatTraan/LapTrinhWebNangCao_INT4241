@@ -31,8 +31,14 @@ class UserInfoController {
         } else {
             $_SESSION['capNhatThanhCong'] = 0;
             echo 'Vui lòng nhập đầy đủ thông tin.';
-        }
+        }        
+    }
 
-        
+    public function hienThiDonHang() {
+        $email = $_SESSION['user'];
+        $orderItems = UserInfoModel::getUserOrders($email);
+        $_SESSION['orderItems'] = $orderItems;
+        // Hiển thị đơn hàng của người dùng
+        require_once 'views/services/userOrder.php';
     }
 }
