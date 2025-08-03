@@ -83,7 +83,7 @@
                             <div class="text-sm text-gray-900"><?php echo $item['TenKH']; ?></div>
                             <div class="text-sm text-gray-500"><?php echo $item['Email']; ?></div>
                         </td>
-                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">25/07/2024</td>
+                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500"><?php echo $item['SDT']; ?></td>
                         <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900"><?php echo $item['NgaySinh']; ?></td>
 
                         <td class="px-6 py-4 whitespace-nowrap">
