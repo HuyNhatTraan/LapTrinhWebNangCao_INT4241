@@ -103,6 +103,20 @@ class AdminModel {
 
         return $stmt->fetchAll();
     }
+    public static function getDonHangKhachHang($email) {
+        $db = Database::getInstance();
+        $conn = $db->getConnection();
+        $stmt = $conn->prepare("SELECT DISTINCT D.MaDonHang, Count(K.Email) AS TongDH
+            FROM DonHang D
+            JOIN ChiTietDonHang C ON D.MaDonHang = C.MaDonHang
+            JOIN KhachHang K ON K.MaKH = D.MaKH
+            Where K.Email = :email
+            Group By K.Email, D.MaDonHang");
+        $stmt->bindParam(':email', $email);
+        $stmt->execute();
+
+        return $stmt->fetchAll();
+    }
 
     public static function getTongDoanhThuThang() {
         $db = Database::getInstance();

@@ -82,7 +82,17 @@
             </a>
         </div>
     </div>
+    <script src="https://unpkg.com/scrollreveal"></script>
+    <script>
+    var slideUp = {
+        distance: '50%',
+        origin: 'bottom',
+        opacity: '30%'
+    };
 
+    ScrollReveal().reveal('.product-line', slideUp);
+    </script>
+    
     <script defer src="https://cdn.jsdelivr.net/npm/flowbite@3.1.2/dist/flowbite.min.js"></script>
     <?php include 'components/footer.php'; ?>
 </body>

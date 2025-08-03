@@ -9,7 +9,7 @@
 </head>
 <body class="bg-[#f7f7f7]">
     <?php require 'views/components/nav.php' ?>
-    <span class="flex font-bold text-2xl md:text-4xl p-10 mt-10 gap-2">Kết quả tìm kiếm '<span class="text-[#ffa566]"><?= htmlspecialchars($_GET['queryStr']) ?></span>'</span>
+    <span class="flex font-bold text-xl md:text-4xl p-5 md:p-10 mt-10 gap-2">Kết quả tìm kiếm '<span class="text-[#ffa566]"><?= htmlspecialchars($_GET['queryStr']) ?></span>'</span>
     <div class="w-full m-auto ">
         <div class="grid sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 w-full sm:gap-3 md:gap-3">
             <?php foreach ($products as $row): 
@@ -36,14 +36,15 @@
         </div>
     </div>
     <?php if (empty($products)): ?>
-                <div class="w-full flex justify-center items-center flex-col">
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-20">
-                        <path stroke-linecap="round" stroke-linejoin="round" d="m20.25 7.5-.625 10.632a2.25 2.25 0 0 1-2.247 2.118H6.622a2.25 2.25 0 0 1-2.247-2.118L3.75 7.5m6 4.125 2.25 2.25m0 0 2.25 2.25M12 13.875l2.25-2.25M12 13.875l-2.25 2.25M3.375 7.5h17.25c.621 0 1.125-.504 1.125-1.125v-1.5c0-.621-.504-1.125-1.125-1.125H3.375c-.621 0-1.125.504-1.125 1.125v1.5c0 .621.504 1.125 1.125 1.125Z" />
-                    </svg>
-
-                    <h2 class="text-5xl font-bold mt-4">Tiếc hen hong tìm thấy SP nào cả</h2>
-                </div>
-            <?php endif; ?>
+        <div class="w-full flex justify-center items-center flex-col">
+            <div class="flex justify-center items-center md:bg-white p-2 md:p-5 shadow-xl border-2 border-gray-300 rounded-3xl flex-col w-[95%] md:w-[60%] lg:w-[80%] lg:py-10">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-20">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="m20.25 7.5-.625 10.632a2.25 2.25 0 0 1-2.247 2.118H6.622a2.25 2.25 0 0 1-2.247-2.118L3.75 7.5m6 4.125 2.25 2.25m0 0 2.25 2.25M12 13.875l2.25-2.25M12 13.875l-2.25 2.25M3.375 7.5h17.25c.621 0 1.125-.504 1.125-1.125v-1.5c0-.621-.504-1.125-1.125-1.125H3.375c-.621 0-1.125.504-1.125 1.125v1.5c0 .621.504 1.125 1.125 1.125Z" />
+                </svg>
+                <h2 class=" leading-12 text-xl md:text-4xl font-bold mt-4 text-center">Tiếc hen hong tìm thấy kết quả nào cả</h2>
+            </div>            
+        </div>
+    <?php endif; ?>
     <?php require 'views/components/footer.php' ?>
 </body>
 </html>

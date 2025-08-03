@@ -33,7 +33,7 @@
                 $giaHienTai = $row['GiaHienTai'];
                 $giam = round((($giaBase - $giaHienTai) / $giaBase) * 100);
             ?>
-                <div class="flex bg-white group">
+                <div class="flex bg-white group product-line">
                     <a href="product?MaSP=<?= $row['MaSP'] ?>" class="relative flex flex-row sm:flex-col w-full bg-white p-4 sm:py-15">
                         <div class="flex sm:justify-center flex-col items-center text-center">
                             <h2 class="hidden text-md font-bold xl:text-4xl sm:text-2xl md:text-2xl sm:flex"><?= htmlspecialchars($row['TenSP']) ?></h2>
@@ -51,7 +51,16 @@
             <?php endforeach; ?>
         </div>
     </div>
-    
+    <script src="https://unpkg.com/scrollreveal"></script>
+    <script>
+    var slideUp = {
+        distance: '50%',
+        origin: 'bottom',
+        opacity: '30%',
+        reset: true
+    };
+    ScrollReveal().reveal('.product-line', slideUp);
+    </script>
     <?php require 'views/components/footer.php' ?>
 </body>
 

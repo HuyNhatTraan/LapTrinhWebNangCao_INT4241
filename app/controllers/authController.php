@@ -73,11 +73,20 @@ class AuthController {
         if (isset($_SESSION['user'])) {
             $userRole = AuthModel::getRoleUser($_SESSION['user']);
             $userInfo = AuthModel::getKhachHangByEmail($_SESSION['user']);
-            
+            $email = $_SESSION['user'];
+            $userOrder = AdminController::getDonHangKhachHang($email);
+
             if ($userRole && isset($userRole['Role'])) {
                 $_SESSION['role'] = $userRole['Role'];             
             }
-            
+
+            if ($userInfo) {
+                $_SESSION['user_info'] = $userInfo;
+            }
+
+            if ($userOrder) {
+                $_SESSION['user_order'] = $userOrder;
+            }
         }
         // Gọi view account, không phân biệt quyền
         require 'views/services/account.php';

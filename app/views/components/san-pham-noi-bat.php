@@ -2,7 +2,7 @@
 <div class="w-full mt-10 overflow-x-auto scrollbar-hide">
     <div class="flex ml-6 md:ml-0 justify-start sm:justify-center">
         <div class="flex shrink-0 space-x-8 mb-6 text-lg font-semibold items-center">
-            <button onclick="switchTab('redmi')" class="tab-btn text-orange-500 border-b-2 border-orange-500 pb-2"
+            <button onclick="switchTab('redmi')" class="tab-btn text-orange-500 border-b-2 border-orange-500"
                 id="tab-redmi">Redmi</button>
             <button onclick="switchTab('poco')" class="tab-btn text-black hover:text-orange-500"
                 id="tab-poco">POCO</button>
@@ -34,7 +34,7 @@
         </a>
         <div class="grid grid-cols-2 lg:grid-cols-4  rounded-xl gap-2">
             <?php foreach ($_SESSION['redmiList'] as $product): ?>
-                <a href="./product?MaSP=<?php echo $product['MaSP'] ?>" class="bg-[#f5f5f5] rounded-xl flex flex-col items-center justify-center p-5 text-center group">
+                <a href="./product?MaSP=<?php echo $product['MaSP'] ?>" class="product-line bg-[#f5f5f5] rounded-xl flex flex-col items-center justify-center p-5 text-center group">
                     <div class="overflow-hidden group-hover:scale-110 duration-150">
                         <img class="w-40 h-auto" src="<?php echo $product['HinhAnhSP'] ?>" alt="<?php echo htmlspecialchars($product['TenSP']); ?>">
                     </div>
@@ -63,9 +63,9 @@
                     hiểu thêm</button>
             </div>
         </a>
-        <div class="grid grid-cols-2 lg:grid-cols-4 rounded-xl gap-2">
+        <div class="grid grid-cols-2 lg:grid-cols-4 rounded-xl gap-2 product-line">
             <?php foreach ($_SESSION['pocoList'] as $product): ?>
-                <a href="./product?MaSP=<?php echo $product['MaSP'] ?>" class="bg-[#f5f5f5] rounded-xl flex flex-col items-center justify-center p-5 text-center group">
+                <a href="./product?MaSP=<?php echo $product['MaSP'] ?>" class="  bg-[#f5f5f5] rounded-xl flex flex-col items-center justify-center p-5 text-center group">
                     <div class="overflow-hidden group-hover:scale-110 duration-150">
                         <img class="w-40 h-auto" src="<?php echo $product['HinhAnhSP'] ?>" alt="<?php echo htmlspecialchars($product['TenSP']); ?>">
                     </div>

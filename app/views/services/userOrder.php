@@ -14,7 +14,7 @@
     </div>
     <div class="flex">
         <?php //foreach ($orderItems as $item): ?>
-        <div class="flex flex-col w-[95%] md:w-[80%] lg:w-[60%] bg-white p-5 md:p-10 rounded-lg border-2 border-gray-300 shadow-lg mt-6 mx-auto gap-2">
+        <div class="flex flex-col w-[95%] md:w-[80%] lg:w-[60%] bg-white p-3 md:p-10 rounded-lg border-2 border-gray-300 shadow-lg mt-6 mx-auto gap-2">
             <?php if (empty($_SESSION['orderItems'])): ?>
             <!-- Đơn hàng trống -->
                 <div class="flex flex-col gap-2 items-center justify-center text-center">
@@ -22,28 +22,54 @@
                     <span class="font-bold text-lg md:text-3xl">Bạn chưa có đơn hàng, mua sắm ngay!</span>          
                 </div>
             <?php else: ?>
-            <!-- Đơn hàng có -->
-            
-            <?php foreach ($_SESSION['orderItems'] as $item): ?>            
-            <div class="flex gap-2 md:gap-5">
-                <div class="flex items-center">
-                    <img class="w-30 md:w-50 h-auto border-1 border-gray-300 rounded-lg" src="<?php echo $item['HinhAnhBienThe']; ?>" alt="">
-                </div>              
-                <div class="flex flex-col w-full ">
-                    <div class="flex flex-col gap-0.5">
-                        <span class="text-sm sm:text-2xl font-bold"><?php echo $item['TenSP']; ?></span>
-                        <span class="text-xs sm:text-xl"><?php echo $item['TenDLSP']; ?></span>
-                        <span class="text-xs sm:text-xl"><?php echo $item['MauSac']; ?></span>                        
+            <!-- Đơn hàng có -->            
+            <?php
+            // Group data by MaDonHang
+            $groupedOrders = [];
+            foreach ($_SESSION['orderItems'] as $item) {
+                $maDonHang = $item['MaDonHang'];
+                if (!isset($groupedOrders[$maDonHang])) {
+                    $groupedOrders[$maDonHang] = [
+                        'MaDonHang' => $maDonHang,
+                        'SanPham' => [],
+                        'TongTienDonHang' => 0
+                    ];
+                }
+                $groupedOrders[$maDonHang]['SanPham'][] = $item;
+                $groupedOrders[$maDonHang]['TongTienDonHang'] += $item['TongTien'];
+            }
+            ?>
+            <?php foreach ($groupedOrders as $order): ?>
+                <div class="border-2 border-gray-300 p-3 rounded-xl shadow-md">
+                    <h2 class="text-md sm:text-2xl font-bold mb-3">Mã Đơn Hàng: <?php echo $order['MaDonHang']; ?></h2>
+
+                    <?php foreach ($order['SanPham'] as $item): ?>
+                        <div class="flex gap-2 md:gap-5 mb-3">
+                            <div class="flex items-center">
+                                <img class="w-30 md:w-50 h-auto border-1 border-gray-300 rounded-lg" src="<?php echo $item['HinhAnhBienThe']; ?>" alt="">
+                            </div>              
+                            <div class="flex flex-col w-full">
+                                <div class="flex flex-col gap-0.5">
+                                    <span class="text-sm sm:text-2xl font-bold"><?php echo $item['TenSP']; ?></span>
+                                    <span class="text-xs sm:text-xl"><?php echo $item['TenDLSP']; ?></span>
+                                    <span class="text-xs sm:text-xl"><?php echo $item['MauSac']; ?></span>                        
+                                </div>
+                                <div class="flex justify-end mt-1">
+                                    <span class="text-xs font-semibold sm:text-xl">Giá: <?= number_format($item['GiaTien'], 0, ',', '.') ?>đ</span>
+                                </div>
+                            </div>                             
+                        </div>
+                        <div class="flex justify-end">
+                            <span class="text-xs sm:text-xl">Tổng số tiền (<?php echo $item['SoLuong']; ?> sản phẩm): <?= number_format($item['TongTien'] , 0, ',', '.') ?>đ</span>
+                        </div>
+                        <hr class="flex text-gray-400 mt-5 mb-5">
+                    <?php endforeach; ?>
+
+                    <!-- Tổng Tiền Đơn Hàng -->
+                    <div class="flex justify-end mt-4">
+                        <span class="text-xs sm:text-2xl font-bold text-red-500">Tổng tiền đơn hàng: <?= number_format($order['TongTienDonHang'], 0, ',', '.') ?>đ</span>
                     </div>
-                    <div class="flex justify-end mt-1">
-                        <span class="text-xs font-semibold sm:text-xl">Giá: <?= number_format($item['GiaTien'], 0, ',', '.') ?>đ</span>
-                    </div>
-                </div>                             
-            </div>
-            <div class="flex justify-end">
-                <span class="text-xs sm:text-xl">Tổng số tiền (<?php echo $item['SoLuong']; ?> sản phẩm): <?= number_format($item['TongTien'] , 0, ',', '.') ?>đ</span>
-            </div>
-            <hr class="flex text-gray-400 mt-2 mb-2">
+                </div>
             <?php endforeach; ?>
             <?php endif;?>
         </div>        

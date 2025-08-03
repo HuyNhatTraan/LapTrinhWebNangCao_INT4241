@@ -76,7 +76,7 @@
                                 </g>
                             </svg>
                             <span class='text-[20px] font-semibold text-white'>Đơn hàng</span>
-                            <span class='text-[20px] font-bold text-white-600'>0</span>
+                            <span class='text-[20px] font-bold text-white-600'><?=$_SESSION['SoLuongOrder'][0]['TongDH'] ?? 0?></span>
                         </div>
                     </div>
                     <div class='hidden lg:flex items-center gap-6 p-4'>
