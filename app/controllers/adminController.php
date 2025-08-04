@@ -53,8 +53,8 @@ class AdminController {
         $_SESSION['DanhSachSP'] = $items; // Lưu vào session để sử dụng sau này
         // echo $items;
     }
-    public static function getDonHangKhachHang($email): void  {        
-        $items = AdminModel::getDonHangKhachHang($_SESSION['user']); 
+    public static function getDonHangKhachHang($email)   {        
+        $items = AdminModel::getDonHangKhachHang($email); 
         $_SESSION['SoLuongOrder'] = $items; // Lưu vào session để sử dụng sau này
         // echo $items;
     }
