@@ -76,7 +76,7 @@
                                 </g>
                             </svg>
                             <span class='text-[20px] font-semibold text-white'>Đơn hàng</span>
-                            <span class='text-[20px] font-bold text-white-600'><?=$_SESSION['SoLuongOrder'][0]['TongDH'] ?? 0?></span>
+                            <span class='text-[20px] font-bold text-white-600'><?php echo count($_SESSION['SoLuongOrder']); ?></span>
                         </div>
                     </div>
                     <div class='hidden lg:flex items-center gap-6 p-4'>
@@ -93,8 +93,8 @@
                                     </path>
                                 </g>
                             </svg>
-                            <span class='text-[20px] font-semibold text-white'>Địa chỉ</span>
-                            <span class='text-[20px] font-bold'>1</span>
+                            <span class='text-[20px] font-semibold text-white'>Địa chỉ</span>                            
+                            <span class='text-[20px] font-bold'><?php echo count($_SESSION['addressItems']); ?></span>
                         </div>
                     </div>
                     <div class='hidden lg:flex items-center gap-6 p-4'>
@@ -195,7 +195,7 @@
                         <span class="text-sm md:text-md">Theo dõi đơn hàng của bạn</span>
                     </div>
                 </a>
-                <a href=""
+                <a href="./address"
                     class="bg-[#f5f5f5] rounded-xl flex flex-col items-center justify-center p-2 shadow-2xl hover:shadow-[2px_1px_10px_8px_rgba(0,_0,_0,_0.35)] duration-350 py-8">
                     <svg width="64px" height="64px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <g id="SVGRepo_bgCarrier" stroke-width="0"></g>

@@ -15,14 +15,19 @@ class UserInfoModel {
         return $data;
     }
 
-    public static function updateUserInfo($email, $emailMoi, $tenKH, $diaChiGiaoHang, $sdt) {
+    public static function updateUserInfo($email, $tenKH) {
         $db = Database::getInstance()->getConnection();
-        $stmt = $db->prepare("UPDATE KhachHang SET Email = :emailMoi, TenKH = :tenKH, DiaChiGiaoHang = :diaChiGiaoHang, SDT = :sdt WHERE Email = :email");
+        $stmt = $db->prepare("UPDATE KhachHang SET TenKH = :tenKH WHERE Email = :email");
         $stmt->bindParam(':email', $email);
-        $stmt->bindParam(':emailMoi', $emailMoi);
         $stmt->bindParam(':tenKH', $tenKH);
-        $stmt->bindParam(':diaChiGiaoHang', $diaChiGiaoHang);
-        $stmt->bindParam(':sdt', $sdt);
+        $stmt->execute();
+        $data = $stmt->fetchAll(PDO::FETCH_ASSOC);
+        return $data;
+    }
+    public static function getUserAddresses($email) {
+        $db = Database::getInstance()->getConnection();
+        $stmt = $db->prepare("SELECT * FROM DiaChiKH D JOIN KhachHang K ON D.MaKH = K.MaKH WHERE K.Email = :email");
+        $stmt->bindParam(':email', $email);
         $stmt->execute();
         $data = $stmt->fetchAll(PDO::FETCH_ASSOC);
         return $data;

@@ -16,14 +16,13 @@ class UserInfoController {
     }
 
     public function capNhatThongTinTaiKhoan() {
-        if (isset($_POST['TenKH']) && isset($_POST['DiaChiGiaoHang']) && isset($_POST['SDT']) && isset($_POST['Email'])) {
+        if (isset($_POST['TenKH']) && isset($_POST['SDT'])) {
             $tenKH = $_POST['TenKH'];
-            $emailMoi = $_POST['Email'];
-            $diaChiGiaoHang = $_POST['DiaChiGiaoHang'];
+            $emailMoi = $_POST['Email'];            
             $sdt = $_POST['SDT'];
             $email = $_SESSION['user'];
             // Cập nhật thông tin người dùng
-            UserInfoModel::updateUserInfo($email, $emailMoi, $tenKH, $diaChiGiaoHang, $sdt);
+            UserInfoModel::updateUserInfo($email, $tenKH);
             $_SESSION['capNhatThanhCong'] = 1;
             // Hiển thị thông tin người dùng
             header('Location: '. $_SERVER['HTTP_REFERER']);
@@ -40,5 +39,13 @@ class UserInfoController {
         $_SESSION['orderItems'] = $orderItems;
         // Hiển thị đơn hàng của người dùng
         require_once 'views/services/userOrder.php';
+    }
+
+    public function hienThiDiaChi() {
+        $email = $_SESSION['user'];
+        $addressItems = UserInfoModel::getUserAddresses($email);
+        $_SESSION['addressItems'] = $addressItems;
+        // Hiển thị địa chỉ của người dùng
+        require_once 'views/services/userAddress.php';
     }
 }

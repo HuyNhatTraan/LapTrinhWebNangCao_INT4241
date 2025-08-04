@@ -75,6 +75,8 @@ class AuthController {
             $userInfo = AuthModel::getKhachHangByEmail($_SESSION['user']);
             $email = $_SESSION['user'];
             $userOrder = AdminController::getDonHangKhachHang($email);
+            $addressItems = UserInfoModel::getUserAddresses($email);
+            $_SESSION['addressItems'] = $addressItems;
 
             if ($userRole && isset($userRole['Role'])) {
                 $_SESSION['role'] = $userRole['Role'];             

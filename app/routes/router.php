@@ -28,6 +28,7 @@ $routes = [
     '/support' => 'views/pages/support/index.php',
     '/order' => ['controller' => 'UserInfoController', 'action' => 'hienThiDonHang'],
     '/account' => ['controller' => 'AuthController', 'action' => 'hienThiDivToAdmin'],
+    '/address' => ['controller' => 'UserInfoController', 'action' => 'hienThiDiaChi'],
     '/edit-user-info' => ['controller' => 'UserInfoController', 'action' => 'hientThiThongTinTaiKhoan'],
     '/edit-user-info/submit' => ['controller' => 'UserInfoController', 'action' => 'capNhatThongTinTaiKhoan'],
     '/register' => 'views/services/register.php',
