@@ -26,11 +26,43 @@ class UserInfoModel {
     }
     public static function getUserAddresses($email) {
         $db = Database::getInstance()->getConnection();
-        $stmt = $db->prepare("SELECT * FROM DiaChiKH D JOIN KhachHang K ON D.MaKH = K.MaKH WHERE K.Email = :email");
+        $stmt = $db->prepare("SELECT D.MaDiaChiKH, D.TenNguoiNhan, D.SDTNhanHang, D.DiaChiKH, D.GhiChu FROM DiaChiKH D JOIN KhachHang K ON D.MaKH = K.MaKH WHERE K.Email = :email");
         $stmt->bindParam(':email', $email);
         $stmt->execute();
         $data = $stmt->fetchAll(PDO::FETCH_ASSOC);
         return $data;
+    }
+
+    public static function addUserAddresses($email, $TenNguoiNhan, $SDTNhanHang, $DiaChiKH, $GhiChu) {
+        $db = Database::getInstance()->getConnection();
+        $stmt = $db->prepare("INSERT INTO DiaChiKH (MaKH, TenNguoiNhan, SDTNhanHang, DiaChiKH, GhiChu)
+        VALUES ((SELECT MaKH FROM KhachHang WHERE Email = :email), :tenNguoiNhan, :sdtNhanHang, :diaChiKH, :ghiChu)");
+        $stmt->bindParam(':email', $email);
+        $stmt->bindParam(':tenNguoiNhan', $TenNguoiNhan);
+        $stmt->bindParam(':sdtNhanHang', $SDTNhanHang);
+        $stmt->bindParam(':diaChiKH', $DiaChiKH);
+        $stmt->bindParam(':ghiChu', $GhiChu);
+        $stmt->execute();
+        $data = $stmt->fetchAll(PDO::FETCH_ASSOC);
+        return $data;
+    }
+    public static function editUserAddresses($MaDiaChiKH, $TenNguoiNhan, $SDTNhanHang, $DiaChiKH, $GhiChu) {
+        $db = Database::getInstance()->getConnection();
+        $stmt = $db->prepare("UPDATE DiaChiKH SET TenNguoiNhan = :tenNguoiNhan, SDTNhanHang = :sdtNhanHang, DiaChiKH = :diaChiKH, GhiChu = :ghiChu WHERE MaDiaChiKH = :MaDiaChiKH");       
+        $stmt->bindParam(':MaDiaChiKH', $MaDiaChiKH);
+        $stmt->bindParam(':tenNguoiNhan', $TenNguoiNhan);
+        $stmt->bindParam(':sdtNhanHang', $SDTNhanHang);
+        $stmt->bindParam(':diaChiKH', $DiaChiKH);
+        $stmt->bindParam(':ghiChu', $GhiChu);
+        $stmt->execute();
+        $data = $stmt->fetchAll(PDO::FETCH_ASSOC);
+        return $data;
+    }
+    public static function deleteUserAddress($MaDiaChiKH) {
+        $db = Database::getInstance()->getConnection();
+        $stmt = $db->prepare("DELETE FROM DiaChiKH WHERE MaDiaChiKH = :MaDiaChiKH");
+        $stmt->bindParam(':MaDiaChiKH', $MaDiaChiKH);
+        $stmt->execute();
     }
 
     public static function getUserOrders($email) {

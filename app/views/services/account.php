@@ -96,31 +96,7 @@
                             <span class='text-[20px] font-semibold text-white'>Địa chỉ</span>                            
                             <span class='text-[20px] font-bold'><?php echo count($_SESSION['addressItems']); ?></span>
                         </div>
-                    </div>
-                    <div class='hidden lg:flex items-center gap-6 p-4'>
-                        <div class='flex flex-col items-center gap-2'>
-                            <!-- Icon & text cho điểm tích luỹ -->
-                            <svg width='64px' height='64px' viewBox='0 0 24 24' fill='none'
-                                xmlns='http://www.w3.org/2000/svg'>
-                                <g id='SVGRepo_bgCarrier' stroke-width='0'></g>
-                                <g id='SVGRepo_tracerCarrier' stroke-linecap='round' stroke-linejoin='round'></g>
-                                <g id='SVGRepo_iconCarrier'>
-                                    <path
-                                        d='M22 13V12C22 8.22876 22 6.34315 20.8284 5.17157C19.6569 4 17.7712 4 14 4H10C6.22876 4 4.34315 4 3.17157 5.17157C2 6.34315 2 8.22876 2 12C2 15.7712 2 17.6569 3.17157 18.8284C4.34315 20 6.22876 20 10 20H13'
-                                        stroke='#ffffff' stroke-width='1.5' stroke-linecap='round'></path>
-                                    <path opacity='0.4' d='M10 16H6' stroke='#ffffff' stroke-width='1.5'
-                                        stroke-linecap='round'></path>
-                                    <path opacity='0.4' d='M2 10L22 10' stroke='#ffffff' stroke-width='1.5'
-                                        stroke-linecap='round'></path>
-                                    <circle cx='18' cy='17' r='3' stroke='#ffffff' stroke-width='1.5'></circle>
-                                    <path d='M20.5 19.5L21.5 20.5' stroke='#ffffff' stroke-width='1.5'
-                                        stroke-linecap='round'></path>
-                                </g>
-                            </svg>
-                            <span class='text-[20px] font-semibold text-white'>Điểm tích luỹ</span>
-                            <span class='text-[20px] font-bold'>1</span>
-                        </div>
-                    </div>
+                    </div>                   
                     <div class='flex items-center gap-6 p-4'>
                         <div class='flex flex-col items-center gap-2'>
                             <a class='text-xl font-bold underline hover:text-[#3c81c6] duration-150'
@@ -162,7 +138,7 @@
     <div class="w-full flex justify-center items-center mt-3 md:mt-10">
         <div class="w-[90%] md:w-[90%] bg-white p-5 md:p-10 rounded-lg shadow-lg">
             <span class="text-xl font-bold mb-10 md:text-3xl">Công cụ hữu ích</span>
-            <div class="grid sm:grid-cols-2 lg:sm:grid-cols-3 gap-2 sm:gap-5 mt-5 text-center">
+            <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-2 sm:gap-5 mt-5 text-center">
                 <a href="./order"
                     class="bg-[#f5f5f5] rounded-xl flex flex-col items-center justify-center p-2 shadow-2xl hover:shadow-[2px_1px_10px_8px_rgba(0,_0,_0,_0.35)] duration-350 py-8">
                     <svg width="64px" height="64px" viewBox="0 0 32 32" id="svg5" version="1.1"
@@ -190,9 +166,9 @@
                             </g>
                         </g>
                     </svg>
-                    <div class="flex flex-col items-center gap-2 p-4">
-                        <span class="text-xl md:text-3xl font-bold">Đơn hàng của bạn</span>
-                        <span class="text-sm md:text-md">Theo dõi đơn hàng của bạn</span>
+                    <div class="flex flex-col items-center gap-2 p-2">
+                        <span class="text-xl md:text-2xl font-bold">Quản lý đơn hàng</span>
+                        <span class="text-sm md:text-md">Xem và theo dõi đơn hàng của bạn</span>
                     </div>
                 </a>
                 <a href="./address"
@@ -206,35 +182,11 @@
                                 stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
                         </g>
                     </svg>
-                    <div class="flex flex-col items-center gap-2 p-4">
-                        <span class="text-xl md:text-3xl font-bold">Danh sách địa chỉ</span>
+                    <div class="flex flex-col items-center gap-2 p-2">
+                        <span class="text-xl md:text-2xl font-bold">Danh sách địa chỉ</span>
                         <span>Thêm, xoá hoặc chỉnh sửa danh sách địa chỉ của bạn</span>
                     </div>
-                </a>
-                <a href=""
-                    class="bg-[#f5f5f5] rounded-xl flex flex-col items-center justify-center p-2 shadow-2xl hover:shadow-[2px_1px_10px_8px_rgba(0,_0,_0,_0.35)] duration-350 py-8">
-                    <svg width="64px" height="64px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
-                        <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
-                        <g id="SVGRepo_iconCarrier">
-                            <path
-                                d="M22 13V12C22 8.22876 22 6.34315 20.8284 5.17157C19.6569 4 17.7712 4 14 4H10C6.22876 4 4.34315 4 3.17157 5.17157C2 6.34315 2 8.22876 2 12C2 15.7712 2 17.6569 3.17157 18.8284C4.34315 20 6.22876 20 10 20H13"
-                                stroke="#000000" stroke-width="1.5" stroke-linecap="round"></path>
-                            <path opacity="0.4" d="M10 16H6" stroke="#000000" stroke-width="1.5" stroke-linecap="round">
-                            </path>
-                            <path opacity="0.4" d="M2 10L22 10" stroke="#000000" stroke-width="1.5"
-                                stroke-linecap="round"></path>
-                            <circle cx="18" cy="17" r="3" stroke="#000000" stroke-width="1.5"></circle>
-                            <path d="M20.5 19.5L21.5 20.5" stroke="#000000" stroke-width="1.5" stroke-linecap="round">
-                            </path>
-                        </g>
-                    </svg>
-                    <div class="flex flex-col items-center gap-2 p-4">
-                        <span class="text-xl md:text-3xl font-bold">Điểm tích luỹ</span>
-                        <span>Theo dõi, kiểm tra điểm tích luỹ bạn đang có</span>
-                    </div>
-                </a>
-
+                </a>                    
                 <a href="./edit-user-info"
                     class="cursor-pointer bg-[#f5f5f5] rounded-xl flex flex-col items-center justify-center p-2 shadow-2xl hover:shadow-[2px_1px_10px_8px_rgba(0,_0,_0,_0.35)] duration-350 py-8">
                     <svg width="64px" height="64px" viewBox="0 0 24 24" id="Layer_1" data-name="Layer 1"
@@ -258,8 +210,8 @@
                             </path>
                         </g>
                     </svg>
-                    <div class="cursor-pointer flex flex-col items-center gap-2 p-4">
-                        <span class="text-xl md:text-3xl font-bold">Thông tin cá nhân</span>
+                    <div class="cursor-pointer flex flex-col items-center gap-2 p-2">
+                        <span class="text-xl md:text-2xl font-bold">Thông tin cá nhân</span>
                         <span>Chỉnh sửa thông tin cá nhân</span>
                     </div>
                 </a>
@@ -286,8 +238,8 @@
                                 </path>
                             </g>
                         </svg>
-                        <div class="flex flex-col items-center gap-2 p-4">
-                            <span class="text-xl md:text-3xl font-bold">Admin Dashboard</span>
+                        <div class="flex flex-col items-center gap-2 p-2">
+                            <span class="text-xl md:text-2xl font-bold">Admin Dashboard</span>
                             <span>Trang quản lý thông tin</span>
                         </div>
                     </a>

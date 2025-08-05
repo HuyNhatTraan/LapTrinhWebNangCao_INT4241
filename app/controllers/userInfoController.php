@@ -48,4 +48,61 @@ class UserInfoController {
         // Hiển thị địa chỉ của người dùng
         require_once 'views/services/userAddress.php';
     }
+    public function themDiaChi() {
+        $email = $_SESSION['user'];
+        // Kiểm tra xem người dùng đã gửi dữ liệu từ form thêm địa chỉ chưa
+        if (isset($_POST['TenNguoiNhan']) && isset($_POST['SDTNhanHang']) && isset($_POST['DiaChiKH'])) {
+            $TenNguoiNhan = trim($_POST['TenNguoiNhan']);
+            $SDTNhanHang = trim($_POST['SDTNhanHang']);
+            $DiaChiKH = trim($_POST['DiaChiKH']);
+            $GhiChu = trim($_POST['GhiChu']) ?? 'NULL'; // Nếu không có ghi chú thì để trống
+
+            $addressItems = UserInfoModel::addUserAddresses($email, $TenNguoiNhan, $SDTNhanHang, $DiaChiKH, $GhiChu);
+            $_SESSION['addressItems'] = $addressItems;
+            $_SESSION['themDiaChiThanhCong'] = 1;
+
+            header('Location:'. $_SERVER['HTTP_REFERER']);
+            exit;
+        } else {
+            echo 'Vui lòng nhập đầy đủ thông tin địa chỉ.';
+            $_SESSION['themDiaChiThanhCong'] = 0;
+        }        
+    }   
+    public function suaDiaChi() {
+        // Kiểm tra xem người dùng đã gửi dữ liệu từ form thêm địa chỉ chưa
+        if (isset($_POST['TenNguoiNhan']) && isset($_POST['SDTNhanHang']) && isset($_POST['DiaChiKH'])) {
+            $MaDiaChiKH = $_POST['MaDiaChiKH'];
+            $TenNguoiNhan = trim($_POST['TenNguoiNhan']);
+            $SDTNhanHang = trim($_POST['SDTNhanHang']);
+            $DiaChiKH = trim($_POST['DiaChiKH']);
+            $GhiChu = trim($_POST['GhiChu']) ?? 'NULL'; // Nếu không có ghi chú thì để trống
+
+            $addressItems = UserInfoModel::editUserAddresses($MaDiaChiKH, $TenNguoiNhan, $SDTNhanHang, $DiaChiKH, $GhiChu);
+            $_SESSION['addressItems'] = $addressItems;
+            $_SESSION['suaDiaChiThanhCong'] = 1;
+
+            header('Location:'. $_SERVER['HTTP_REFERER']);
+            exit;
+        } else {
+            echo 'Vui lòng nhập đầy đủ thông tin địa chỉ.';
+            $_SESSION['suaDiaChiThanhCong'] = 0;
+        }        
+    }   
+
+    public function xoaDiaChi() {
+        // Kiểm tra xem người dùng đã gửi dữ liệu từ form thêm địa chỉ chưa
+        if (isset($_POST['MaDiaChiKH'])) {
+            $MaDiaChiKH = $_POST['MaDiaChiKH'];
+            UserInfoModel::deleteUserAddress($MaDiaChiKH);
+            $addressItems = UserInfoModel::getUserAddresses($_SESSION['user']);
+            $_SESSION['addressItems'] = $addressItems;
+            $_SESSION['suaDiaChiThanhCong'] = 1;
+
+            header('Location:'. $_SERVER['HTTP_REFERER']);
+            exit;
+        } else {
+            echo 'Vui lòng nhập đầy đủ thông tin địa chỉ.';
+            $_SESSION['suaDiaChiThanhCong'] = 0;
+        }        
+    }   
 }
