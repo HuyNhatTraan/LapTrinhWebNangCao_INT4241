@@ -51,6 +51,7 @@ $routes = [
     '/placed-order' => ['controller' => 'CartController', 'action' => 'placedOrder'],
     '/search' => ['controller' => 'ProductController', 'action' => 'showSearchResults'],
     '/product' => ['controller' => 'ProductController', 'action' => 'showChiTietSP'],
+    '/order-success' => 'views/pages/placedOrder/index.php',
 ];
 
 // Kiểm tra xem đường dẫn URI người dùng truy cập có tồn tại trong mảng routes không

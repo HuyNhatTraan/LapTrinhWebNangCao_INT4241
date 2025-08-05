@@ -188,9 +188,14 @@ class CartController
                 'GiaHienTai' => $giaHienTai[$i]
             ];
         }
-        cartModel::insertIntoDonHang($maDiaChiKH, $maKH, $items, $phuongThucThanhToan);
+        $order = cartModel::insertIntoDonHang($maDiaChiKH, $maKH, $items, $phuongThucThanhToan);
+        // Xóa giỏ hàng sau khi đặt hàng thành công
+        $cartItems = [];
+        $_SESSION['cartItems'] = [];
+        $_SESSION['order_id'] = $order; // Lưu mã đơn hàng vào session để hiển thị sau này
+        
         // Quay lại trang giỏ hàng
-        // header('Location: ' . $_SERVER['HTTP_REFERER']);
-        // exit;
+        header('Location: ./order-success');
+        exit;
     }
 }

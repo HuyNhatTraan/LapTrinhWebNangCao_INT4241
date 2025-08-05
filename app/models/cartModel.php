@@ -54,6 +54,6 @@ class cartModel {
         }
         
         $data = $stmt->fetchAll(PDO::FETCH_ASSOC);
-        return $data;
+        return $maDonHang;
     }
 }
