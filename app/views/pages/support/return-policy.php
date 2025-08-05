@@ -11,12 +11,11 @@
 
 <body class="bg-[#f7f7f7]">
     <?php require 'views/components/nav.php'; ?>
-    <span class="flex justify-center font-bold text-4xl h-40 items-center">CHÍNH SÁCH HOÀN TRẢ CỦA HT Tech</span>
+    <span class="flex justify-center font-bold text-4xl h-40 items-center text-center leading-12">CHÍNH SÁCH HOÀN TRẢ CỦA HT Tech</span>
     <div class="">
-        <div class="w-[80%] m-auto">
-            
+        <div class="w-[95%] md:w-[80%] m-auto">            
             <div class="flex flex-col gap-8">
-                <h1 class="text-2xl font-bold text-gray-800  mb-2">Chính Sách Hoàn Trả</h1>
+                <h1 class="hidden md:flex text-2xl font-bold text-gray-800  mb-2">Chính Sách Hoàn Trả</h1>
                 <div class=" rounded-lg p-6 shadow mb-4 bg-white">
                     <p class="text-gray-700 mb-2">
                         Chính Sách Hoàn Trả này chỉ áp dụng cho các sản phẩm (<span class="font-semibold">Sản phẩm</span>) được mua từ <a href="https://mi.com/vn" class="text-blue-600 underline">mi.com/vn</a> (<span class="font-semibold">Trang web</span>). Nếu quý khách mua sản phẩm từ các trang web trực tuyến hoặc cửa hàng ngoại tuyến khác ngoài Trang web, vui lòng tham khảo chính sách hoàn trả của các đơn vị đó. Chính Sách Hoàn Trả này chỉ áp dụng cho các quy trình liên quan đến trường hợp quý khách gửi yêu cầu hoàn trả đến Công ty TNHH Xiaomi Việt Nam (<span class="font-semibold">Người bán</span>).

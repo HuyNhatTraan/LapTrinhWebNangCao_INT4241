@@ -11,11 +11,11 @@
 
 <body class="bg-[#f7f7f7]">
     <?php require 'views/components/nav.php'; ?>
-    <span class="flex justify-center font-bold text-4xl h-40 items-center">CHÍNH SÁCH BẢO HÀNH</span>
+    <span class="flex justify-center font-bold text-4xl h-40 items-center text-center leading-12">CHÍNH SÁCH BẢO HÀNH</span>
     <div class="">
-        <div class="w-[80%] m-auto">
+        <div class="w-[95%] md:w-[80%] m-auto">
             <div class="flex flex-col gap-8">
-                <h1 class="text-2xl font-bold text-gray-800 mb-2">Chính Sách Bảo Hành Điện Thoại Mi</h1>
+                <h1 class="hidden md:flex text-2xl font-bold text-gray-800 mb-2">Chính Sách Bảo Hành Điện Thoại Mi</h1>
                 <div class="rounded-lg p-6 shadow mb-4 bg-white">
                     <section class="mb-6">
                         <h2 class="text-xl font-semibold text-indigo-700 mb-2">Những trường hợp được bảo hành</h2>

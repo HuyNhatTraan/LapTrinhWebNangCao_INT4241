@@ -13,9 +13,9 @@
     <?php require 'views/components/nav.php'; ?>
     <span class="flex justify-center font-bold text-4xl h-40 items-center">PHÍ SỬA CHỮA</span>
     <div class="">
-        <div class="w-[80%] m-auto">
+        <div class="w-[95%] md:w-[80%] m-auto">
             <div class="flex flex-col gap-8">
-                <h1 class="text-2xl font-bold text-gray-800 mb-2">Phí Sửa Chữa Dự Kiến</h1>
+                <h1 class="hidden md:flex text-2xl font-bold text-gray-800 mb-2">Phí Sửa Chữa Dự Kiến</h1>
                 <div class="rounded-lg p-6 shadow mb-4 bg-white">
                     <table class="min-w-full text-sm text-left border border-gray-200 mb-6">
                         <thead class="bg-gray-100">

@@ -14,8 +14,7 @@
     <span class="flex items-center justify-center font-bold text-lg md:text-3xl mt-10 mb-3 md:mb-10">Danh sách địa
         chỉ</span>
     <div class="flex flex-col justify-center items-center gap-3">
-        <div
-            class="grid grid-cols-1 md:grid-cols-2 bg-white w-[95%] md:w-[70%] border-2 border-gray-300 rounded-xl p-3 gap-3">
+        <div class="grid grid-cols-1 md:grid-cols-2 bg-white w-[95%] md:w-[70%] border-2 border-gray-300 rounded-xl p-3 gap-3">
             <!-- Không có địa chỉ -->
             <?php if (empty($_SESSION['addressItems'])): ?>
                 <div
@@ -26,7 +25,7 @@
                 <!-- Có địa chỉ -->
                 <!-- Foreach bắt đầu từ đây -->
                 <?php foreach ($_SESSION['addressItems'] as $index => $address): ?>
-                    <div class="flex flex-col p-3 md:p-5 border-2 border-gray-300 rounded-xl gap-2">
+                    <div class="flex flex-col w-full p-3 md:p-5 border-2 border-gray-300 rounded-xl gap-2">
                         <span class="text-xl md:text-3xl font-bold mb-3">Địa chỉ <?php echo $index + 1; ?></span>
                         <div class="text-sm font-bold md:text-lg">Tên người nhận:
                             <span class="font-normal"><?php echo $address['TenNguoiNhan']; ?></span>
@@ -126,9 +125,9 @@
                                 </div>
                             </div>
                             <button data-modal-target="popup-modal <?php echo $address['MaDiaChiKH'] ?>" data-modal-toggle="popup-modal <?php echo $address['MaDiaChiKH'] ?>"
-                                class="block text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+                                class="cursor-pointer  block text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
                                 type="button">
-                                Xoá địa chỉ
+                                Xoá 
                             </button>
                             <div id="popup-modal <?php echo $address['MaDiaChiKH'] ?>" tabindex="-1"
                                 class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 justify-center items-center w-full md:inset-0 h-[calc(100%-1rem)] max-h-full">
@@ -156,11 +155,11 @@
                                             <form method="POST" action="./address/delete">
                                                 <input type="hidden" name="MaDiaChiKH" value="<?php echo $address['MaDiaChiKH']; ?>">                                                
                                                 <button data-modal-hide="popup-modal <?php echo $address['MaDiaChiKH'] ?>" type="submit"
-                                                    class="text-white bg-red-600 hover:bg-red-800 focus:ring-4 focus:outline-none focus:ring-red-300 dark:focus:ring-red-800 font-medium rounded-lg text-sm inline-flex items-center px-5 py-2.5 text-center">
+                                                    class="cursor-pointer text-white bg-red-600 hover:bg-red-800 focus:ring-4 focus:outline-none focus:ring-red-300 dark:focus:ring-red-800 font-medium rounded-lg text-sm inline-flex items-center px-5 py-2.5 text-center">
                                                     Yes Sirrrr
                                                 </button>
                                                 <button data-modal-hide="popup-modal <?php echo $address['MaDiaChiKH'] ?>" type="button"
-                                                    class="py-2.5 px-5 ms-3 text-sm font-medium text-gray-900 focus:outline-none bg-white rounded-lg border border-gray-200 hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-4 focus:ring-gray-100 dark:focus:ring-gray-700 dark:bg-gray-800 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700">Hong chịu
+                                                    class="cursor-pointer py-2.5 px-5 ms-3 text-sm font-medium text-white focus:outline-none bg-white rounded-lg border border-gray-200 hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-4 focus:ring-gray-100 dark:focus:ring-gray-700 dark:bg-gray-800 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700">Hong chịu
                                                 </button>
                                             </form>
                                         </div>
@@ -173,7 +172,7 @@
                 <?php endforeach; ?>
             <?php endif; ?>
             <button data-modal-target="crud-modal" data-modal-toggle="crud-modal"
-                class="cursor-pointer col-span-2 w-fit flex m-auto text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+                class="cursor-pointer md:col-span-2 w-fit flex m-auto text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
                 type="button">
                 Thêm địa chỉ mới
             </button>
