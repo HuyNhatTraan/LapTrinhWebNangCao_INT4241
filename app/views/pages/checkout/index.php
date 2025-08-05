@@ -95,8 +95,8 @@
                 <div class="w-full lg:col-span-2 border-2 rounded-2xl bg-white border-gray-300 flex flex-col justify-between p-7">
                     <div class="font-bold text-xl md:text-3xl">Địa chỉ giao hàng</div>
                     <hr class="mt-5 mb-5 text-gray-400">
-
-                    <h3 class="mb-5 text-lg font-medium">Chọn địa chỉ giao hàng của bạn!</h3>                    
+                    <?php if (!empty($_SESSION['addressItems'])): ?>
+                    <h3 class="mb-5 text-lg font-medium">Chọn địa chỉ giao hàng của bạn!</h3>
                         <div class="grid gap-2 md:grid-cols-2">
                         <?php foreach ($_SESSION['addressItems'] as $index => $address): ?>
                             <div class="flex">
@@ -121,8 +121,13 @@
                                 </label>
                             </div>
                         <?php endforeach; ?>
+                        
                         <a href="./address" class="cursor-pointer p-3 col-span-2 w-fit bg-blue-600 hover:bg-blue-800 duration-300 text-white rounded-lg">Thêm địa chỉ mới hoặc thay đổi địa chỉ</a>
                     </div>
+                    <?php else:?>                        
+                        <h2 class="text-xl font-normal">Bạn chưa có địa chỉ giao hàng nào cả </h2>
+                        <a href="./address" class="cursor-pointer p-3 col-span-2 w-fit bg-blue-600 hover:bg-blue-800 duration-300 text-white rounded-lg">Thêm địa chỉ ngay</a>
+                        <?php endif; ?>
                 </div>
                 <div class="w-full lg:col-span-2 border-2 rounded-2xl bg-white border-gray-300 flex flex-col justify-between p-7">
                     <div class="font-bold text-xl md:text-3xl">Phương thức thanh toán</div>
@@ -205,8 +210,12 @@
                             <span class="text-sm md:text-md">Phí vận chuyển: </span>
                             <span class="text-sm md:text-md text-orange-500">Miễn phí</span>
                         </div>
-                        <div class="flex justify-between text-xl mt-5 text-gray-600 w-full">                            
-                            <button class="bg-black text-white py-2 rounded-xl w-full hover:bg-[#444444] duration-150 text-sm md:text-lg cursor-pointer">Xác nhận và thanh toán ngay</button>                                
+                        <div class="flex justify-between text-xl mt-5 text-gray-600 w-full">   
+                            <?php if (!empty($_SESSION['addressItems'])): ?>
+                                <button class="bg-black text-white py-2 rounded-xl w-full hover:bg-[#444444] duration-150 text-sm md:text-lg cursor-pointer">Xác nhận và thanh toán ngay</button>
+                            <?php else: ?>
+                                <button class="bg-gray-300 text-gray-600 py-2 rounded-xl w-full cursor-not-allowed" disabled>Vui lòng thêm địa chỉ giao hàng</button>
+                            <?php endif; ?>
                         </div>
                     </div>
                     <div class="border-2 rounded-2xl bg-white border-gray-300 p-5 mt-4">

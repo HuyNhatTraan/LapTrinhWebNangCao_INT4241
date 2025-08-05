@@ -156,10 +156,10 @@
                                                 <input type="hidden" name="MaDiaChiKH" value="<?php echo $address['MaDiaChiKH']; ?>">                                                
                                                 <button data-modal-hide="popup-modal <?php echo $address['MaDiaChiKH'] ?>" type="submit"
                                                     class="cursor-pointer text-white bg-red-600 hover:bg-red-800 focus:ring-4 focus:outline-none focus:ring-red-300 dark:focus:ring-red-800 font-medium rounded-lg text-sm inline-flex items-center px-5 py-2.5 text-center">
-                                                    Yes Sirrrr
+                                                    Chắc chắn
                                                 </button>
                                                 <button data-modal-hide="popup-modal <?php echo $address['MaDiaChiKH'] ?>" type="button"
-                                                    class="cursor-pointer py-2.5 px-5 ms-3 text-sm font-medium text-white focus:outline-none bg-white rounded-lg border border-gray-200 hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-4 focus:ring-gray-100 dark:focus:ring-gray-700 dark:bg-gray-800 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700">Hong chịu
+                                                    class="cursor-pointer py-2.5 px-5 ms-3 text-sm font-medium text-white focus:outline-none bg-white rounded-lg border border-gray-200 hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-4 focus:ring-gray-100 dark:focus:ring-gray-700 dark:bg-gray-800 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700">Để tôi suy nghĩ lại
                                                 </button>
                                             </form>
                                         </div>

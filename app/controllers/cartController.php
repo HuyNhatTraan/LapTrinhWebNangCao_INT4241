@@ -193,7 +193,7 @@ class CartController
         $cartItems = [];
         $_SESSION['cartItems'] = [];
         $_SESSION['order_id'] = $order; // Lưu mã đơn hàng vào session để hiển thị sau này
-        
+        unset($_SESSION['cart']);
         // Quay lại trang giỏ hàng
         header('Location: ./order-success');
         exit;
