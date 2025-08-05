@@ -181,9 +181,15 @@
                         <span class="text-orange-500">Miễn phí</span>
                     </div>
                     <div class="flex justify-center text-xl mt-5 text-gray-600">
-                        <a href="./checkout" class="flex justify-center bg-black text-white py-2 rounded-xl w-full hover:bg-[#444444] duration-150 text-md">
-                            <button >Thanh toán</button>
+                        <?php if (empty($_SESSION['cartItems'])): ?>
+                        <span href="./checkout" class="flex justify-center bg-black text-white py-2 rounded-xl w-full hover:bg-[#444444] duration-150 text-md">
+                            <button>Giỏ hàng trống</button>
+                        </span>
+                        <?php else: ?>
+                        <a href="./checkout" class="cursor-pointer flex justify-center bg-black text-white py-2 rounded-xl w-full hover:bg-[#444444] duration-150 text-md">
+                            <button>Thanh toán</button>
                         </a>
+                        <?php endif; ?>
                     </div>
                 </div>
                 <div class="border-2 rounded-2xl bg-white border-gray-300 p-5 mt-4">

@@ -41,13 +41,21 @@ class UserInfoController {
         require_once 'views/services/userOrder.php';
     }
 
-    public function hienThiDiaChi() {
+    public static function hienThiDiaChi() {
         $email = $_SESSION['user'];
         $addressItems = UserInfoModel::getUserAddresses($email);
         $_SESSION['addressItems'] = $addressItems;
         // Hiển thị địa chỉ của người dùng
         require_once 'views/services/userAddress.php';
     }
+
+    public static function hienThiDiaChiCheckOut() {
+        $email = $_SESSION['user'];
+        $addressItems = UserInfoModel::getUserAddresses($email);
+        $_SESSION['addressItems'] = $addressItems;
+        
+    }
+
     public function themDiaChi() {
         $email = $_SESSION['user'];
         // Kiểm tra xem người dùng đã gửi dữ liệu từ form thêm địa chỉ chưa

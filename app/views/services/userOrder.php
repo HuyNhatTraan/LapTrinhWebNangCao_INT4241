@@ -225,7 +225,7 @@
                 ?>
                 <?php foreach ($groupedOrders as $order): ?>
                     <div class="border-2 border-gray-300 p-3 rounded-xl shadow-md">
-                        <h2 class="text-md sm:text-2xl font-bold mb-3">Mã Đơn Hàng: <?php echo $order['MaDonHang']; ?></h2>
+                        <h2 class="text-md sm:text-2xl font-bold mb-3">Mã Đơn Hàng: #<?php echo $order['MaDonHang']; ?></h2>
 
                         <?php foreach ($order['SanPham'] as $item): ?>
                             <div class="flex gap-2 md:gap-5 mb-3">
