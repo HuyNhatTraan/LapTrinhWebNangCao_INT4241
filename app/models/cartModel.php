@@ -32,4 +32,28 @@ class cartModel {
         $data = $stmt->fetchAll(PDO::FETCH_ASSOC);
         return $data;
     }
+
+    public static function insertIntoDonHang($MaDiaChiKH, $MaKH, $items, $PhuongThucThanhToan) {
+        $db = Database::getInstance()->getConnection();
+        $stmt = $db->prepare("INSERT INTO DonHang (MaDiaChiKH, MaKH, NgayTao, TrangThai, PhuongThucThanhToan, GhiChu) VALUES (:MaDiaChiKH, :MaKH, NOW(), 'Chờ xử lý', :PhuongThucThanhToan, '')");
+        $stmt->bindValue(':MaDiaChiKH', $MaDiaChiKH, PDO::PARAM_STR);
+        $stmt->bindValue(':MaKH', $MaKH, PDO::PARAM_STR);
+        $stmt->bindValue(':PhuongThucThanhToan', $PhuongThucThanhToan, PDO::PARAM_STR);
+        $stmt->execute();
+
+        $maDonHang = $db->lastInsertId();
+
+        $stmtCT = $db->prepare("INSERT INTO ChiTietDonHang (MaDonHang, MaBienThe, MaDLSP, SoLuong, GiaTien) VALUES (:MaDonHang, :MaBienThe, :MaDLSP, :SoLuong, :GiaHienTai)");
+        foreach ($items as $item) {
+            $stmtCT->bindValue(':MaDonHang', $maDonHang, PDO::PARAM_INT);
+            $stmtCT->bindValue(':MaBienThe', $item['MaBienThe'], PDO::PARAM_STR);
+            $stmtCT->bindValue(':MaDLSP', $item['MaDLSP'], PDO::PARAM_STR);
+            $stmtCT->bindValue(':SoLuong', $item['SoLuong'], PDO::PARAM_INT);
+            $stmtCT->bindValue(':GiaHienTai', $item['GiaHienTai'], PDO::PARAM_STR);
+            $stmtCT->execute();
+        }
+        
+        $data = $stmt->fetchAll(PDO::FETCH_ASSOC);
+        return $data;
+    }
 }

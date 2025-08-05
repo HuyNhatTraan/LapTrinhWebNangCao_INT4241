@@ -73,7 +73,12 @@
             $thongSoKyThuat = ProductModel::getThongSoSP($MaSP);
             $_SESSION['dungLuong'] = $dungLuong; // Lưu sản phẩm vào session để sử dụng trong giỏ hàng
             // Gửi sang view để hiển thị
-            include __DIR__ .'/../views/product/index.php'; 
+            if (!empty($mauSacHinhAnh)) {
+                include __DIR__ .'/../views/product/index.php'; 
+            } else {
+                include __DIR__ .'/../views/errors/404.php'; 
+            }
+            
         }
     
         public function showSearchResults() {

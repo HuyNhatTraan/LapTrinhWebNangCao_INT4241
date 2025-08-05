@@ -83,13 +83,12 @@
     </div>
 
     <div class="w-[90%] md:w-[80%] flex m-auto flex-col">
-        <form action="" method="">
+        <form action="./placed-order" method="POST">
         <?php if (empty($_SESSION['user'])): ?>
             <div
                 class="flex flex-col gap-5 justify-center items-center bg-white border-2 rounded-2xl border-gray-300 p-6 text-center">
                 <span class="text-2xl font-bold">Vui lòng đăng nhập để tiến hành đặt hàng và thanh toán</span>
-                <a href="./login" class="cursor-pointer p-3 bg-blue-600 hover:bg-blue-800 duration-300 text-white rounded-lg">Đăng
-                    nhập ngay</a>
+                <a href="./login" class="cursor-pointer p-3 bg-blue-600 hover:bg-blue-800 duration-300 text-white rounded-lg">Đăng nhập ngay</a>                    
             </div>
         <?php else: ?>
             <div class="grid grid-cols-1 lg:grid-cols-3 gap-3">                
@@ -122,7 +121,7 @@
                                 </label>
                             </div>
                         <?php endforeach; ?>
-                        <a href="./address" class="cursor-pointer p-3 col-span-2 w-fit bg-blue-600 hover:bg-blue-800 duration-300 text-white rounded-lg">Thêm địa chỉ mới</a>
+                        <a href="./address" class="cursor-pointer p-3 col-span-2 w-fit bg-blue-600 hover:bg-blue-800 duration-300 text-white rounded-lg">Thêm địa chỉ mới hoặc thay đổi địa chỉ</a>
                     </div>
                 </div>
                 <div class="w-full lg:col-span-2 border-2 rounded-2xl bg-white border-gray-300 flex flex-col justify-between p-7">
@@ -150,35 +149,36 @@
                         </div>
                         <div class="flex flex-col text-xl mt-3 text-gray-600">
                             <?php foreach ($cartItems as $item): ?>                                
-                                <div class="flex mb-2">
+                                <div class="flex mb-2">                                    
                                     <a href="product?MaSP=<?php echo $item['MaSP']; ?>" class="flex justify-between w-full">
                                         <div class="hidden md:flex">
                                             <img class="w-20 h-20" src="<?php echo $item['HinhAnhBienThe']; ?>"
                                                 alt="<?php echo $item['HinhAnhBienThe']; ?>">
                                             <span class=" text-black text-[16px]">
                                                 <div class="flex flex-col">
+                                                    <input type="hidden" name="MaSP[]" value="<?php echo $item['MaSP']; ?>">
                                                     <div class="font-bold"><?php echo $item['TenSP']; ?></div>
                                                     <div class="text-gray-600"><?php echo $item['MauSac']; ?></div>
-                                                    <input type="hidden" name="MaDLSP" value="<?php echo $item['MaDLSP']; ?>">
+                                                    <input type="hidden" name="MaBienThe[]" value="<?php echo $item['MaBienThe']; ?>">
+                                                    <input type="hidden" name="MaDLSP[]" value="<?php echo $item['MaDLSP']; ?>">
                                                     <div class="text-gray-600"><?php echo $item['TenDLSP']; ?></div>                                                    
                                                 </div>
                                                 <div class="mt-1">
+                                                    <input type="hidden" name="SoLuong[]" value="<?php echo $item['SoLuong']; ?>">
                                                     Số lượng: <?php echo $item['SoLuong']; ?>
                                                 </div>
                                             </span>
                                         </div>
                                         <div class="flex md:hidden">                                            
                                             <img class="w-20 h-20" src="<?php echo $item['HinhAnhBienThe']; ?>" alt="<?php echo $item['HinhAnhBienThe']; ?>">                                                
-                                            <div class="flex flex-col text-black">
-                                                <input type="hidden" name="">
+                                            <div class="flex flex-col text-black">                                                
                                                 <span class="font-bold text-sm"><?php echo $item['TenSP']; ?></span>
-                                                <span class="text-gray-700 text-sm">Màu sắc:<?php echo $item['MauSac']; ?></span>                                                    
-                                                <input type="hidden" name="">  
+                                                <span class="text-gray-700 text-sm">Màu sắc:<?php echo $item['MauSac']; ?></span>                                                                                                      
                                               
                                                 <span class="text-gray-700 text-sm">Dung lượng:<?php echo $item['TenDLSP']; ?></span>
                                                     
                                                 <span class="text-gray-700 text-sm">Số lượng:<?php echo $item['SoLuong']; ?></span>
-                                                    
+                                                <input type="hidden" name="GiaHienTai[]" value="<?php echo $item['GiaHienTai']; ?>">
                                                 <span class=" font-bold text-sm"> Giá<?php echo number_format($item['GiaHienTai'], 0, ',', '.'); ?>đ                                                    
                                                 </span>
                                             </div>
@@ -198,6 +198,7 @@
                                 }
                                 echo number_format($tongCong, 0, ',', '.');
                                 ?>đ
+                                <input type="hidden" name="TongCong" value="<?php echo $tongCong; ?>">
                             </span>
                         </div>
                         <div class="flex justify-between text-xl mt-3 text-gray-600">

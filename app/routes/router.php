@@ -48,6 +48,7 @@ $routes = [
     '/cart' => ['controller' => 'CartController', 'action' => 'xuLyVaHienThiGioHang'],
     '/cart/deleteItem' => ['controller' => 'CartController', 'action' => 'deleteItem'],
     '/cart/updateItem' => ['controller' => 'CartController', 'action' => 'updateItem'],
+    '/placed-order' => ['controller' => 'CartController', 'action' => 'placedOrder'],
     '/search' => ['controller' => 'ProductController', 'action' => 'showSearchResults'],
     '/product' => ['controller' => 'ProductController', 'action' => 'showChiTietSP'],
 ];

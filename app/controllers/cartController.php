@@ -1,5 +1,6 @@
 <?php
 require_once __DIR__ . '/../models/cartModel.php';
+require_once __DIR__ . '/../models/userInfoModel.php';
 session_start();
 
 class CartController
@@ -36,27 +37,27 @@ class CartController
         }
     }
     public function updateItem() {
-    if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-        $maSP = $_POST['MaSP'] ?? null;
-        $maBienThe = $_POST['MaBienThe'] ?? null;
-        $SoLuong = isset($_POST['SoLuong']) ? (int)$_POST['SoLuong'] : 1;
-        echo "Cập nhật số lượng: $SoLuong cho sản phẩm $maSP, biến thể $maBienThe";
-        foreach ($_SESSION['cart'] as $index => $item) {
-            if (
-                $item['MaSP'] === $maSP &&
-                $item['MaBienThe'] === $maBienThe                 
-            ) {
-                $_SESSION['cart'][$index]['SoLuong'] = $SoLuong;               
-                print_r($_SESSION['cart']); // Nó không thực hiện 
-                break;
+        if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+            $maSP = $_POST['MaSP'] ?? null;
+            $maBienThe = $_POST['MaBienThe'] ?? null;
+            $SoLuong = isset($_POST['SoLuong']) ? (int)$_POST['SoLuong'] : 1;
+            echo "Cập nhật số lượng: $SoLuong cho sản phẩm $maSP, biến thể $maBienThe";
+            foreach ($_SESSION['cart'] as $index => $item) {
+                if (
+                    $item['MaSP'] === $maSP &&
+                    $item['MaBienThe'] === $maBienThe                 
+                ) {
+                    $_SESSION['cart'][$index]['SoLuong'] = $SoLuong;               
+                    print_r($_SESSION['cart']); // Nó không thực hiện 
+                    break;
+                }
             }
-        }
 
-        // Quay lại trang giỏ hàng
-        header('Location: ' . $_SERVER['HTTP_REFERER']);
-        exit;
+            // Quay lại trang giỏ hàng
+            header('Location: ' . $_SERVER['HTTP_REFERER']);
+            exit;
+        }
     }
-}
     public function xuLyVaHienThiGioHang() {
         // Luôn luôn đảm bảo session cart tồn tại
         if (!isset($_SESSION['cart'])) {
@@ -164,5 +165,32 @@ class CartController
         }
     }
 
-    
+    public function placedOrder() {
+        $maDiaChiKH = $_POST['MaDiaChiKH'];
+        $maSPList = $_POST['MaSP'];
+        $maBienTheList = $_POST['MaBienThe'];  // Mấy thằng này là Array: ví dụ: ['BT019', 'BT009']
+        $maDLSPList = $_POST['MaDLSP'];        
+        $soLuongList = $_POST['SoLuong'];      
+        $maDiaChiKH = $_POST['MaDiaChiKH'];
+        $phuongThucThanhToan = $_POST['phuongThucThanhToan'];
+        $giaHienTai = $_POST['GiaHienTai'];
+        $tongCong = $_POST['TongCong'];        
+        $user = UserInfoModel::getUserInfo($_SESSION['user']);
+        $maKH = $user[0]['MaKH'];
+
+        $items = [];
+        foreach ($maSPList as $i => $maSP) {
+            $items[] = [
+                'MaSP' => $maSP,
+                'MaBienThe' => $maBienTheList[$i],
+                'MaDLSP' => $maDLSPList[$i],
+                'SoLuong' => $soLuongList[$i],
+                'GiaHienTai' => $giaHienTai[$i]
+            ];
+        }
+        cartModel::insertIntoDonHang($maDiaChiKH, $maKH, $items, $phuongThucThanhToan);
+        // Quay lại trang giỏ hàng
+        // header('Location: ' . $_SERVER['HTTP_REFERER']);
+        // exit;
+    }
 }
