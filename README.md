@@ -16,7 +16,7 @@ git clone https://github.com/HuyNhatTraan/LapTrinhWebNangCao_INT4241.git
 
 ### 2. Tạo Database
 - Mở **MySQL Workbench** (bản mới nhất).
-- Import file **`MyDB.sql`** để tạo database với tên:
+- Import file **`DBMySQL.sql`** để tạo database với tên:
   ```sql
   HT_Tech_LTWNC
   ```
