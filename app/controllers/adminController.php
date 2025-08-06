@@ -58,5 +58,26 @@ class AdminController {
         $_SESSION['SoLuongOrder'] = $items; // Lưu vào session để sử dụng sau này
         // echo $items;
     }
-    
+    public static function suaKH()   {        
+        if (isset($_POST['MaKH']) && isset($_POST['TenKH']) && isset($_POST['SDT']) && isset($_POST['TrangThaiKH']) && isset($_POST['NgaySinh']) ){
+            $maKH = $_POST['MaKH'];
+            $tenKH = $_POST['TenKH'];
+            $sdt = $_POST['SDT'];
+            $trangThaiKH = $_POST['TrangThaiKH'];
+            $ngaySinh = $_POST['NgaySinh'];
+
+            // Validate input
+            if (empty($maKH) || empty($tenKH) || empty($sdt) || empty($trangThaiKH) || empty($ngaySinh)) {
+                echo "Vui lòng điền đầy đủ thông tin.";
+                return;
+            }
+
+            // Cập nhật thông tin khách hàng
+            AdminModel::suaKhachHang($maKH, $tenKH, $sdt, $trangThaiKH, $ngaySinh);
+            header('Location: ' . $_SERVER['HTTP_REFERER']); // Quay lại trang trước đó
+            exit;
+        } else {
+            echo "Vui lòng điền đầy đủ thông tin.";
+        }
+    }
 }

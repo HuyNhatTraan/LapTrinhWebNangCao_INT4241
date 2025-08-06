@@ -22,7 +22,7 @@ class UserInfoController {
             $sdt = $_POST['SDT'];
             $email = $_SESSION['user'];
             // Cập nhật thông tin người dùng
-            UserInfoModel::updateUserInfo($email, $tenKH);
+            UserInfoModel::updateUserInfo($email, $tenKH, $sdt);
             $_SESSION['capNhatThanhCong'] = 1;
             // Hiển thị thông tin người dùng
             header('Location: '. $_SERVER['HTTP_REFERER']);

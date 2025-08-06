@@ -25,4 +25,39 @@ class DanhMucSPController {
             echo "Yêu cầu không hợp lệ.";
         }
     }
+
+    public function xoaDanhMucSP() {
+        if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+            $maDM = $_POST['MaDM'];            
+
+            // Thêm danh mục sản phẩm
+            DanhMucSPModel::xoaDanhMucSP($maDM);
+            header('Location: ' . $_SERVER['HTTP_REFERER']); // Quay lại trang trước đó
+            exit;
+        } else {
+            echo "Yêu cầu không hợp lệ.";
+        }
+    }
+
+    public function suaDanhMucSP() {
+        if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+            $maDM = $_POST['MaDM'];
+            $tenDM = $_POST['TenDanhMucSP'];
+
+            // Validate input
+            if (empty($maDM) || empty($tenDM)) {
+                echo "Vui lòng điền đầy đủ thông tin.";
+                return;
+            }
+
+            // Cập nhật danh mục sản phẩm
+            DanhMucSPModel::suaDanhMucSP($maDM, $tenDM);
+            header('Location: ' . $_SERVER['HTTP_REFERER']); // Quay lại trang trước đó
+            exit;
+        } else {
+            echo "Yêu cầu không hợp lệ.";
+        }
+    }
 }
+
+            

@@ -15,11 +15,12 @@ class UserInfoModel {
         return $data;
     }
 
-    public static function updateUserInfo($email, $tenKH) {
+    public static function updateUserInfo($email, $tenKH, $sdt) {
         $db = Database::getInstance()->getConnection();
-        $stmt = $db->prepare("UPDATE KhachHang SET TenKH = :tenKH WHERE Email = :email");
+        $stmt = $db->prepare("UPDATE KhachHang SET TenKH = :tenKH, SDT = :sdt WHERE Email = :email");
         $stmt->bindParam(':email', $email);
         $stmt->bindParam(':tenKH', $tenKH);
+        $stmt->bindParam(':sdt', $sdt);
         $stmt->execute();
         $data = $stmt->fetchAll(PDO::FETCH_ASSOC);
         return $data;

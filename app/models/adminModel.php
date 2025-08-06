@@ -87,7 +87,7 @@ class AdminModel {
         $db = Database::getInstance();
         $conn = $db->getConnection();
 
-        $stmt = $conn->prepare("SELECT MaKH, TenKH, Email, SDT, NgaySinh, TrangThaiKH FROM KhachHang");
+        $stmt = $conn->prepare("SELECT * FROM KhachHang");
 
         $stmt->execute();
 
@@ -140,5 +140,17 @@ class AdminModel {
         $stmt->execute();
 
         return $stmt->fetch();
+    }
+    public static function suaKhachHang($maKH, $tenKH, $sdt, $trangThaiKH, $ngaySinh) {
+        $db = Database::getInstance();
+        $conn = $db->getConnection();
+
+        $stmt = $conn->prepare("UPDATE KhachHang SET TenKH = :tenKH, SDT = :sdt, TrangThaiKH = :trangThaiKH, NgaySinh = :ngaySinh WHERE MaKH = :maKH");
+        $stmt->bindParam(':maKH', $maKH);
+        $stmt->bindParam(':tenKH', $tenKH);
+        $stmt->bindParam(':sdt', $sdt);
+        $stmt->bindParam(':trangThaiKH', $trangThaiKH);
+        $stmt->bindParam(':ngaySinh', $ngaySinh);
+        $stmt->execute();
     }
 }

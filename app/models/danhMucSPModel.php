@@ -12,4 +12,19 @@ class DanhMucSPModel {
         $stmt->bindParam(':TenDanhMucSP', $TenDanhMucSP);
         $stmt->execute();        
     }
+    
+    public static function xoaDanhMucSP($MaDM) {
+        $db = Database::getInstance()->getConnection();
+        $stmt = $db->prepare("DELETE FROM DanhMucSP WHERE MaDM = :MaDM");
+        $stmt->bindParam(':MaDM', $MaDM);        
+        $stmt->execute();        
+    }
+
+    public static function suaDanhMucSP($MaDM, $TenDanhMucSP) {
+        $db = Database::getInstance()->getConnection();
+        $stmt = $db->prepare("UPDATE DanhMucSP SET TenDanhMucSP = :TenDanhMucSP WHERE MaDM = :MaDM");
+        $stmt->bindParam(':MaDM', $MaDM);
+        $stmt->bindParam(':TenDanhMucSP', $TenDanhMucSP);
+        $stmt->execute();        
+    }
 }
