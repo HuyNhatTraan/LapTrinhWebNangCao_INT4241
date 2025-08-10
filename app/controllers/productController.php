@@ -77,8 +77,7 @@
                 include __DIR__ .'/../views/product/index.php'; 
             } else {
                 include __DIR__ .'/../views/errors/404.php'; 
-            }
-            
+            }            
         }
     
         public function showSearchResults() {

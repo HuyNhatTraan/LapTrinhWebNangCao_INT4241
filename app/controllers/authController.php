@@ -18,8 +18,7 @@ class AuthController {
 
             if ($user && password_verify($password, $user['Password'])) {
                 session_regenerate_id(true);
-                $_SESSION['user'] = $user['Email'];
-                $_SESSION['last_activity'] = time();
+                $_SESSION['user'] = $user['Email'];                
                 $_SESSION['isLoginSuccess'] = 1;
                 header('Location: ' . $_SERVER['HTTP_REFERER']);
                 

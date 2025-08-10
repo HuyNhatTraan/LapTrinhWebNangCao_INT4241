@@ -18,8 +18,7 @@ class CartController
             $maSP = $_POST['MaSP'] ?? null;
             $maBienThe = $_POST['MaBienThe'] ?? null;
             
-
-            print_r($_SESSION['cart']);
+            print_r($_SESSION['cart']); // Debug đã hen
             foreach ($_SESSION['cart'] as $index => $item) {
                 if (
                     $item['MaSP'] === $maSP &&

@@ -62,7 +62,8 @@ class AdminModel {
         $db = Database::getInstance();
         $conn = $db->getConnection();
 
-        $stmt = $conn->prepare("SELECT D.MaDonHang, K.TenKH, K.Email, D.NgayTao, SUM(C.SoLuong * C.GiaTien) AS TongTien, D.TrangThai FROM DonHang D
+        $stmt = $conn->prepare("SELECT D.MaDonHang, K.TenKH, K.Email, D.NgayTao, SUM(C.SoLuong * C.GiaTien) AS TongTien, D.TrangThai 
+            FROM DonHang D
             JOIN ChiTietDonHang C ON D.MaDonHang = C.MaDonHang 
             JOIN KhachHang K ON K.MaKH = D.MaKH
             GROUP BY D.MaDonHang");
@@ -145,7 +146,8 @@ class AdminModel {
         $db = Database::getInstance();
         $conn = $db->getConnection();
 
-        $stmt = $conn->prepare("UPDATE KhachHang SET TenKH = :tenKH, SDT = :sdt, TrangThaiKH = :trangThaiKH, NgaySinh = :ngaySinh WHERE MaKH = :maKH");
+        $stmt = $conn->prepare("UPDATE KhachHang SET TenKH = :tenKH, SDT = :sdt, TrangThaiKH = :trangThaiKH, NgaySinh = :ngaySinh 
+        WHERE MaKH = :maKH");
         $stmt->bindParam(':maKH', $maKH);
         $stmt->bindParam(':tenKH', $tenKH);
         $stmt->bindParam(':sdt', $sdt);

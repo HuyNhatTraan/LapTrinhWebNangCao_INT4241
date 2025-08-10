@@ -109,9 +109,10 @@ class productModel {
     // Lấy biến thể màu sắc và hình ảnh của sản phẩm truyền MaSP vào
     public static function getBienTheSP($MaSP) {
         $db = Database::getInstance()->getConnection();
-
+        
         // Dùng bindValue để tránh SQL Injection cho LIMIT
-        $stmt = $db->prepare("Select HinhAnhBienThe, MauSac, MaMau, MaBienThe From SanPham S Join BienTheSP B ON S.MaSP = B.MaSP Where S.MaSP = :MaSP");
+        $stmt = $db->prepare("Select HinhAnhBienThe, MauSac, MaMau, MaBienThe From SanPham S 
+        Join BienTheSP B ON S.MaSP = B.MaSP Where S.MaSP = :MaSP");
         $stmt->bindValue(':MaSP', $MaSP, PDO::PARAM_STR);
         $stmt->execute();
 
