@@ -50,9 +50,13 @@ class UserInfoController {
     }
 
     public static function hienThiDiaChiCheckOut() {
-        $email = $_SESSION['user'];
-        $addressItems = UserInfoModel::getUserAddresses($email);
-        $_SESSION['addressItems'] = $addressItems;
+        if (isset($_SESSION['user'])){
+            $email = $_SESSION['user'];
+            $addressItems = UserInfoModel::getUserAddresses($email);
+            $_SESSION['addressItems'] = $addressItems;
+        }
+        
+        
         
     }
 

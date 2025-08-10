@@ -68,7 +68,7 @@ class UserInfoModel {
 
     public static function getUserOrders($email) {
         $db = Database::getInstance()->getConnection();
-        $stmt = $db->prepare("SELECT  D.MaDonHang, S.TenSP, B.HinhAnhBienThe, C.GiaTien, C.SoLuong, SUM(C.GiaTien * C.SoLuong) AS TongTien, DL.TenDLSP , B.MauSac
+        $stmt = $db->prepare("SELECT  D.MaDonHang, S.TenSP, D.TrangThai, B.HinhAnhBienThe, C.GiaTien, C.SoLuong, SUM(C.GiaTien * C.SoLuong) AS TongTien, DL.TenDLSP , B.MauSac
         FROM DonHang D            
         INNER JOIN ChiTietDonHang C ON D.MaDonHang = C.MaDonHang
         INNER JOIN KhachHang K ON K.MaKH = D.MaKH
@@ -76,7 +76,7 @@ class UserInfoModel {
         INNER JOIN SanPham S ON S.MaSP = B.MaSP
         INNER Join DungLuongSP DL ON DL.MaDLSP = C.MaDLSP
         Where K.Email = :email
-        GROUP BY S.TenSP, B.HinhAnhBienThe, C.GiaTien, C.SoLuong, DL.TenDLSP, B.MauSac, D.MaDonHang");
+        GROUP BY S.TenSP, B.HinhAnhBienThe, C.GiaTien, C.SoLuong, DL.TenDLSP, B.MauSac, D.MaDonHang,D.TrangThai");
         $stmt->bindParam(':email', $email);
         $stmt->execute();
         // Lấy tất cả đơn hàng của người dùng 
