@@ -37,7 +37,8 @@ class AdminController {
         $items = AdminModel::getDanhSachDonHang(); 
         $_SESSION['DanhSachDonHang'] = $items; // Lưu vào session để sử dụng sau này
         // echo $items;
-    }
+    }    
+
     public static function hienThiDanhSachDanhMuc() {
         $items = AdminModel::getDanhSachDanhMuc(); 
         $_SESSION['DanhSachDanhMuc'] = $items; // Lưu vào session để sử dụng sau này
@@ -48,18 +49,8 @@ class AdminController {
         $_SESSION['DanhSachKH'] = $items; // Lưu vào session để sử dụng sau này
         // echo $items;
     }
-    public static function hienThiDanhSachSP() {
-        $items = AdminModel::getDanhSachSP(); 
-        $_SESSION['DanhSachSP'] = $items; // Lưu vào session để sử dụng sau này
-        // echo $items;
-    }
-    public static function getDonHangKhachHang($email)   {        
-        $items = AdminModel::getDonHangKhachHang($email); 
-        $_SESSION['SoLuongOrder'] = $items; // Lưu vào session để sử dụng sau này
-        // echo $items;
-    }
-    public static function suaKH()   {        
-        if (isset($_POST['MaKH']) && isset($_POST['TenKH']) && isset($_POST['SDT']) && isset($_POST['TrangThaiKH']) && isset($_POST['NgaySinh']) ){
+    public static function editThongTinDanhSachKH() {
+        if (isset($_POST['MaKH']) && isset($_POST['TenKH']) && isset($_POST['SDT']) && isset($_POST['TrangThaiKH']) && isset($_POST['NgaySinh'])) {
             $maKH = $_POST['MaKH'];
             $tenKH = $_POST['TenKH'];
             $sdt = $_POST['SDT'];
@@ -71,13 +62,28 @@ class AdminController {
                 echo "Vui lòng điền đầy đủ thông tin.";
                 return;
             }
-
-            // Cập nhật thông tin khách hàng
-            AdminModel::suaKhachHang($maKH, $tenKH, $sdt, $trangThaiKH, $ngaySinh);
+            $items = AdminModel::suaKhachHang($maKH, $tenKH, $sdt, $trangThaiKH, $ngaySinh); 
+            $_SESSION['force_refresh'] = true;
+            $_SESSION['DanhSachKH'] = $items; // Lưu vào session để sử dụng sau này
             header('Location: ' . $_SERVER['HTTP_REFERER']); // Quay lại trang trước đó
             exit;
+        // echo $items;
         } else {
-            echo "Vui lòng điền đầy đủ thông tin.";
+            echo "Yêu cầu không hợp lệ.";
+            return;
+
         }
+        
     }
+    public static function hienThiDanhSachSP() {
+        $items = AdminModel::getDanhSachSP(); 
+        $_SESSION['DanhSachSP'] = $items; // Lưu vào session để sử dụng sau này
+        // echo $items;
+    }
+    public static function getDonHangKhachHang($email)   {        
+        $items = AdminModel::getDonHangKhachHang($email); 
+        $_SESSION['SoLuongOrder'] = $items; // Lưu vào session để sử dụng sau này
+        // echo $items;
+    }
+    
 }

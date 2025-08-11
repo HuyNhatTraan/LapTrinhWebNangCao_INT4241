@@ -19,6 +19,7 @@ class DanhMucSPController {
 
             // Thêm danh mục sản phẩm
             DanhMucSPModel::themDanhMucSP($maDM, $tenDM);
+            $_SESSION['force_refresh'] = true;
             header('Location: ' . $_SERVER['HTTP_REFERER']); // Quay lại trang trước đó
             exit;
         } else {
@@ -32,6 +33,7 @@ class DanhMucSPController {
 
             // Thêm danh mục sản phẩm
             DanhMucSPModel::xoaDanhMucSP($maDM);
+            $_SESSION['force_refresh'] = true;
             header('Location: ' . $_SERVER['HTTP_REFERER']); // Quay lại trang trước đó
             exit;
         } else {
@@ -51,6 +53,7 @@ class DanhMucSPController {
             }
 
             // Cập nhật danh mục sản phẩm
+            $_SESSION['force_refresh'] = true;
             DanhMucSPModel::suaDanhMucSP($maDM, $tenDM);
             header('Location: ' . $_SERVER['HTTP_REFERER']); // Quay lại trang trước đó
             exit;

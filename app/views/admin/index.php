@@ -7,7 +7,12 @@ echo '
     }
     </script>
 ';
+if (!empty($_SESSION['force_refresh'])) {
+    echo "<script>location.reload();</script>";
+    unset($_SESSION['force_refresh']);
+}
 ?>
+
 <?php
 // Xử lý routing
 $page = isset($_GET['page']) ? $_GET['page'] : 'dashboard';

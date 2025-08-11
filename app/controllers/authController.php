@@ -59,7 +59,8 @@ class AuthController {
                 AdminController::hienThiDanhSachDonhang();
                 AdminController::hienThiDanhSachDanhMuc();
                 AdminController::hienThiDanhSachKH();
-                AdminController::hienThiDanhSachSP();
+                AdminController::hienThiDanhSachSP();      
+                
             } else {
                 include 'views/errors/403.php';                
             }

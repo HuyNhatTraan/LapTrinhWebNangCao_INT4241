@@ -18,6 +18,7 @@ require_once 'controllers/cartController.php'; // Nạp controller cần dùng
 require_once 'controllers/authController.php'; // Nạp controller cần dùng
 require_once 'controllers/danhMucSPController.php'; // Nạp controller cần dùng
 require_once 'controllers/userInfoController.php'; // Nạp controller cần dùng
+require_once 'controllers/donHangController.php'; // Nạp controller cần dùng
 
 $routes = [
     '/' => ['controller' => 'ProductController', 'action' => 'showHomepageStore'],
@@ -45,8 +46,10 @@ $routes = [
     '/admin' => ['controller' => 'AuthController', 'action' => 'getAdminDashboard'],
     '/admin/ThemDM' => ['controller' => 'DanhMucSPController', 'action' => 'themDanhMucSP'],
     '/admin/XoaDM' => ['controller' => 'DanhMucSPController', 'action' => 'xoaDanhMucSP'],
-    '/admin/SuaDM' => ['controller' => 'DanhMucSPController', 'action' => 'suaDanhMucSP'],
-    '/admin/SuaKH' => ['controller' => 'AdminController', 'action' => 'suaKH'],
+    '/admin/SuaDM' => ['controller' => 'DanhMucSPController', 'action' => 'suaDanhMucSP'],    
+    '/admin/XoaDH' => ['controller' => 'DonHangController', 'action' => 'xoaDonHang'],
+    '/admin/SuaKH' => ['controller' => 'AdminController', 'action' => 'editThongTinDanhSachKH'],
+    '/admin/SuaDH' => ['controller' => 'DonHangController', 'action' => 'editDonHang'],
     '/checkout' => ['controller' => 'CartController', 'action' => 'xuLyVaHienThiCheckOut'],
     '/cart' => ['controller' => 'CartController', 'action' => 'xuLyVaHienThiGioHang'],
     '/cart/deleteItem' => ['controller' => 'CartController', 'action' => 'deleteItem'],

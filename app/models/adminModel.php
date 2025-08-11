@@ -62,16 +62,30 @@ class AdminModel {
         $db = Database::getInstance();
         $conn = $db->getConnection();
 
-        $stmt = $conn->prepare("SELECT D.MaDonHang, K.TenKH, K.Email, D.NgayTao, SUM(C.SoLuong * C.GiaTien) AS TongTien, D.TrangThai 
+        $stmt = $conn->prepare("SELECT D.MaDonHang, K.MaKH, K.TenKH, K.Email, D.NgayTao, SUM(C.SoLuong * C.GiaTien) AS TongTien, D.TrangThai 
             FROM DonHang D
             JOIN ChiTietDonHang C ON D.MaDonHang = C.MaDonHang 
             JOIN KhachHang K ON K.MaKH = D.MaKH
-            GROUP BY D.MaDonHang");
+            GROUP BY D.MaDonHang
+            ORDER BY D.MaDonHang DESC");
         $stmt->execute();
 
         return $stmt->fetchAll();
     }
 
+    // Need to work on this function
+    public static function getChiTietDanhSachDonHang($MaDonHang, $MaKH) {
+        $db = Database::getInstance();
+        $conn = $db->getConnection();
+
+        $stmt = $conn->prepare("SELECT * From Donhang D JOIN ChiTietDonHang C WHERE C.MaDonHang = :MaDonHang AND D.MaDonHang = :MaDonHang AND D.MaKH = :MaKH");
+        $stmt->bindParam(':MaDonHang', $MaDonHang);
+        $stmt->bindParam(':MaKH', $MaKH);
+        $stmt->execute();
+
+        return $stmt->fetchAll();
+    }
+    
     public static function getDanhSachDanhMuc() {
         $db = Database::getInstance();
         $conn = $db->getConnection();
@@ -94,6 +108,7 @@ class AdminModel {
 
         return $stmt->fetchAll();
     }
+
     public static function getDanhSachSP() {
         $db = Database::getInstance();
         $conn = $db->getConnection();

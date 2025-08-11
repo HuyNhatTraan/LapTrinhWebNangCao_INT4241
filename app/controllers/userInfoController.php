@@ -25,6 +25,7 @@ class UserInfoController {
             UserInfoModel::updateUserInfo($email, $tenKH, $sdt);
             $_SESSION['capNhatThanhCong'] = 1;
             // Hiển thị thông tin người dùng
+            $_SESSION['force_refresh'] = true;
             header('Location: '. $_SERVER['HTTP_REFERER']);
             exit;
         } else {
@@ -55,9 +56,6 @@ class UserInfoController {
             $addressItems = UserInfoModel::getUserAddresses($email);
             $_SESSION['addressItems'] = $addressItems;
         }
-        
-        
-        
     }
 
     public function themDiaChi() {
