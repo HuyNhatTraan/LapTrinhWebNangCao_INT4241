@@ -49,6 +49,7 @@ $routes = [
     '/admin/SuaDM' => ['controller' => 'DanhMucSPController', 'action' => 'suaDanhMucSP'],    
     '/admin/XoaDH' => ['controller' => 'DonHangController', 'action' => 'xoaDonHang'],
     '/admin/SuaKH' => ['controller' => 'AdminController', 'action' => 'editThongTinDanhSachKH'],
+    '/admin/SuaSP' => ['controller' => 'AdminController', 'action' => 'editThongTinDanhSachSP'],
     '/admin/SuaDH' => ['controller' => 'DonHangController', 'action' => 'editDonHang'],
     '/checkout' => ['controller' => 'CartController', 'action' => 'xuLyVaHienThiCheckOut'],
     '/cart' => ['controller' => 'CartController', 'action' => 'xuLyVaHienThiGioHang'],

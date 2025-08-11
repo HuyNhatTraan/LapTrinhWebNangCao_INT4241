@@ -80,6 +80,32 @@ class AdminController {
         $_SESSION['DanhSachSP'] = $items; // Lưu vào session để sử dụng sau này
         // echo $items;
     }
+    public static function editThongTinDanhSachSP() {    
+        if (isset($_POST['MaSP']) && isset($_POST['TenSP']) && isset($_POST['GiaBase']) && isset($_POST['GiaHienTai'])) {
+            $maSP = $_POST['MaSP'];
+            $tenSP = $_POST['TenSP'];
+            $giaBase = $_POST['GiaBase'];
+            $giaHienTai = $_POST['GiaHienTai'];
+            $maDM = $_POST['MaDM'];
+
+            // Validate input
+            if (empty($maSP) || empty($tenSP) || empty($giaBase) || empty($giaHienTai) || empty($maDM)) {
+                echo "Vui lòng điền đầy đủ thông tin.";
+                return;
+            }
+            AdminModel::suaSanPham($maSP, $tenSP, $giaBase, $giaHienTai, $maDM); 
+            $_SESSION['force_refresh'] = true;
+            
+            header('Location: ' . $_SERVER['HTTP_REFERER']); // Quay lại trang trước đó
+            exit;
+        
+        } else {
+            echo "Yêu cầu không hợp lệ.";
+            return;
+
+        }
+        
+    }
     public static function getDonHangKhachHang($email)   {        
         $items = AdminModel::getDonHangKhachHang($email); 
         $_SESSION['SoLuongOrder'] = $items; // Lưu vào session để sử dụng sau này

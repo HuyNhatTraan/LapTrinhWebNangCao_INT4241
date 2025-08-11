@@ -170,4 +170,17 @@ class AdminModel {
         $stmt->bindParam(':ngaySinh', $ngaySinh);
         $stmt->execute();
     }
+    public static function suaSanPham($maSP, $tenSP, $giaBase, $giaHienTai, $maDM) {
+        $db = Database::getInstance();
+        $conn = $db->getConnection();
+
+        $stmt = $conn->prepare("UPDATE SanPham SET TenSP = :tenSP, GiaBase = :giaBase, GiaHienTai = :giaHienTai, MaDM = :maDM
+        WHERE MaSP = :maSP");
+        $stmt->bindParam(':maSP', $maSP);
+        $stmt->bindParam(':tenSP', $tenSP);
+        $stmt->bindParam(':giaBase', $giaBase);
+        $stmt->bindParam(':giaHienTai', $giaHienTai);
+        $stmt->bindParam(':maDM', $maDM);
+        $stmt->execute();
+    }
 }
